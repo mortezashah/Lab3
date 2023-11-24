@@ -1,0 +1,25 @@
+VAR
+	Axis1 : Axis_type := (Exists:=1);
+	Axis2 : Axis_type := (Exists:=1);
+	CutStart : BOOL;
+	Data : ARRAY[0..5] OF LREAL;
+	Data2 : ARRAY[0..5] OF REAL;
+	gComTCPSimActive : BOOL;
+	gDispalyAlarm : BOOL; (*Dispaly Alarm*)
+	gDispalyRun : BOOL; (*dispaly Run image*)
+	gDispalyStop : BOOL; (*Display Stop image*)
+	gDisplayBlink : BOOL;
+	gDisplayCount : INT;
+	gErrorID : USINT;
+	gReceiptChanged : BOOL;
+	gSaveParameter : BOOL;
+	gSensorLowStream : BOOL;
+	gSensorUpStream : BOOL;
+	gServoInitialized : BOOL;
+END_VAR
+VAR RETAIN
+	gSpeedRefHmi : INT;
+END_VAR
+VAR
+	gDispalyServoNotReady : BOOL; (*Not  ready to start *)
+END_VAR

@@ -1,0 +1,5 @@
+VAR
+	MpAlarmXCore_0 : MpAlarmXCore; (*mp alarm core x*)
+	MpAlarmXAcknowledgeAll_0 : MpAlarmXAcknowledgeAll;
+	ackAlarms : BOOL;
+END_VAR

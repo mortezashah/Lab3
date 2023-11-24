@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<OpcUaSource FileVersion="7" ArVersion="A4.83">
+  <Aliases>
+    <ACLAliases>
+      <ACL Id="1">
+        <ACE RoleName="Administrators" Access="0x017F" />
+        <ACE RoleName="Operator" Access="0x005F" />
+        <ACE RoleName="Service" Access="0x005F" />
+        <ACE RoleName="Everyone" Access="0x005F" />
+      </ACL>
+      <ACL Id="3">
+        <ACE RoleName="Administrators" Access="0x01FF" />
+        <ACE RoleName="Operator" Access="0x005F" />
+        <ACE RoleName="Service" Access="0x01FF" />
+        <ACE RoleName="Everyone" Access="0x005F" />
+      </ACL>
+    </ACLAliases>
+    <EURangeViolationAliases />
+    <EURangesAliases>
+      <EURanges Id="2">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">20</High>
+        </EURange>
+      </EURanges>
+    </EURangesAliases>
+    <EngineeringUnitAliases />
+  </Aliases>
+  <DefaultView AclId="3">
+    <Module Name="&lt;Default&gt;">
+      <GlobalVariables Name="Global Variables">
+        <Variable Name="Axis1">
+          <Variable Name="cmdCam" />
+          <Variable Name="Exists" />
+          <Variable Name="name" />
+          <Variable Name="cmdReset" />
+          <Variable Name="cmdStart" />
+          <Variable Name="cmdStartAutomat" />
+          <Variable Name="cmdCamAutomat" />
+          <Variable Name="cmdGear" />
+          <Variable Name="cmdStop" />
+          <Variable Name="cmdHome" />
+          <Variable Name="cmdReference" />
+          <Variable Name="cmdRun" />
+          <Variable Name="cmdOffset" />
+          <Variable Name="cmdJog" />
+          <Variable Name="cmdManualForward" />
+          <Variable Name="cmdManualReverse" />
+          <Variable Name="cmdMoveAdditive" />
+          <Variable Name="cmdMoveVelocity" />
+          <Variable Name="cmdMoveAbsolute" />
+          <Variable Name="parmSpeed" />
+          <Variable Name="parmAccelDecel" />
+          <Variable Name="parmAbsolutePosition" />
+          <Variable Name="parmMaxTorque" />
+          <Variable Name="statusOn" />
+          <Variable Name="statusOff" />
+          <Variable Name="statusDisabled" />
+          <Variable Name="statusFaulted" />
+          <Variable Name="statusStarting" />
+          <Variable Name="statusHoming" />
+          <Variable Name="statusInPosition" />
+          <Variable Name="statusRunning" />
+          <Variable Name="statusJogging" />
+          <Variable Name="statusMoving" />
+          <Variable Name="statusManualForward" />
+          <Variable Name="statusManualReverse" />
+          <Variable Name="statusStopping" />
+          <Variable Name="statusHomed" />
+          <Variable Name="statusPosition" />
+          <Variable Name="statusSpeed" />
+          <Variable Name="statusCurrent" />
+          <Variable Name="statusLagError" />
+          <Variable Name="statusTemperature" />
+          <Variable Name="statusTorque" />
+          <Variable Name="statusMasterOffset" />
+          <Variable Name="statusAbsMoveActive" />
+          <Variable Name="statusGeared" />
+          <Variable Name="statusPoweredOff" />
+          <Variable Name="statusStopped" />
+          <Variable Name="statusPeakCurrent" />
+          <Variable Name="statusPeakLagError" />
+          <Variable Name="statusPeakTorque" />
+          <Variable Name="statusErrorID" />
+          <Variable Name="parmMaintMax" />
+          <Variable Name="parmMaintMin" />
+          <Variable Name="parmMax" />
+          <Variable Name="parmMin" />
+          <Variable Name="parmOperMax" />
+          <Variable Name="parmOperMin" />
+          <Variable Name="parmReferencePosition" />
+        </Variable>
+        <Variable Name="Data" />
+        <Variable Name="Data2" />
+        <Variable Name="Axis2">
+          <Variable Name="Exists" />
+          <Variable Name="name" />
+          <Variable Name="cmdReset" />
+          <Variable Name="cmdStart" />
+          <Variable Name="cmdStartAutomat" />
+          <Variable Name="cmdCamAutomat" />
+          <Variable Name="cmdCam" />
+          <Variable Name="cmdGear" />
+          <Variable Name="cmdStop" />
+          <Variable Name="cmdHome" />
+          <Variable Name="cmdReference" />
+          <Variable Name="cmdRun" />
+          <Variable Name="cmdOffset" />
+          <Variable Name="cmdJog" />
+          <Variable Name="cmdManualForward" />
+          <Variable Name="cmdManualReverse" />
+          <Variable Name="cmdMoveAdditive" />
+          <Variable Name="cmdMoveVelocity" />
+          <Variable Name="cmdMoveAbsolute" />
+          <Variable Name="parmSpeed" />
+          <Variable Name="parmAccelDecel" />
+          <Variable Name="parmAbsolutePosition" />
+          <Variable Name="parmMaxTorque" />
+          <Variable Name="statusOn" />
+          <Variable Name="statusOff" />
+          <Variable Name="statusDisabled" />
+          <Variable Name="statusFaulted" />
+          <Variable Name="statusStarting" />
+          <Variable Name="statusHoming" />
+          <Variable Name="statusInPosition" />
+          <Variable Name="statusRunning" />
+          <Variable Name="statusJogging" />
+          <Variable Name="statusMoving" />
+          <Variable Name="statusManualForward" />
+          <Variable Name="statusManualReverse" />
+          <Variable Name="statusStopping" />
+          <Variable Name="statusHomed" />
+          <Variable Name="statusPosition" />
+          <Variable Name="statusSpeed" />
+          <Variable Name="statusCurrent" />
+          <Variable Name="statusLagError" />
+          <Variable Name="statusTemperature" />
+          <Variable Name="statusTorque" />
+          <Variable Name="statusMasterOffset" />
+          <Variable Name="statusAbsMoveActive" />
+          <Variable Name="statusGeared" />
+          <Variable Name="statusPoweredOff" />
+          <Variable Name="statusStopped" />
+          <Variable Name="statusPeakCurrent" />
+          <Variable Name="statusPeakLagError" />
+          <Variable Name="statusPeakTorque" />
+          <Variable Name="statusErrorID" />
+          <Variable Name="parmMaintMax" />
+          <Variable Name="parmMaintMin" />
+          <Variable Name="parmMax" />
+          <Variable Name="parmMin" />
+          <Variable Name="parmOperMax" />
+          <Variable Name="parmOperMin" />
+          <Variable Name="parmReferencePosition" />
+        </Variable>
+        <Variable Name="gServoInitialized" />
+        <Variable Name="gDispalyServoNotReady" />
+      </GlobalVariables>
+      <Task Name="CamAutomat">
+        <Variable Name="MpAxisBasic_AxisMaster">
+          <Variable Name="Position" />
+        </Variable>
+        <Variable Name="MpAxisBasic_AxisSlave">
+          <Variable Name="Position" />
+        </Variable>
+      </Task>
+      <Task Name="MachineAla">
+        <Variable Name="ackAlarms" />
+      </Task>
+    </Module>
+  </DefaultView>
+</OpcUaSource>

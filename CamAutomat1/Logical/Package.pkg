@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package Version="1.00.0" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Global data types">Global.typ</Object>
+    <Object Type="File" Description="Global variables">Global.var</Object>
+    <Object Type="File" Description="Global data types">MNG_Global.typ</Object>
+    <Object Type="Package" Description="Global libraries">Libraries</Object>
+    <Object Type="Package" Description="Imported Images">Images</Object>
+    <Object Type="Package" Description="HMI">mappView</Object>
+    <Object Type="File" Description="Project Language">Project.language</Object>
+    <Object Type="Program" Language="IEC">CamAutomat</Object>
+    <Object Type="Program" Language="IEC">SesnorSim</Object>
+    <Object Type="Program" Language="IEC" Description="Laram Dispaly">MachineAlarm</Object>
+  </Objects>
+</Package>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="gTempController_2" Type="tempcontroller">
+    <Group ID="TempController">
+      <Selector ID="SoftStart" Value="NotUsed" />
+    </Group>
+  </Element>
+  <Element ID="gTempController_1" Type="tempcontroller">
+    <Group ID="TempController">
+      <Selector ID="SoftStart" Value="NotUsed" />
+    </Group>
+  </Element>
+</Configuration>

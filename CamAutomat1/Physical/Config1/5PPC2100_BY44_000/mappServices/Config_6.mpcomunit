@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="gGroup" Type="mpcomunit">
+    <Group ID="Display">
+      <Group ID="Units">
+        <Group ID="0">
+          <Selector ID="DisplayUnits">
+            <Group ID="Metric">
+              <Property ID="Code" Value="MTL" />
+            </Group>
+            <Group ID="Imperial">
+              <Property ID="Code" Value="OZI" />
+            </Group>
+            <Group ID="ImperialUS">
+              <Property ID="Code" Value="OZA" />
+            </Group>
+          </Selector>
+        </Group>
+      </Group>
+    </Group>
+  </Element>
+</Configuration>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="ContentManual" height="522" width="798" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart2" top="314" left="117" zIndex="0" text="$IAT/Home" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton1" top="255" left="46" zIndex="1" text="$IAT/Fwd" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton2" top="255" left="184" zIndex="2" text="$IAT/Bck" />
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart3" top="314" left="511" zIndex="3" text="$IAT/Home" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton3" top="255" left="438" zIndex="4" text="$IAT/Fwd" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton4" top="255" left="576" zIndex="5" text="$IAT/Bck" />
+  </Widgets>
+</Content>

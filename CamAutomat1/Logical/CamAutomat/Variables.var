@@ -1,0 +1,32 @@
+VAR
+	AxisParameters_Master : MpAxisBasicParType := (Velocity:=200,Acceleration:=1000,Deceleration:=1000);
+	MpAxisBasic_AxisMaster : MpAxisBasic;
+	MpAxisBasic_AxisSlave : MpAxisBasic;
+	AxisParameters_Slave : MpAxisBasicParType := (Velocity:=200,Acceleration:=1000,Deceleration:=1000);
+	MpAxisCamSequencer_0 : MpAxisCamSequencer;
+	CamSequencerParameters_0 : MpAxisCamSequencerParType;
+	Axis2Home : BOOL;
+	Axis1Home : BOOL;
+	Axis1_ErrorID : UINT;
+	AxisStep : UINT;
+	TON_StepDelay : TON := (PT:=T#100ms);
+END_VAR
+VAR CONSTANT
+	STATE_WAIT : USINT := 0;
+	STATE_POWER_ON : USINT := 1;
+	STATE_HOME : USINT := 2;
+	STATE_READY : USINT := 10;
+	STATE_UPDATE : UINT := 12;
+	STATE_STOP : USINT := 20;
+	STATE_OFFSET : USINT := 22;
+	STATE_MOVE_ABSOLUTE : USINT := 24;
+	STATE_MOVE_ADDITIVE : USINT := 26;
+	STATE_MOVE_VELOCITY : USINT := 28;
+	STATE_MOVE_CAMAUTOMAT : USINT := 30;
+	STATE_JOG : USINT := 40;
+	STATE_ERROR : USINT := 101;
+END_VAR
+VAR
+	TON_DelayDo1 : TON;
+	DelayOpc : TIME := T#15s;
+END_VAR
