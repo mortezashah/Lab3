@@ -1,0 +1,12 @@
+VAR
+	MC_BR_TouchProbe_0 : MC_BR_TouchProbe;
+	McBrTrigger : McBrTriggerType;
+	McBrInfoType : McBrTriggerInfoType;
+	trigger : BOOL;
+	McBrAdvancePar : McAdvBrTouchProbeParType;
+	newValue : LREAL; (*new Position*)
+	preValue : LREAL; (*Old position*)
+	difValue : LREAL; (*distance*)
+	minValue : LREAL := 134.0; (*minum distance*)
+	partDetected : BOOL; (*start cam*)
+END_VAR

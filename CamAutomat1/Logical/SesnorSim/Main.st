@@ -1,4 +1,8 @@
-
+//[*********************************************************************************
+//* Primary Author:    	Morteza Shahmoradi
+//* Created:   			Dec 4, 2023
+//* Description: 		Machine  Control
+//	*********************************************************************************]  
 PROGRAM _INIT
 	(* Insert code here *)
 	 
@@ -25,10 +29,10 @@ PROGRAM _CYCLIC
 	
 	Data[4] := gSensorLowStream * 360.0;
 		
-	IF 	EDGEPOS(gSensorUpStream) AND CutStart THEN
-		Axis1.cmdCam := TRUE;
-	END_IF
-	
+//	IF 	EDGEPOS(gSensorUpStream) AND CutStart THEN
+//		Axis1.cmdCam := TRUE;
+//	END_IF
+//	
 		
 		
 END_PROGRAM

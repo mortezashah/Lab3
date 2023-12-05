@@ -1,18 +1,23 @@
+//[*********************************************************************************
+//* Primary Author:    	Morteza Shahmoradi
+//* Created:   			Dec 4, 2023
+//* Description: 		Machine  Control
+//	*********************************************************************************]  
 PROGRAM _INIT	
 
 	(* Initialize MpAxisBasic_AxisMaster *)	
 	MpAxisBasic_AxisMaster.Enable := TRUE;		
 	AxisParameters_Master.Position := 180.0;	
 	AxisParameters_Master.Velocity := 72.0;	
-	AxisParameters_Master.Acceleration := 360.0;	
-	AxisParameters_Master.Deceleration := 360.0;	
+	AxisParameters_Master.Acceleration := 3600.0;	
+	AxisParameters_Master.Deceleration := 3600.0;	
 	
 	(* Initialize MpAxisBasic_AxisSlave *)	
 	MpAxisBasic_AxisSlave.Enable := TRUE;		
 	AxisParameters_Slave.Position := 180.0;	
 	AxisParameters_Slave.Velocity := 72.0;	
-	AxisParameters_Slave.Acceleration := 360.0;	
-	AxisParameters_Slave.Deceleration := 360.0;	
+	AxisParameters_Slave.Acceleration := 3600.0;	
+	AxisParameters_Slave.Deceleration := 3600.0;	
 	
 	AxisParameters_Master.AutoTune.Mode 				:= mcAXIS_TUNE_AUTOMATIC;
 	AxisParameters_Master.AutoTune.MaxCurrentPercent 	:= 80.0;
@@ -29,13 +34,13 @@ PROGRAM _INIT
 	AxisParameters_Slave.Homing.Mode 		:= mcHOMING_DIRECT;
 	AxisParameters_Slave.Homing.Position 	:= 0.0;
 	
-	MpAxisBasic_AxisMaster.MpLink := ADR(gAxis1_MpLink);	
+	MpAxisBasic_AxisMaster.MpLink := ADR(gConv_MpLink);	
 	MpAxisBasic_AxisMaster.Parameters := ADR(AxisParameters_Master);		
-	MpAxisBasic_AxisSlave.MpLink := ADR(gAxis2_MpLink);	
+	MpAxisBasic_AxisSlave.MpLink := ADR(gCutter_MpLink);	
 	MpAxisBasic_AxisSlave.Parameters := ADR(AxisParameters_Slave);	
-	MpAxisCamSequencer_0.MpLink := ADR(gAxis2_MpLink);	
+	MpAxisCamSequencer_0.MpLink := ADR(gCutter_MpLink);	
 
-	MpAxisCamSequencer_0.MpLinkMaster := ADR(gAxis1_MpLink);	
+	MpAxisCamSequencer_0.MpLinkMaster := ADR(gConv_MpLink);	
 	MpAxisCamSequencer_0.Parameters := ADR(CamSequencerParameters_0);	
 
 END_PROGRAM
@@ -62,13 +67,14 @@ PROGRAM _CYCLIC
 					MpAxisBasic_AxisMaster.Power		:= FALSE;
 					MpAxisBasic_AxisSlave.Power			:= FALSE;
 					MpAxisCamSequencer_0.Enable			:= FALSE;
+					gEnableTouchProbe := FALSE;		
 					IF ( Axis1.Exists AND gServoInitialized) THEN
 						MpAxisBasic_AxisMaster.Power	:= TRUE;
 						MpAxisBasic_AxisSlave.Power		:= TRUE;
 						AxisStep :=  STATE_POWER_ON;
 					END_IF			
 				STATE_POWER_ON : //************************ 1 ****************** STATE_POWER_ON ********************* 1 ********************* STATE_POWER_ON
-		
+					gEnableTouchProbe := FALSE;
 					IF (MpAxisBasic_AxisMaster.PowerOn = TRUE AND MpAxisBasic_AxisMaster.PowerOn = TRUE ) THEN
 						AxisStep := STATE_HOME;
 					END_IF
@@ -98,6 +104,7 @@ PROGRAM _CYCLIC
 						Axis2Home := FALSE;
 						Axis1Home := FALSE;
 						MpAxisCamSequencer_0.Enable := TRUE;
+						gEnableTouchProbe := TRUE;
 						AxisStep := STATE_READY;
 						
 					END_IF			
@@ -109,6 +116,7 @@ PROGRAM _CYCLIC
 				STATE_READY : //***************************** 10 ************************ STATE_READY ******************** 10 ************************** STATE_READY 
 					
 					Axis1.statusStarting :=0;
+			
 		
 					IF (Axis1.cmdHome = 1 AND NOT  MpAxisBasic_AxisMaster.CommandBusy  AND NOT  MpAxisBasic_AxisSlave.CommandBusy )THEN
 						Axis1Home							:= FALSE;
@@ -275,6 +283,9 @@ PROGRAM _CYCLIC
 	MpAxisBasic_AxisMaster();	
 	MpAxisBasic_AxisSlave();	
 	MpAxisCamSequencer_0();
+	
+	
+	
 
 END_PROGRAM
 

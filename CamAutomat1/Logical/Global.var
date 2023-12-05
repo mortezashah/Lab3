@@ -22,4 +22,5 @@ VAR RETAIN
 END_VAR
 VAR
 	gDispalyServoNotReady : BOOL; (*Not  ready to start *)
+	gEnableTouchProbe : BOOL;
 END_VAR

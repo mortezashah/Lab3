@@ -8,9 +8,10 @@
     <Object Type="Package" Description="Global libraries">Libraries</Object>
     <Object Type="Package" Description="Imported Images">Images</Object>
     <Object Type="Package" Description="HMI">mappView</Object>
-    <Object Type="File" Description="Project Language">Project.language</Object>
-    <Object Type="Program" Language="IEC">CamAutomat</Object>
-    <Object Type="Program" Language="IEC">SesnorSim</Object>
+    <Object Type="Program" Language="IEC" Description="Control Axis">CamAutomat</Object>
+    <Object Type="Program" Language="IEC" Description="Save Prosition">TouchProbe</Object>
+    <Object Type="Program" Language="IEC" Description="Simulation">SesnorSim</Object>
     <Object Type="Program" Language="IEC" Description="Laram Dispaly">MachineAlarm</Object>
+    <Object Type="File" Description="Project Language">Project.language</Object>
   </Objects>
 </Package>

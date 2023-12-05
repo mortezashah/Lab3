@@ -1,4 +1,8 @@
-
+//[*********************************************************************************
+//* Primary Author:    	Morteza Shahmoradi
+//* Created:   			Dec 4, 2023
+//* Description: 		Machine  Control
+//	*********************************************************************************]  
 PROGRAM _INIT
 	(* Insert code here *)
 	MpAlarmXCore_0(
@@ -12,21 +16,7 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC
-	(* Insert code here *)
-	
-//	//ice cream temperature >= -4°C
-//	IF gIceCreamTemperatures >= -4 THEN
-//		MpAlarmXSet(MpLinkICEgAlarmXCore,'TemperatureHigh');
-//	ELSE
-//		MpAlarmXReset(MpLinkICEgAlarmXCore,'TemperatureHigh');
-//	END_IF;
-//	
-//	//ice cream temperature <= -20°C
-//	IF gIceCreamTemperatures <= -20.0 THEN
-//		MpAlarmXSet(MpLinkICEgAlarmXCore,'TemperatureLow');
-//	ELSE
-//		MpAlarmXReset(MpLinkICEgAlarmXCore,'TemperatureLow');
-//	END_IF;
+
 	MpAlarmXCore_0();
 
 	MpAlarmXAcknowledgeAll_0.Execute := ackAlarms;
