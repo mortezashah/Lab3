@@ -26,5 +26,13 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:Axis1.cmdStartAutomat" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="PushButtonStart3" attribute="value" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::CamAutomat:MpAxisBasic_AxisMaster.MoveVelocity" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="PushButtonStart3" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:Axis1.statusOff" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="PushButtonStartMain1" attribute="value" />
+</Binding>
 </Bindings>
 </BindingsSet>

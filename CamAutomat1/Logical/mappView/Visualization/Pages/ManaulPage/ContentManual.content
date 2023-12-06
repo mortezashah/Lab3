@@ -1,11 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Content id="ContentManual" height="522" width="798" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
-    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart2" top="314" left="117" zIndex="0" text="$IAT/Home" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton1" top="255" left="46" zIndex="1" text="$IAT/Fwd" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton2" top="255" left="184" zIndex="2" text="$IAT/Bck" />
-    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart3" top="314" left="511" zIndex="3" text="$IAT/Home" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton3" top="255" left="438" zIndex="4" text="$IAT/Fwd" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton4" top="255" left="576" zIndex="5" text="$IAT/Bck" />
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart2" top="317" left="130" width="526" zIndex="0" text="$IAT/Home" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton1" top="255" left="46" zIndex="1" text="$IAT/FWD" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton2" top="255" left="184" zIndex="2" text="$IAT/BACK" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton3" top="255" left="438" zIndex="3" text="$IAT/FWD" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton4" top="255" left="576" zIndex="4" text="$IAT/BACK" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput1" top="150" left="187" width="118" zIndex="5" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput2" top="150" left="588" zIndex="6" unit="{'metric':'DD','imperial':'DD','imperial-us':'DD'}" />
+    <Widget xsi:type="widgets.brease.Label" id="Label10" top="150" left="60" width="118" zIndex="7" text="$IAT/CurrentP" textAlign="left" fontSize="13px" />
+    <Widget xsi:type="widgets.brease.Label" id="Label11" top="150" left="460" width="118" zIndex="8" text="$IAT/CurrentP" textAlign="left" fontSize="13px" />
+    <Widget xsi:type="widgets.brease.Label" id="Label12" top="181" left="60" width="118" zIndex="9" text="$IAT/jogS" textAlign="left" fontSize="13px" />
+    <Widget xsi:type="widgets.brease.Label" id="Label13" top="215" left="60" width="118" zIndex="10" text="$IAT/ProS" textAlign="left" fontSize="13px" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed" top="181" left="187" width="122" zIndex="11" unit="{'metric':'C16','imperial':'FS','imperial-us':'FS'}" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed1" top="215" left="187" width="122" zIndex="12" unit="{'metric':'C16','imperial':'FS','imperial-us':'FS'}" />
+    <Widget xsi:type="widgets.brease.Label" id="Label14" top="181" left="460" width="118" zIndex="13" text="$IAT/jogS" textAlign="left" fontSize="13px" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed2" top="181" left="588" zIndex="14" unit="{'metric':'E96','imperial':'E96','imperial-us':'E96'}" />
   </Widgets>
 </Content>

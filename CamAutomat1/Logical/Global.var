@@ -1,5 +1,7 @@
 VAR
 	Axis1 : Axis_type := (Exists:=1);
+	gCutPosition : LREAL; (*Postition of the conv axis*)
+	gConvPosition : LREAL; (*Postition of the conv axis*)
 	Axis2 : Axis_type := (Exists:=1);
 	CutStart : BOOL;
 	Data : ARRAY[0..5] OF LREAL;
@@ -23,4 +25,8 @@ END_VAR
 VAR
 	gDispalyServoNotReady : BOOL; (*Not  ready to start *)
 	gEnableTouchProbe : BOOL;
+	gCutJogSpeed : REAL := 10.00; (*Jog Speed Cut*)
+	gConvPrSpeed : REAL := 72.00; (*Product  Speed Conveyor*)
+	gConvJogSpeed : REAL := 72.00; (*Jog Speed Conveyor*)
+	gManualActive : BOOL; (*Des activate Manaul*)
 END_VAR

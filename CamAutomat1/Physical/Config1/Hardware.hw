@@ -48,6 +48,7 @@
     <Group ID="FileDevice2" />
     <Parameter ID="FileDeviceName2" Value="SIM_Recipes" />
     <Parameter ID="FileDevicePath2" Value="C:\Basic" />
+    <Parameter ID="TimeZone" Value="65" />
     <Group ID="FtpUser1" />
     <Parameter ID="FtpUsername1" Value="academy" />
     <Parameter ID="FtpUserPassword1" Value="PTbbKbjlQWNQQLeLnvYxsprPr7USEpMWmZovrSfugvI=" />
@@ -82,6 +83,9 @@
     <Connection Connector="SS" TargetModule="8V1010.00-2a" TargetConnector="SS2" />
     <Parameter ID="PlugInType" Value="Encoder" />
     <Parameter ID="McAcoposTypeID" Value="AcoposPlugInConfig" />
+  </Module>
+  <Module Name="8AC130.60-1" Type="8AC130.60-1" Version="2.2.0.0">
+    <Connection Connector="SS" TargetModule="8V1010.00-2a" TargetConnector="SS3" />
   </Module>
   <Module Name="8LVA13.B1015D000-0" Type="8LVA13.B1015D000-0" Version="2.2.0.3">
     <Connection Connector="EC" TargetModule="8AC126.60-1" TargetConnector="EC" />

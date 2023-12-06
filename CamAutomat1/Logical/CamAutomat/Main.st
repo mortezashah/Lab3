@@ -46,7 +46,15 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC	
-		(* Insert code here *)
+				
+	AxisParameters_Master.Velocity := gConvPrSpeed;	
+	AxisParameters_Slave.Jog.Velocity := gCutJogSpeed;	
+	AxisParameters_Master.Jog.Velocity := gConvJogSpeed;
+	gConvPosition := MpAxisBasic_AxisMaster.Position;
+	gCutPosition  := MpAxisBasic_AxisSlave.Position;
+	gManualActive :=  NOT MpAxisBasic_AxisMaster.MoveVelocity;
+	
+	(* Insert code here *)
 	TON_DelayDo1.PT := DelayOpc;
 	// Create Pulse Generator Start
 	
@@ -146,7 +154,7 @@ PROGRAM _CYCLIC
 					ELSIF (Axis1.cmdMoveVelocity AND NOT MpAxisBasic_AxisMaster.MoveVelocity) THEN
 							AxisStep := STATE_MOVE_VELOCITY;
 				
-					ELSIF (Axis1.cmdManualForward OR Axis1.cmdManualReverse OR Axis2.cmdManualForward OR Axis2.cmdManualReverse ) THEN
+					ELSIF NOT MpAxisBasic_AxisMaster.MoveVelocity AND (Axis1.cmdManualForward OR Axis1.cmdManualReverse OR Axis2.cmdManualForward OR Axis2.cmdManualReverse ) THEN
 						AxisStep := STATE_JOG;	
 						
 					END_IF
@@ -207,7 +215,18 @@ PROGRAM _CYCLIC
 						AxisStep := STATE_READY;
 					ELSIF (Axis1.cmdStop = 1) THEN
 						Axis1.cmdStartAutomat 					:= FALSE;
+						Axis1.cmdCam 							:= FALSE;
 						Axis1.cmdStop 							:= FALSE;
+						Axis1.cmdMoveVelocity 					:= FALSE;
+						Axis1.cmdMoveAdditive 					:= FALSE;
+						MpAxisBasic_AxisMaster.MoveAdditive 	:= FALSE;
+						MpAxisBasic_AxisMaster.MoveVelocity 	:= FALSE;
+						MpAxisCamSequencer_0.StartSequence		:= FALSE;
+						AxisStep := STATE_STOP;
+					ELSIF (Axis1.statusOff = 1 AND MpAxisBasic_AxisSlave.Velocity = 0.0) THEN
+						Axis1.cmdStartAutomat 					:= FALSE;
+						Axis1.cmdCam 							:= FALSE;
+						Axis1.statusOff							:= FALSE;
 						Axis1.cmdMoveVelocity 					:= FALSE;
 						Axis1.cmdMoveAdditive 					:= FALSE;
 						MpAxisBasic_AxisMaster.MoveAdditive 	:= FALSE;

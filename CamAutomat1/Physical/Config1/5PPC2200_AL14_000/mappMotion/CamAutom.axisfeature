@@ -10,7 +10,7 @@
               <Property ID="AxisReference" Value="gConv_MpLink" />
               <Property ID="MaxVelocity" Value="1000" />
             </Selector>
-            <Property ID="StartPosition" Value="0.0" />
+            <Property ID="StartPosition" Value="0.00" />
             <Selector ID="StartInterval" Value="MasterAxisPeriod" />
           </Group>
           <Group ID="AdvancedParameters">
@@ -57,11 +57,11 @@
             <Selector ID="Cam" Value="Predefined">
               <Property ID="PredefinedCam" Value="OneToOne" />
             </Selector>
-            <Property ID="MasterFactor" Value="1" />
+            <Property ID="MasterFactor" Value="100" />
             <Property ID="SlaveFactor" Value="0" />
             <Selector ID="CompensationMode" Value="DistancesBetweenCamCenterPoints">
-              <Property ID="MasterDistance" Value="0.0" />
-              <Property ID="SlaveDistance" Value="0.0" />
+              <Property ID="MasterDistance" Value="0.00" />
+              <Property ID="SlaveDistance" Value="0.00" />
               <Selector ID="AdvancedParameters" Value="NotUsed" />
             </Selector>
             <Group ID="AdvancedParameters">
@@ -81,11 +81,11 @@
             <Selector ID="Cam" Value="Predefined">
               <Property ID="PredefinedCam" Value="OneToOne" />
             </Selector>
-            <Property ID="MasterFactor" Value="1" />
-            <Property ID="SlaveFactor" Value="1" />
+            <Property ID="MasterFactor" Value="100" />
+            <Property ID="SlaveFactor" Value="100" />
             <Selector ID="CompensationMode" Value="MaDistBetweenLatchPosCenter">
-              <Property ID="MasterDistance" Value="73" />
-              <Property ID="SlaveDistance" Value="85" />
+              <Property ID="MasterDistance" Value="40" />
+              <Property ID="SlaveDistance" Value="70" />
               <Selector ID="AdvancedParameters" Value="NotUsed" />
             </Selector>
             <Group ID="AdvancedParameters">
@@ -105,10 +105,10 @@
             <Selector ID="Cam" Value="Predefined">
               <Property ID="PredefinedCam" Value="OneToOne" />
             </Selector>
-            <Property ID="MasterFactor" Value="1" />
-            <Property ID="SlaveFactor" Value="1" />
+            <Property ID="MasterFactor" Value="100" />
+            <Property ID="SlaveFactor" Value="100" />
             <Selector ID="CompensationMode" Value="MaDistBetweenLatchPosCenter">
-              <Property ID="MasterDistance" Value="8.6" />
+              <Property ID="MasterDistance" Value="10" />
               <Property ID="SlaveDistance" Value="10" />
               <Selector ID="AdvancedParameters" Value="NotUsed" />
             </Selector>
@@ -129,11 +129,11 @@
             <Selector ID="Cam" Value="Predefined">
               <Property ID="PredefinedCam" Value="OneToOne" />
             </Selector>
-            <Property ID="MasterFactor" Value="1" />
+            <Property ID="MasterFactor" Value="100" />
             <Property ID="SlaveFactor" Value="0" />
             <Selector ID="CompensationMode" Value="MaDistBetweenLatchPosCenter">
-              <Property ID="MasterDistance" Value="73" />
-              <Property ID="SlaveDistance" Value="85" />
+              <Property ID="MasterDistance" Value="20" />
+              <Property ID="SlaveDistance" Value="100" />
               <Selector ID="AdvancedParameters" Value="NotUsed" />
             </Selector>
             <Group ID="AdvancedParameters">

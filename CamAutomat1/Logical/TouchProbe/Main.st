@@ -22,7 +22,7 @@ PROGRAM _CYCLIC
 
 		IF difValue > minValue THEN
 		preValue := newValue;
-		partDetected := TRUE;
+		partDetected := CutStart;
 		END_IF
 		
 		
@@ -32,12 +32,20 @@ PROGRAM _CYCLIC
 		Axis1.cmdCam := TRUE;
 		partDetected := FALSE;
 	END_IF
+	
+	CutStart := Axis1.cmdStartAutomat;
+	
+	IF EDGEPOS(Axis1.cmdStartAutomat) THEN
+		preValue := newValue;
+	END_IF
 		
 	 
 END_PROGRAM
 
 PROGRAM _EXIT
 	(* Insert code here *)
+	MC_BR_TouchProbe_0.Enable := FALSE;
+	MC_BR_TouchProbe_0();
 	 
 END_PROGRAM
 

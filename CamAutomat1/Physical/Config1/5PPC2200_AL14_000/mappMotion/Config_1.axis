@@ -3,15 +3,14 @@
 <Configuration>
   <Element ID="gConv_MpLink" Type="axis">
     <Property ID="BaseTypeIsReadOnly" Value="0" />
-    <Selector ID="BaseType" Value="RotaryPeriodic">
-      <Property ID="MeasurementUnitIsReadOnly" Value="0" />
-      <Property ID="MeasurementUnit" Value="17476" />
+    <Selector ID="BaseType" Value="LinearPeriodic">
+      <Property ID="MeasurementUnit" Value="5066068" />
       <Property ID="MeasurementResolutionIsReadOnly" Value="0" />
-      <Property ID="MeasurementResolution" Value="0.1" />
+      <Property ID="MeasurementResolution" Value="0.01" />
       <Property ID="CountDirectionIsReadOnly" Value="0" />
       <Property ID="CountDirection" Value="Standard" />
       <Group ID="PeriodSettings">
-        <Property ID="Period" Value="360" />
+        <Property ID="Period" Value="140" />
       </Group>
     </Selector>
     <Property ID="MovementLimitsIsReadOnly" Value="0" />
@@ -46,7 +45,7 @@
       <Property ID="MeasurementUnitIsReadOnly" Value="0" />
       <Property ID="MeasurementUnit" Value="17476" />
       <Property ID="MeasurementResolutionIsReadOnly" Value="0" />
-      <Property ID="MeasurementResolution" Value="0.1" />
+      <Property ID="MeasurementResolution" Value="0.01" />
       <Property ID="CountDirectionIsReadOnly" Value="0" />
       <Property ID="CountDirection" Value="Inverse" />
       <Group ID="PeriodSettings">

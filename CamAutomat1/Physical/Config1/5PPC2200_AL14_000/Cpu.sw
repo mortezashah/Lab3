@@ -7,9 +7,7 @@
     <Task Name="TouchProbe" Source="TouchProbe.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#2" />
-  <TaskClass Name="Cyclic#3">
-    <Task Name="ComTCP_P" Source="Libraries.ComTCP.ComTCP_P.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
-  </TaskClass>
+  <TaskClass Name="Cyclic#3" />
   <TaskClass Name="Cyclic#4">
     <Task Name="MachineAla" Source="MachineAlarm.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
