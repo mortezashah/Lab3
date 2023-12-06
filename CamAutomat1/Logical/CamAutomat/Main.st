@@ -11,13 +11,14 @@ PROGRAM _INIT
 	AxisParameters_Master.Velocity := 72.0;	
 	AxisParameters_Master.Acceleration := 3600.0;	
 	AxisParameters_Master.Deceleration := 3600.0;	
-	
+	AxisParameters_Master.Stop.Deceleration := 3600.0;
 	(* Initialize MpAxisBasic_AxisSlave *)	
 	MpAxisBasic_AxisSlave.Enable := TRUE;		
 	AxisParameters_Slave.Position := 180.0;	
 	AxisParameters_Slave.Velocity := 72.0;	
 	AxisParameters_Slave.Acceleration := 3600.0;	
 	AxisParameters_Slave.Deceleration := 3600.0;	
+	AxisParameters_Slave.Stop.Deceleration := 3600.0;
 	
 	AxisParameters_Master.AutoTune.Mode 				:= mcAXIS_TUNE_AUTOMATIC;
 	AxisParameters_Master.AutoTune.MaxCurrentPercent 	:= 80.0;
@@ -29,10 +30,7 @@ PROGRAM _INIT
 	AxisParameters_Slave.AutoTune.MaxDistance 			:= 10;
 	AxisParameters_Slave.AutoTune.MaxPositionError 	:= 30;
 	
-	AxisParameters_Master.Homing.Mode 		:= mcHOMING_DIRECT;
-	AxisParameters_Master.Homing.Position 	:= 0.0;
-	AxisParameters_Slave.Homing.Mode 		:= mcHOMING_DIRECT;
-	AxisParameters_Slave.Homing.Position 	:= 0.0;
+
 	
 	MpAxisBasic_AxisMaster.MpLink := ADR(gConv_MpLink);	
 	MpAxisBasic_AxisMaster.Parameters := ADR(AxisParameters_Master);		
@@ -84,7 +82,7 @@ PROGRAM _CYCLIC
 				STATE_POWER_ON : //************************ 1 ****************** STATE_POWER_ON ********************* 1 ********************* STATE_POWER_ON
 					gEnableTouchProbe := FALSE;
 					IF (MpAxisBasic_AxisMaster.PowerOn = TRUE AND MpAxisBasic_AxisMaster.PowerOn = TRUE ) THEN
-						AxisStep := STATE_HOME;
+						AxisStep := STATE_READY;
 					END_IF
 					IF (MpAxisBasic_AxisMaster.Error OR MpAxisBasic_AxisSlave.Error) THEN
 						Axis1_ErrorID := 1;
@@ -93,6 +91,10 @@ PROGRAM _CYCLIC
 					
 				STATE_HOME :  //***************************** 2 ********************STATE_HOME************************* 2 *********************STATE_HOME
 					Axis1.statusHomed 							:= FALSE;
+					AxisParameters_Master.Homing.Mode 		:= mcHOMING_DIRECT;
+					AxisParameters_Master.Homing.Position 	:= 0.0;
+					AxisParameters_Slave.Homing.Mode 		:= mcHOMING_DIRECT;
+					AxisParameters_Slave.Homing.Position 	:= 0.0;
 					IF (NOT MpAxisCamSequencer_0.CommandBusy AND NOT MpAxisCamSequencer_0.StartSequence)  THEN
 						MpAxisBasic_AxisMaster.Home 			:= TRUE;
 						MpAxisBasic_AxisSlave.Home 			:= TRUE;
@@ -124,8 +126,8 @@ PROGRAM _CYCLIC
 				STATE_READY : //***************************** 10 ************************ STATE_READY ******************** 10 ************************** STATE_READY 
 					
 					Axis1.statusStarting :=0;
-			
-		
+					MpAxisCamSequencer_0.Enable := TRUE;
+					CutStart := FALSE;
 					IF (Axis1.cmdHome = 1 AND NOT  MpAxisBasic_AxisMaster.CommandBusy  AND NOT  MpAxisBasic_AxisSlave.CommandBusy )THEN
 						Axis1Home							:= FALSE;
 						Axis2Home							:= FALSE;
@@ -143,10 +145,14 @@ PROGRAM _CYCLIC
 						MpAxisBasic_AxisMaster.MoveVelocity 	:= FALSE;
 						AxisStep 				:= STATE_STOP;
 						
-					ELSIF (Axis1.cmdStartAutomat ) THEN
+					ELSIF NOT MpAxisBasic_AxisSlave.MoveAbsolute AND Axis1.cmdStartAutomat AND ( MpAxisBasic_AxisSlave.Position = 0.0 OR  MpAxisBasic_AxisSlave.Position = 180.0)  THEN
 						MpAxisCamSequencer_0.StartSequence := TRUE;
 						MpAxisCamSequencer_0.Signal1		:= FALSE;
 						AxisStep := STATE_MOVE_CAMAUTOMAT;	
+					ELSIF (Axis1.cmdStartAutomat AND NOT ( MpAxisBasic_AxisSlave.Position = 0.0 OR  MpAxisBasic_AxisSlave.Position = 180.0) ) THEN
+						MpAxisBasic_AxisSlave.MoveAbsolute := TRUE;
+					ELSIF (MpAxisBasic_AxisSlave.MoveAbsolute  AND  ( MpAxisBasic_AxisSlave.Position = 0.0 OR  MpAxisBasic_AxisSlave.Position = 180.0) ) THEN
+						MpAxisBasic_AxisSlave.MoveAbsolute := FALSE;
 						
 					ELSIF (Axis1.cmdMoveAdditive AND NOT MpAxisBasic_AxisMaster.MoveAdditive  ) THEN
 						AxisStep := STATE_MOVE_ADDITIVE;	
@@ -207,8 +213,9 @@ PROGRAM _CYCLIC
 					END_IF			
 						
 				STATE_MOVE_CAMAUTOMAT : //*************** 30 *************************** STATE_MOVE_VELOCITY *********************** 30 ******************* STATE_MOVE_CAMAUTOMAT 
+			gEnableTouchProbe := TRUE;
 
-			
+					CutStart := TRUE;
 					 IF NOT Axis1.cmdStartAutomat  THEN
 						Axis1.cmdCam 			:= FALSE;
 						MpAxisCamSequencer_0.StartSequence 		:= FALSE;

@@ -33,7 +33,6 @@ PROGRAM _CYCLIC
 		partDetected := FALSE;
 	END_IF
 	
-	CutStart := Axis1.cmdStartAutomat;
 	
 	IF EDGEPOS(Axis1.cmdStartAutomat) THEN
 		preValue := newValue;
