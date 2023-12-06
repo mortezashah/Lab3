@@ -29,4 +29,7 @@ END_VAR
 VAR
 	TON_DelayDo1 : TON;
 	DelayOpc : TIME := T#20s;
+	startPositionJog : LREAL;
+	cutJogEnable : BOOL;
+	bypassProtection : BOOL;
 END_VAR

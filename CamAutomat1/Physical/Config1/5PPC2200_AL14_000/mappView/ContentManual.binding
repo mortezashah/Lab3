@@ -103,5 +103,9 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="Label12" attribute="enable" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::CamAutomat:bypassProtection" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ToggleButton1" attribute="value" />
+</Binding>
 </Bindings>
 </BindingsSet>

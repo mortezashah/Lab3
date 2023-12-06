@@ -10,6 +10,6 @@
     <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput1" top="47" left="146" width="150" height="31" zIndex="6" />
     <Widget xsi:type="widgets.brease.Image" id="Image1" top="4" left="697" width="138" height="40" zIndex="7" image="Media/BW_Papersystems_logo_w_Square_icon_(transparent).png" />
     <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput2" top="53" left="286" width="211" height="21" zIndex="8" fontSize="16px" />
-    <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput3" top="53" left="523" width="211" height="21" zIndex="9" value="Servos Are Initializing" fontSize="16px" visible="false" />
+    <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput3" top="53" left="523" width="211" height="21" zIndex="9" value="Servos are Initializing" fontSize="16px" visible="false" />
   </Widgets>
 </Content>

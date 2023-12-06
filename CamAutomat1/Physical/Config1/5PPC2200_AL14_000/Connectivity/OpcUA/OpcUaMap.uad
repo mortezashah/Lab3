@@ -188,6 +188,8 @@
         <Variable Name="MpAxisBasic_AxisSlave">
           <Variable Name="Position" />
         </Variable>
+        <Variable Name="cutJogEnable" />
+        <Variable Name="bypassProtection" />
       </Task>
       <Task Name="MachineAla">
         <Variable Name="ackAlarms" />

@@ -161,7 +161,9 @@ PROGRAM _CYCLIC
 							AxisStep := STATE_MOVE_VELOCITY;
 				
 					ELSIF NOT MpAxisBasic_AxisMaster.MoveVelocity AND (Axis1.cmdManualForward OR Axis1.cmdManualReverse OR Axis2.cmdManualForward OR Axis2.cmdManualReverse ) THEN
-						AxisStep := STATE_JOG;	
+				AxisStep := STATE_JOG;
+				startPositionJog := MpAxisBasic_AxisSlave.Position ;
+				
 						
 					END_IF
 					
@@ -255,14 +257,21 @@ PROGRAM _CYCLIC
 						
 				STATE_JOG ://************************* 40 **************************** STATE_JOG ********************************* 40 ********************* STATE_JOG 					
 				
+			
 				IF NOT (Axis1.cmdManualForward OR Axis1.cmdManualReverse OR Axis2.cmdManualForward OR Axis2.cmdManualReverse ) THEN
 					AxisStep := STATE_READY;
 				END_IF
 				
 				MpAxisBasic_AxisMaster.JogPositive 	:= Axis1.cmdManualForward;
-				MpAxisBasic_AxisMaster.JogNegative	:= Axis1.cmdManualReverse;
-				MpAxisBasic_AxisSlave.JogPositive 	:= Axis2.cmdManualForward;
-				MpAxisBasic_AxisSlave.JogNegative 	:= Axis2.cmdManualReverse;
+			MpAxisBasic_AxisMaster.JogNegative	:= Axis1.cmdManualReverse;
+					
+			MpAxisBasic_AxisSlave.JogPositive 	:= Axis2.cmdManualForward AND cutJogEnable   ;
+			MpAxisBasic_AxisSlave.JogNegative 	:= Axis2.cmdManualReverse AND cutJogEnable ;
+
+
+							
+
+
 				
 			
 				STATE_ERROR : //********************** 101 ******************************* STATE_ERROR **************************** 101 ********************** STATE_ERROR 
@@ -311,6 +320,10 @@ PROGRAM _CYCLIC
 	MpAxisCamSequencer_0();
 	
 	
+	cutJogEnable := (MpAxisBasic_AxisSlave.Position > -0.1  AND MpAxisBasic_AxisSlave.Position < 20.0 ) OR 
+	(MpAxisBasic_AxisSlave.Position > 160.0  AND MpAxisBasic_AxisSlave.Position < 200) OR
+	(MpAxisBasic_AxisSlave.Position > 340.0  AND MpAxisBasic_AxisSlave.Position < 359.9999) OR
+	bypassProtection;
 	
 
 END_PROGRAM

@@ -5,16 +5,17 @@
     <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton1" top="255" left="46" zIndex="1" text="$IAT/FWD" />
     <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton2" top="255" left="184" zIndex="2" text="$IAT/BACK" />
     <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton3" top="255" left="438" zIndex="3" text="$IAT/FWD" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton4" top="255" left="576" zIndex="4" text="$IAT/BACK" />
-    <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput1" top="150" left="187" width="118" zIndex="5" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" />
-    <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput2" top="150" left="588" zIndex="6" unit="{'metric':'DD','imperial':'DD','imperial-us':'DD'}" />
-    <Widget xsi:type="widgets.brease.Label" id="Label10" top="150" left="60" width="118" zIndex="7" text="$IAT/CurrentP" textAlign="left" fontSize="13px" />
-    <Widget xsi:type="widgets.brease.Label" id="Label11" top="150" left="460" width="118" zIndex="8" text="$IAT/CurrentP" textAlign="left" fontSize="13px" />
-    <Widget xsi:type="widgets.brease.Label" id="Label12" top="181" left="60" width="118" zIndex="9" text="$IAT/jogS" textAlign="left" fontSize="13px" />
-    <Widget xsi:type="widgets.brease.Label" id="Label13" top="215" left="60" width="118" zIndex="10" text="$IAT/ProS" textAlign="left" fontSize="13px" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed" top="181" left="187" width="122" zIndex="11" unit="{'metric':'C16','imperial':'FS','imperial-us':'FS'}" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed1" top="215" left="187" width="122" zIndex="12" unit="{'metric':'C16','imperial':'FS','imperial-us':'FS'}" />
-    <Widget xsi:type="widgets.brease.Label" id="Label14" top="181" left="460" width="118" zIndex="13" text="$IAT/jogS" textAlign="left" fontSize="13px" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed2" top="181" left="588" zIndex="14" unit="{'metric':'E96','imperial':'E96','imperial-us':'E96'}" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButton4" top="255" left="580" zIndex="4" text="$IAT/BACK" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput1" top="136" left="187" width="118" zIndex="5" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput2" top="136" left="588" zIndex="6" unit="{'metric':'DD','imperial':'DD','imperial-us':'DD'}" />
+    <Widget xsi:type="widgets.brease.Label" id="Label10" top="136" left="60" width="118" zIndex="7" text="$IAT/CurrentP" textAlign="left" fontSize="13px" />
+    <Widget xsi:type="widgets.brease.Label" id="Label11" top="136" left="460" width="118" zIndex="8" text="$IAT/CurrentP" textAlign="left" fontSize="13px" />
+    <Widget xsi:type="widgets.brease.Label" id="Label12" top="167" left="60" width="118" zIndex="9" text="$IAT/jogS" textAlign="left" fontSize="13px" />
+    <Widget xsi:type="widgets.brease.Label" id="Label13" top="201" left="60" width="118" zIndex="10" text="$IAT/ProS" textAlign="left" fontSize="13px" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed" top="167" left="187" width="122" zIndex="11" unit="{'metric':'C16','imperial':'FS','imperial-us':'FS'}" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed1" top="201" left="187" width="122" zIndex="12" unit="{'metric':'C16','imperial':'FS','imperial-us':'FS'}" />
+    <Widget xsi:type="widgets.brease.Label" id="Label14" top="167" left="460" width="118" zIndex="13" text="$IAT/jogS" textAlign="left" fontSize="13px" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed2" top="167" left="588" zIndex="14" unit="{'metric':'E96','imperial':'E96','imperial-us':'E96'}" />
+    <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton1" top="209" left="469" width="186" zIndex="15" text="Bypass Protection" />
   </Widgets>
 </Content>
