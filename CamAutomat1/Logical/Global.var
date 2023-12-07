@@ -2,29 +2,26 @@ VAR
 	Axis1 : Axis_type := (Exists:=1);
 	gCutPosition : LREAL; (*Postition of the conv axis*)
 	gConvPosition : LREAL; (*Postition of the conv axis*)
-	Axis2 : Axis_type := (Exists:=1);
-	CutStart : BOOL;
-	Data : ARRAY[0..5] OF LREAL;
-	Data2 : ARRAY[0..5] OF REAL;
-	gComTCPSimActive : BOOL;
+	Axis2 : Axis_type := (Exists:=1); (*Axis 2 setup*)
+	CutStart : BOOL; (*User demand cut*)
+	Data : ARRAY[0..5] OF LREAL; (*TBD*)
+	Data2 : ARRAY[0..5] OF REAL; (*TBD*)
 	gDispalyAlarm : BOOL; (*Dispaly Alarm*)
 	gDispalyRun : BOOL; (*dispaly Run image*)
 	gDispalyStop : BOOL; (*Display Stop image*)
-	gDisplayBlink : BOOL;
-	gDisplayCount : INT;
-	gErrorID : USINT;
-	gReceiptChanged : BOOL;
-	gSaveParameter : BOOL;
-	gSensorLowStream : BOOL;
-	gSensorUpStream : BOOL;
-	gServoInitialized : BOOL;
+	gDisplayBlink : BOOL; (*Blinking Alarm*)
+	gDisplayCount : INT; (*Count the cut*)
+	gErrorID : USINT; (*Error ID*)
+	gReceiptChanged : BOOL; (*Recepit is changed*)
+	gSaveParameter : BOOL; (*Paramter is changed*)
+	gServoInitialized : BOOL; (*Initialize servo*)
 END_VAR
 VAR RETAIN
-	gSpeedRefHmi : INT;
+	gSpeedRefHmi : INT; (*Speed Ref Hmi*)
 END_VAR
 VAR
 	gDispalyServoNotReady : BOOL; (*Not  ready to start *)
-	gEnableTouchProbe : BOOL;
+	gEnableTouchProbe : BOOL; (*Enable the touch probe*)
 	gCutJogSpeed : REAL := 10.00; (*Jog Speed Cut*)
 	gConvPrSpeed : REAL := 72.00; (*Product  Speed Conveyor*)
 	gConvJogSpeed : REAL := 72.00; (*Jog Speed Conveyor*)

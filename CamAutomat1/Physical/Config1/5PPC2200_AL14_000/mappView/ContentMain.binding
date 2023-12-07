@@ -34,5 +34,13 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:Axis1.statusOff" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="PushButtonStartMain1" attribute="value" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::CamAutomat:displayRunImage" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="Image3" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::CamAutomat:displayStopImage" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="Image2" attribute="visible" />
+</Binding>
 </Bindings>
 </BindingsSet>

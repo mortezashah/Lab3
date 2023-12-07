@@ -1,35 +1,38 @@
 VAR
-	AxisParameters_Master : MpAxisBasicParType := (Velocity:=200,Acceleration:=1000,Deceleration:=1000);
-	MpAxisBasic_AxisMaster : MpAxisBasic;
-	MpAxisBasic_AxisSlave : MpAxisBasic;
-	AxisParameters_Slave : MpAxisBasicParType := (Velocity:=200,Acceleration:=1000,Deceleration:=1000);
-	MpAxisCamSequencer_0 : MpAxisCamSequencer;
-	CamSequencerParameters_0 : MpAxisCamSequencerParType;
-	Axis2Home : BOOL;
-	Axis1Home : BOOL;
-	Axis1_ErrorID : UINT;
-	AxisStep : UINT;
-	TON_StepDelay : TON := (PT:=T#100ms);
+	MpAxisBasic_AxisMaster : MpAxisBasic; (*master axis function*)
+	AxisParameters_Master : MpAxisBasicParType := (Velocity:=200,Acceleration:=1000,Deceleration:=1000); (*Master paramter defention*)
+	MpAxisBasic_AxisSlave : MpAxisBasic; (*master axis function*)
+	AxisParameters_Slave : MpAxisBasicParType := (Velocity:=200,Acceleration:=1000,Deceleration:=1000); (*slave axis function paramter *)
+	MpAxisCamSequencer_0 : MpAxisCamSequencer; (*cam sequencert*)
+	CamSequencerParameters_0 : MpAxisCamSequencerParType; (*cam paramters*)
+	Axis2Home : BOOL; (*Home command*)
+	Axis1Home : BOOL; (*Home command*)
+	Axis1_ErrorID : UINT; (*Error ID Axis 1*)
+	AxisStep : UINT; (*Step index for axis*)
+	TON_StepDelay : TON := (PT:=T#100ms); (*delay between steps*)
 END_VAR
 VAR CONSTANT
-	STATE_WAIT : USINT := 0;
-	STATE_POWER_ON : USINT := 1;
-	STATE_HOME : USINT := 2;
-	STATE_READY : USINT := 10;
-	STATE_UPDATE : UINT := 12;
-	STATE_STOP : USINT := 20;
-	STATE_OFFSET : USINT := 22;
-	STATE_MOVE_ABSOLUTE : USINT := 24;
-	STATE_MOVE_ADDITIVE : USINT := 26;
-	STATE_MOVE_VELOCITY : USINT := 28;
-	STATE_MOVE_CAMAUTOMAT : USINT := 30;
-	STATE_JOG : USINT := 40;
-	STATE_ERROR : USINT := 101;
+	STATE_WAIT : USINT := 0; (*State Definition*)
+	STATE_POWER_ON : USINT := 1; (*State Definition*)
+	STATE_HOME : USINT := 2; (*State Definition*)
+	STATE_READY : USINT := 10; (*State Definition*)
+	STATE_UPDATE : UINT := 12; (*State Definition*)
+	STATE_STOP : USINT := 20; (*State Definition*)
+	STATE_OFFSET : USINT := 22; (*State Definition*)
+	STATE_MOVE_ABSOLUTE : USINT := 24; (*State Definition*)
+	STATE_MOVE_ADDITIVE : USINT := 26; (*State Definition*)
+	STATE_MOVE_VELOCITY : USINT := 28; (*State Definition*)
+	STATE_MOVE_CAMAUTOMAT : USINT := 30; (*State Definition*)
+	STATE_JOG : USINT := 40; (*State Definition*)
+	STATE_ERROR : USINT := 101; (*State Definition*)
 END_VAR
 VAR
-	TON_DelayDo1 : TON;
-	DelayOpc : TIME := T#20s;
-	startPositionJog : LREAL;
-	cutJogEnable : BOOL;
-	bypassProtection : BOOL;
+	TON_DelayDo1 : TON; (*Timer delay*)
+	DelayOpc : TIME := T#20s; (*start up delay*)
+	startPositionJog : LREAL; (*potion at where jog start*)
+	cutJogEnableBW : BOOL; (*jog backward enable*)
+	cutJogEnableFW : BOOL; (*jog reverse enable*)
+	bypassProtection : BOOL; (*bypass jog prectoon*)
+	displayStopImage : BOOL; (*Display stop image*)
+	displayRunImage : BOOL; (*Display Run image*)
 END_VAR

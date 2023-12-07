@@ -693,5 +693,13 @@
         <seg>Value Bonding</seg>
       </tuv>
     </tu>
+    <tu tuid="Stop_1">
+      <tuv xml:lang="fr">
+        <seg>Arr�t</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Stop/Manual</seg>
+      </tuv>
+    </tu>
   </body>
 </tmx>

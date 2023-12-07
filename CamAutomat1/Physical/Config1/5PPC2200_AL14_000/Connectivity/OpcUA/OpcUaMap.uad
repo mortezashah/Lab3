@@ -189,8 +189,9 @@
         <Variable Name="MpAxisBasic_AxisSlave">
           <Variable Name="Position" />
         </Variable>
-        <Variable Name="cutJogEnable" />
         <Variable Name="bypassProtection" />
+        <Variable Name="displayRunImage" />
+        <Variable Name="displayStopImage" />
       </Task>
       <Task Name="MachineAla">
         <Variable Name="ackAlarms" />

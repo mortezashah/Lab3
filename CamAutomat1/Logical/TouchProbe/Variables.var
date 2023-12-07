@@ -9,4 +9,6 @@ VAR
 	difValue : LREAL; (*distance*)
 	minValue : LREAL := 134.0; (*minum distance*)
 	partDetected : BOOL; (*start cam*)
+	TON_1 : TON := (PT:=T#500ms); (*Delay for start cut*)
+	TON_0 : TON; (*Delay for start cut*)
 END_VAR

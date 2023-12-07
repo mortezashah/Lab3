@@ -7,14 +7,14 @@ PROGRAM _INIT
 
 	(* Initialize MpAxisBasic_AxisMaster *)	
 	MpAxisBasic_AxisMaster.Enable := TRUE;		
-	AxisParameters_Master.Position := 180.0;	
+	AxisParameters_Master.Position := 0.0;	
 	AxisParameters_Master.Velocity := 72.0;	
 	AxisParameters_Master.Acceleration := 3600.0;	
 	AxisParameters_Master.Deceleration := 3600.0;	
 	AxisParameters_Master.Stop.Deceleration := 3600.0;
 	(* Initialize MpAxisBasic_AxisSlave *)	
 	MpAxisBasic_AxisSlave.Enable := TRUE;		
-	AxisParameters_Slave.Position := 180.0;	
+	AxisParameters_Slave.Position := 0.0;	
 	AxisParameters_Slave.Velocity := 72.0;	
 	AxisParameters_Slave.Acceleration := 3600.0;	
 	AxisParameters_Slave.Deceleration := 3600.0;	
@@ -145,25 +145,23 @@ PROGRAM _CYCLIC
 						MpAxisBasic_AxisMaster.MoveVelocity 	:= FALSE;
 						AxisStep 				:= STATE_STOP;
 						
-					ELSIF NOT MpAxisBasic_AxisSlave.MoveAbsolute AND Axis1.cmdStartAutomat AND ( MpAxisBasic_AxisSlave.Position = 0.0 OR  MpAxisBasic_AxisSlave.Position = 180.0)  THEN
+					ELSIF MpAxisBasic_AxisMaster.MoveVelocity AND Axis1.cmdStartAutomat   THEN
 						MpAxisCamSequencer_0.StartSequence := TRUE;
 						MpAxisCamSequencer_0.Signal1		:= FALSE;
 						AxisStep := STATE_MOVE_CAMAUTOMAT;	
-					ELSIF (Axis1.cmdStartAutomat AND NOT ( MpAxisBasic_AxisSlave.Position = 0.0 OR  MpAxisBasic_AxisSlave.Position = 180.0) ) THEN
-						MpAxisBasic_AxisSlave.MoveAbsolute := TRUE;
-					ELSIF (MpAxisBasic_AxisSlave.MoveAbsolute  AND  ( MpAxisBasic_AxisSlave.Position = 0.0 OR  MpAxisBasic_AxisSlave.Position = 180.0) ) THEN
-						MpAxisBasic_AxisSlave.MoveAbsolute := FALSE;
-						
-					ELSIF (Axis1.cmdMoveAdditive AND NOT MpAxisBasic_AxisMaster.MoveAdditive  ) THEN
-						AxisStep := STATE_MOVE_ADDITIVE;	
+
 			
-					ELSIF (Axis1.cmdMoveVelocity AND NOT MpAxisBasic_AxisMaster.MoveVelocity) THEN
+					ELSIF NOT MpAxisBasic_AxisSlave.MoveAbsolute AND Axis1.cmdMoveVelocity AND NOT MpAxisBasic_AxisMaster.MoveVelocity AND  MpAxisBasic_AxisSlave.Position = 0.0  THEN
 							AxisStep := STATE_MOVE_VELOCITY;
-				
+					ELSIF Axis1.cmdMoveVelocity  AND NOT (MpAxisBasic_AxisSlave.Position = 0.0  ) THEN
+						MpAxisBasic_AxisSlave.MoveAbsolute := TRUE;
+					ELSIF MpAxisBasic_AxisSlave.MoveAbsolute  AND  ( MpAxisBasic_AxisSlave.Position = 0.0 ) THEN
+						MpAxisBasic_AxisSlave.MoveAbsolute := FALSE;
+									
 					ELSIF NOT MpAxisBasic_AxisMaster.MoveVelocity AND (Axis1.cmdManualForward OR Axis1.cmdManualReverse OR Axis2.cmdManualForward OR Axis2.cmdManualReverse ) THEN
-				AxisStep := STATE_JOG;
-				startPositionJog := MpAxisBasic_AxisSlave.Position ;
-				
+						AxisStep := STATE_JOG;
+						startPositionJog := MpAxisBasic_AxisSlave.Position ;
+						
 						
 					END_IF
 					
@@ -216,8 +214,8 @@ PROGRAM _CYCLIC
 						
 				STATE_MOVE_CAMAUTOMAT : //*************** 30 *************************** STATE_MOVE_VELOCITY *********************** 30 ******************* STATE_MOVE_CAMAUTOMAT 
 			gEnableTouchProbe := TRUE;
-
-					CutStart := TRUE;
+						
+					CutStart := MpAxisCamSequencer_0.ActualStateIndex <> 0;
 					 IF NOT Axis1.cmdStartAutomat  THEN
 						Axis1.cmdCam 			:= FALSE;
 						MpAxisCamSequencer_0.StartSequence 		:= FALSE;
@@ -242,13 +240,15 @@ PROGRAM _CYCLIC
 						MpAxisBasic_AxisMaster.MoveVelocity 	:= FALSE;
 						MpAxisCamSequencer_0.StartSequence		:= FALSE;
 						AxisStep := STATE_STOP;
-					ELSIF (NOT MpAxisCamSequencer_0.Signal1 AND MpAxisCamSequencer_0.StartSequence AND MpAxisCamSequencer_0.ActualStateIndex = 1) THEN
-						MpAxisCamSequencer_0.Signal1 := Axis1.cmdCam;
-
-					ELSIF ( MpAxisCamSequencer_0.Signal1 AND MpAxisCamSequencer_0.ActualStateIndex = 2) THEN
-						Axis1.cmdCam 					:= FALSE;
-						MpAxisCamSequencer_0.Signal1 	:= FALSE;
+//					ELSIF (NOT MpAxisCamSequencer_0.Signal1 AND MpAxisCamSequencer_0.StartSequence AND MpAxisCamSequencer_0.ActualStateIndex = 1) THEN
+//						MpAxisCamSequencer_0.Signal1 := Axis1.cmdCam;
+//
+////					ELSIF ( MpAxisCamSequencer_0.Signal1 AND MpAxisCamSequencer_0.ActualStateIndex = 2) THEN
+////						Axis1.cmdCam 					:= FALSE;
+////						MpAxisCamSequencer_0.Signal1 	:= FALSE;
 				
+				ELSIF (  MpAxisCamSequencer_0.ActualStateIndex >= 1) THEN
+					MpAxisCamSequencer_0.Signal1 := Axis1.cmdCam AND NOT Axis1.statusOff ;
 								
 					END_IF							
 				
@@ -265,8 +265,8 @@ PROGRAM _CYCLIC
 				MpAxisBasic_AxisMaster.JogPositive 	:= Axis1.cmdManualForward;
 			MpAxisBasic_AxisMaster.JogNegative	:= Axis1.cmdManualReverse;
 					
-			MpAxisBasic_AxisSlave.JogPositive 	:= Axis2.cmdManualForward AND cutJogEnable   ;
-			MpAxisBasic_AxisSlave.JogNegative 	:= Axis2.cmdManualReverse AND cutJogEnable ;
+			MpAxisBasic_AxisSlave.JogPositive 	:= Axis2.cmdManualForward AND cutJogEnableFW   ;
+			MpAxisBasic_AxisSlave.JogNegative 	:= Axis2.cmdManualReverse AND cutJogEnableBW ;
 
 
 							
@@ -307,8 +307,8 @@ PROGRAM _CYCLIC
 	Data[0] := MpAxisBasic_AxisMaster.Position;
 	Data[1] := MpAxisBasic_AxisSlave.Position;
 	Data[2] := BOOL_TO_REAL(Axis1.cmdCam) * 360.0;
-	(*Data[3]* used*)
-	(*Data[4]* used*)
+	Data[3] := 0.0;
+	Data[4] := 0.0;
 	Data[5] := MpAxisCamSequencer_0.ActualStateIndex * 50.0;
 		
 	
@@ -321,23 +321,38 @@ PROGRAM _CYCLIC
 	MpAxisCamSequencer_0();
 	
 	
-	cutJogEnable := (MpAxisBasic_AxisSlave.Position > -0.1  AND MpAxisBasic_AxisSlave.Position < 20.0 ) OR 
-	(MpAxisBasic_AxisSlave.Position > 160.0  AND MpAxisBasic_AxisSlave.Position < 200) OR
-	(MpAxisBasic_AxisSlave.Position > 340.0  AND MpAxisBasic_AxisSlave.Position < 359.9999) OR
+	cutJogEnableFW := (MpAxisBasic_AxisSlave.Position > -0.1  AND MpAxisBasic_AxisSlave.Position < 157.5 ) OR // stop jog when the blade is off
+	(MpAxisBasic_AxisSlave.Position > 197.5  AND MpAxisBasic_AxisSlave.Position < 359.9999) OR
+	bypassProtection;
+	cutJogEnableBW := (MpAxisBasic_AxisSlave.Position > -0.1  AND MpAxisBasic_AxisSlave.Position < 162.5 ) OR // stop jog when the blade is off
+	(MpAxisBasic_AxisSlave.Position > 202.5  AND MpAxisBasic_AxisSlave.Position < 359.9999) OR
 	bypassProtection;
 	
 	IF gErrorID > 0 THEN  // MAchine status code
 		gMachineStatus := 3; // Error
-	ELSIF MpAxisBasic_AxisMaster.MoveVelocity AND gErrorID = 0 THEN
+		displayStopImage := TRUE;
+		displayRunImage := FALSE;
+		
+	ELSIF MpAxisBasic_AxisMaster.MoveVelocity AND gErrorID = 0 THEN // define the stop mode
 		gMachineStatus := 1;
+		displayStopImage := FALSE;
+		displayRunImage := TRUE;
 	ELSIF AxisStep = 40 THEN
 		gMachineStatus := 2;
-	ELSIF Axis1.statusOff = 1 THEN
+		displayStopImage := TRUE;
+		displayRunImage := FALSE;
+	ELSIF Axis1.statusOff = 1 THEN // define the stop mode finalize mpod
 		gMachineStatus := 5;
-	ELSIF NOT MpAxisBasic_AxisMaster.MoveVelocity AND AxisStep = 10   THEN
-		gMachineStatus := 0;			
+		displayStopImage := TRUE;
+		displayRunImage := FALSE;
+	ELSIF NOT MpAxisBasic_AxisMaster.MoveVelocity AND AxisStep = 10   THEN // define the Jog mode
+		gMachineStatus := 0;	
+		displayStopImage := TRUE;
+		displayRunImage := FALSE;
 	ELSIF gServoInitialized = 0 THEN
-			gMachineStatus := 4;	
+		gMachineStatus := 4;
+		displayStopImage := TRUE;
+		displayRunImage := FALSE;
 	END_IF		
 	gMachineStatusMessage := gMachineStatusArray[gMachineStatus];	 // HMI status
 

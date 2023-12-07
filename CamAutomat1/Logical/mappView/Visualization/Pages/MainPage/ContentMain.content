@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Content id="ContentMain" height="522" width="798" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
-    <Widget xsi:type="widgets.brease.Image" id="Image1" top="22" left="744" width="38" height="33" zIndex="1" image="Media/SymbolLib/Alarm/Alarm.svg" backColor="rgba(176, 196, 222, 0)" imageColor="rgba(255, 128, 0, 1)" visible="false" />
-    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart" top="255" left="178" width="135" zIndex="0" text="$IAT/Start" />
-    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart1" top="255" left="331" width="135" zIndex="2" text="$IAT/Stop" />
-    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart2" top="255" left="638" width="135" zIndex="3" text="$IAT/Reset" />
-    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart3" top="255" left="485" width="135" zIndex="4" text="$IAT/Start_1" />
-    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStartMain1" top="255" left="33" width="126" zIndex="5" text="$IAT/finpro" />
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart" top="255" left="178" width="135" zIndex="0" text="$IAT/Auto" />
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart1" top="255" left="331" width="135" zIndex="1" text="$IAT/Stop_1" />
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart2" top="255" left="638" width="135" zIndex="2" text="$IAT/Reset" />
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart3" top="255" left="485" width="135" zIndex="3" text="$IAT/Start_1" />
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStartMain1" top="255" left="33" width="126" zIndex="4" text="$IAT/finpro" />
+    <Widget xsi:type="widgets.brease.Image" id="Image2" top="43" left="246" width="296" height="165" zIndex="5" image="Media/Capture.JPG" />
+    <Widget xsi:type="widgets.brease.Image" id="Image3" top="43" left="246" width="296" height="165" zIndex="6" image="Media/EseniTqEJ9MA6Si7.gif" />
   </Widgets>
 </Content>

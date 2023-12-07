@@ -22,17 +22,24 @@ PROGRAM _CYCLIC
 
 		IF difValue > minValue THEN
 		preValue := newValue;
-		partDetected := CutStart;
+		partDetected := TON_0.Q ;
 		END_IF
 		
 		
 	END_IF
-		
-	IF 	EDGEPOS(partDetected) AND CutStart THEN
+	
+	TON_0(IN := CutStart , PT := T#500ms);
+	TON_0();	
+	IF 	EDGEPOS(partDetected) AND TON_0.Q THEN
 		Axis1.cmdCam := TRUE;
 		partDetected := FALSE;
 	END_IF
 	
+	TON_1.IN := Axis1.cmdCam;
+	TON_1();
+	IF EDGEPOS(TON_1.Q) THEN
+		Axis1.cmdCam := FALSE;
+	END_IF
 	
 	IF EDGEPOS(Axis1.cmdStartAutomat) THEN
 		preValue := newValue;
