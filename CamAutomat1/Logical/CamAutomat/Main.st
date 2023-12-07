@@ -124,7 +124,7 @@ PROGRAM _CYCLIC
 					END_IF
 					
 				STATE_READY : //***************************** 10 ************************ STATE_READY ******************** 10 ************************** STATE_READY 
-					
+					Axis1.statusOff := 0;
 					Axis1.statusStarting :=0;
 					MpAxisCamSequencer_0.Enable := TRUE;
 					CutStart := FALSE;
@@ -173,7 +173,7 @@ PROGRAM _CYCLIC
 					
 									
 				STATE_STOP : //*********************** 20 ****************************** STATE_STOP ***************************** 20 ********************** STATE_STOP 
-					
+					Axis1.statusOff := 0;
 					MpAxisBasic_AxisMaster.Stop := TRUE;
 					MpAxisBasic_AxisSlave.Stop := TRUE;
 					(* if axis is stopped go to state wait *)
@@ -275,7 +275,7 @@ PROGRAM _CYCLIC
 				
 			
 				STATE_ERROR : //********************** 101 ******************************* STATE_ERROR **************************** 101 ********************** STATE_ERROR 
-						
+					gErrorID := 3;	
 					Axis1.statusStarting :=0;
 					Axis1.statusFaulted := TRUE;					
 					MpAxisBasic_AxisMaster.Power := FALSE;
@@ -298,7 +298,8 @@ PROGRAM _CYCLIC
 						Axis1.statusErrorID := 0;
 						MpAxisBasic_AxisMaster.ErrorReset := FALSE;
 						MpAxisBasic_AxisSlave.ErrorReset  := FALSE;
-						MpAxisCamSequencer_0.ErrorReset := FALSE;
+					MpAxisCamSequencer_0.ErrorReset := FALSE;
+					gErrorID := 0;
 		
 					END_IF
 					
@@ -325,6 +326,20 @@ PROGRAM _CYCLIC
 	(MpAxisBasic_AxisSlave.Position > 340.0  AND MpAxisBasic_AxisSlave.Position < 359.9999) OR
 	bypassProtection;
 	
+	IF gErrorID > 0 THEN  // MAchine status code
+		gMachineStatus := 3; // Error
+	ELSIF MpAxisBasic_AxisMaster.MoveVelocity AND gErrorID = 0 THEN
+		gMachineStatus := 1;
+	ELSIF AxisStep = 40 THEN
+		gMachineStatus := 2;
+	ELSIF Axis1.statusOff = 1 THEN
+		gMachineStatus := 5;
+	ELSIF NOT MpAxisBasic_AxisMaster.MoveVelocity AND AxisStep = 10   THEN
+		gMachineStatus := 0;			
+	ELSIF gServoInitialized = 0 THEN
+			gMachineStatus := 4;	
+	END_IF		
+	gMachineStatusMessage := gMachineStatusArray[gMachineStatus];	 // HMI status
 
 END_PROGRAM
 

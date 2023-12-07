@@ -13,188 +13,20 @@
         <seg>Alarm</seg>
       </tuv>
     </tu>
-    <tu tuid="MainPage">
+    <tu tuid="Auto">
       <tuv xml:lang="fr">
-        <seg>Entree</seg>
+        <seg>auto</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Main</seg>
+        <seg>Auto</seg>
       </tuv>
     </tu>
-    <tu tuid="NodeBonding">
+    <tu tuid="BACK">
       <tuv xml:lang="fr">
-        <seg>Liaison de Node</seg>
+        <seg>Recolle</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Node Bonding</seg>
-      </tuv>
-    </tu>
-    <tu tuid="ValueBonding">
-      <tuv xml:lang="fr">
-        <seg>Liaison de Value</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Value Bonding</seg>
-      </tuv>
-    </tu>
-    <tu tuid="Password">
-      <tuv xml:lang="fr">
-        <seg>Mot de passe</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Password</seg>
-      </tuv>
-    </tu>
-    <tu tuid="Username">
-      <tuv xml:lang="fr">
-        <seg>Nom d'utilisateur</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Username</seg>
-      </tuv>
-    </tu>
-    <tu tuid="SetTemperature">
-      <tuv xml:lang="fr">
-        <seg>R�gler la temp�rature</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Set Temperature</seg>
-      </tuv>
-    </tu>
-    <tu tuid="Login">
-      <tuv xml:lang="fr">
-        <seg>Se connecter</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Login</seg>
-      </tuv>
-    </tu>
-    <tu tuid="ServicePage">
-      <tuv xml:lang="fr">
-        <seg>Service</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Service</seg>
-      </tuv>
-    </tu>
-    <tu tuid="CurrentTemperature">
-      <tuv xml:lang="fr">
-        <seg>Temp�rature actuelle</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Temperature Current</seg>
-      </tuv>
-    </tu>
-    <tu tuid="InfeedConvTopVelocitySpeedControl">
-      <tuv xml:lang="fr">
-        <seg>R�f�rence de vitesse du convoyeur d�alimentation (haut)</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Infeed Conveyor Top Velocity Speed Reference</seg>
-      </tuv>
-    </tu>
-    <tu tuid="InfeedConvBottomVelocitySpeedControl">
-      <tuv xml:lang="fr">
-        <seg>R�f�rence de vitesse du convoyeur d'alimentation (bas)</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Infeed Conveyor Bottom Velocity Speed Reference</seg>
-      </tuv>
-    </tu>
-    <tu tuid="ConvTopVelocitySpeedControl">
-      <tuv xml:lang="fr">
-        <seg>Rouge cap en linge</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Red Cap in Lane</seg>
-      </tuv>
-    </tu>
-    <tu tuid="ConvLiftVelocitySpeedControl">
-      <tuv xml:lang="fr">
-        <seg>Noir cap en linge</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Black Cap in Lane</seg>
-      </tuv>
-    </tu>
-    <tu tuid="ConvBottomVelocitySpeedControl">
-      <tuv xml:lang="fr">
-        <seg>Metallic cap en linge</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Metallic Cap in Lane</seg>
-      </tuv>
-    </tu>
-    <tu tuid="OutfeedConvVelocitySpeedControl">
-      <tuv xml:lang="fr">
-        <seg>R�f�rence de vitesse du convoyeur de sortie</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Outfeed Conveyor Velocity Speed Reference</seg>
-      </tuv>
-    </tu>
-    <tu tuid="Start">
-      <tuv xml:lang="fr">
-        <seg>Commencer</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Start</seg>
-      </tuv>
-    </tu>
-    <tu tuid="Stop">
-      <tuv xml:lang="fr">
-        <seg>Arr�t</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Stop</seg>
-      </tuv>
-    </tu>
-    <tu tuid="Reset">
-      <tuv xml:lang="fr">
-        <seg>R�initialiser</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Reset</seg>
-      </tuv>
-    </tu>
-    <tu tuid="BoxCount">
-      <tuv xml:lang="fr">
-        <seg>Nombre de bo�tes</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Box Count</seg>
-      </tuv>
-    </tu>
-    <tu tuid="JamatinfeedConveyorTop">
-      <tuv xml:lang="fr">
-        <seg>Jam sur le dessus du convoyeur d'infeed</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Jam at in-feed Conveyor Top</seg>
-      </tuv>
-    </tu>
-    <tu tuid="JamatinfeedConveyorBottom">
-      <tuv xml:lang="fr">
-        <seg>Jam au bas du convoyeur d'infeed</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Jam at in-feed Conveyor Bottom</seg>
-      </tuv>
-    </tu>
-    <tu tuid="Param">
-      <tuv xml:lang="fr">
-        <seg>Parameter</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Parameter</seg>
-      </tuv>
-    </tu>
-    <tu tuid="TopSpeedBoxRelease">
-      <tuv xml:lang="fr">
-        <seg>Vitesse de lib�ration de la bo�te du convoyeur sup�rieur en amont</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Upstream Top Conveyor Box Release Delay</seg>
+        <seg>Backward</seg>
       </tuv>
     </tu>
     <tu tuid="BottomSpeedBoxRelease">
@@ -205,68 +37,12 @@
         <seg>Upstream Bottom Conveyor  Box Release Delay</seg>
       </tuv>
     </tu>
-    <tu tuid="ComIphysic">
+    <tu tuid="BoxCount">
       <tuv xml:lang="fr">
-        <seg>Communication avec iPhysics perdue</seg>
+        <seg>Nombre de bo�tes</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Communication to iPhysics Lost</seg>
-      </tuv>
-    </tu>
-    <tu tuid="Save">
-      <tuv xml:lang="fr">
-        <seg>Sauvgarder</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Save</seg>
-      </tuv>
-    </tu>
-    <tu tuid="LoadToFile">
-      <tuv xml:lang="fr">
-        <seg>Charger les param�tres � partir du fichier</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Load Parameters From File</seg>
-      </tuv>
-    </tu>
-    <tu tuid="SaveToFile">
-      <tuv xml:lang="fr">
-        <seg>Enregistrer les param�tres dans un fichier</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Save Parameters To File</seg>
-      </tuv>
-    </tu>
-    <tu tuid="Count">
-      <tuv xml:lang="fr">
-        <seg>Nombre de boite descharge</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Number of Unloaded Box</seg>
-      </tuv>
-    </tu>
-    <tu tuid="Status">
-      <tuv xml:lang="fr">
-        <seg>Etat</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Status</seg>
-      </tuv>
-    </tu>
-    <tu tuid="Performance">
-      <tuv xml:lang="fr">
-        <seg>Performance</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Performance</seg>
-      </tuv>
-    </tu>
-    <tu tuid="boxperm_1">
-      <tuv xml:lang="fr">
-        <seg>Maximum boit par minutes</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Maximum Box per Minutes</seg>
+        <seg>Box Count</seg>
       </tuv>
     </tu>
     <tu tuid="boxperm">
@@ -277,44 +53,84 @@
         <seg>Box per Minutes</seg>
       </tuv>
     </tu>
-    <tu tuid="time">
+    <tu tuid="boxperm_1">
       <tuv xml:lang="fr">
-        <seg>Temps</seg>
+        <seg>Maximum boit par minutes</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Time</seg>
+        <seg>Maximum Box per Minutes</seg>
       </tuv>
     </tu>
-    <tu tuid="LowSpeed">
+    <tu tuid="clor">
       <tuv xml:lang="fr">
-        <seg>Bas vitess</seg>
+        <seg>clor pas correct</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Low Speed</seg>
+        <seg>Wrong Colour Assignment</seg>
       </tuv>
     </tu>
-    <tu tuid="mediumspeed">
+    <tu tuid="ComIphysic">
       <tuv xml:lang="fr">
-        <seg>Vitesse moyenne</seg>
+        <seg>Communication avec iPhysics perdue</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Medium Speed</seg>
+        <seg>Communication to iPhysics Lost</seg>
       </tuv>
     </tu>
-    <tu tuid="highspeed">
+    <tu tuid="ConvBottomVelocitySpeedControl">
       <tuv xml:lang="fr">
-        <seg>Haut vitess</seg>
+        <seg>Metallic cap en linge</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>High Speed</seg>
+        <seg>Metallic Cap in Lane</seg>
       </tuv>
     </tu>
-    <tu tuid="Error">
+    <tu tuid="ConvLiftVelocitySpeedControl">
       <tuv xml:lang="fr">
-        <seg>Erreur</seg>
+        <seg>Noir cap en linge</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Error</seg>
+        <seg>Black Cap in Lane</seg>
+      </tuv>
+    </tu>
+    <tu tuid="ConvOnOff">
+      <tuv xml:lang="fr">
+        <seg>conv. on</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Conv On</seg>
+      </tuv>
+    </tu>
+    <tu tuid="ConvTopVelocitySpeedControl">
+      <tuv xml:lang="fr">
+        <seg>Rouge cap en linge</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Red Cap in Lane</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Count">
+      <tuv xml:lang="fr">
+        <seg>Nombre de boite descharge</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Number of Unloaded Box</seg>
+      </tuv>
+    </tu>
+    <tu tuid="CurrentP">
+      <tuv xml:lang="fr">
+        <seg>position act.</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Actual Position</seg>
+      </tuv>
+    </tu>
+    <tu tuid="CurrentTemperature">
+      <tuv xml:lang="fr">
+        <seg>Temp�rature actuelle</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Temperature Current</seg>
       </tuv>
     </tu>
     <tu tuid="des">
@@ -323,6 +139,22 @@
       </tuv>
       <tuv xml:lang="en">
         <seg>Description</seg>
+      </tuv>
+    </tu>
+    <tu tuid="disable">
+      <tuv xml:lang="fr">
+        <seg>desavtivate</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Disable</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Error">
+      <tuv xml:lang="fr">
+        <seg>Erreur</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Error</seg>
       </tuv>
     </tu>
     <tu tuid="ErrorID0">
@@ -389,20 +221,12 @@
         <seg>Fault in color assignment</seg>
       </tuv>
     </tu>
-    <tu tuid="Auto">
+    <tu tuid="finpro">
       <tuv xml:lang="fr">
-        <seg>auto</seg>
+        <seg>fin de production</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Auto</seg>
-      </tuv>
-    </tu>
-    <tu tuid="Manual">
-      <tuv xml:lang="fr">
-        <seg>manuelle</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Manual/SetUp</seg>
+        <seg>Prduc. Finish</seg>
       </tuv>
     </tu>
     <tu tuid="FWD">
@@ -413,76 +237,60 @@
         <seg>Forward</seg>
       </tuv>
     </tu>
-    <tu tuid="BACK">
+    <tu tuid="highspeed">
       <tuv xml:lang="fr">
-        <seg>Recolle</seg>
+        <seg>Haut vitess</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Backward</seg>
+        <seg>High Speed</seg>
       </tuv>
     </tu>
-    <tu tuid="Pusher">
+    <tu tuid="Home">
       <tuv xml:lang="fr">
-        <seg>Pusse</seg>
+        <seg>maison</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Pusher</seg>
+        <seg>Home</seg>
       </tuv>
     </tu>
-    <tu tuid="Picker">
+    <tu tuid="InfeedConvBottomVelocitySpeedControl">
       <tuv xml:lang="fr">
-        <seg>prendre</seg>
+        <seg>R�f�rence de vitesse du convoyeur d'alimentation (bas)</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Picker</seg>
+        <seg>Infeed Conveyor Bottom Velocity Speed Reference</seg>
       </tuv>
     </tu>
-    <tu tuid="Stamp">
+    <tu tuid="InfeedConvTopVelocitySpeedControl">
       <tuv xml:lang="fr">
-        <seg>stampe</seg>
+        <seg>R�f�rence de vitesse du convoyeur d�alimentation (haut)</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Stamper</seg>
+        <seg>Infeed Conveyor Top Velocity Speed Reference</seg>
       </tuv>
     </tu>
-    <tu tuid="LogoConv">
+    <tu tuid="JamatinfeedConveyorBottom">
       <tuv xml:lang="fr">
-        <seg>logo Conveyor</seg>
+        <seg>Jam au bas du convoyeur d'infeed</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Logo Conveyor</seg>
+        <seg>Jam at in-feed Conveyor Bottom</seg>
       </tuv>
     </tu>
-    <tu tuid="Speed">
+    <tu tuid="JamatinfeedConveyorTop">
       <tuv xml:lang="fr">
-        <seg>vittesse</seg>
+        <seg>Jam sur le dessus du convoyeur d'infeed</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Speed</seg>
+        <seg>Jam at in-feed Conveyor Top</seg>
       </tuv>
     </tu>
-    <tu tuid="ConvOnOff">
+    <tu tuid="jogS">
       <tuv xml:lang="fr">
-        <seg>conv. on</seg>
+        <seg>jog vittess</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Conv On</seg>
-      </tuv>
-    </tu>
-    <tu tuid="SorterConv">
-      <tuv xml:lang="fr">
-        <seg>sorter conv</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Sorter Conv</seg>
-      </tuv>
-    </tu>
-    <tu tuid="Sorter">
-      <tuv xml:lang="fr">
-        <seg>sorter</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Sorter</seg>
+        <seg>Jog Speed</seg>
       </tuv>
     </tu>
     <tu tuid="Lane1">
@@ -509,84 +317,36 @@
         <seg>Line 3</seg>
       </tuv>
     </tu>
-    <tu tuid="punch">
+    <tu tuid="LoadToFile">
       <tuv xml:lang="fr">
-        <seg>puncher</seg>
+        <seg>Charger les param�tres � partir du fichier</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Puncher</seg>
+        <seg>Load Parameters From File</seg>
       </tuv>
     </tu>
-    <tu tuid="userStamp">
+    <tu tuid="Login">
       <tuv xml:lang="fr">
-        <seg>stamping position d</seg>
+        <seg>Se connecter</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Stamp Pos. Start</seg>
+        <seg>Login</seg>
       </tuv>
     </tu>
-    <tu tuid="userstmpStop">
+    <tu tuid="LogoConv">
       <tuv xml:lang="fr">
-        <seg>stamping position f</seg>
+        <seg>logo Conveyor</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Stamp Pos. Stop</seg>
+        <seg>Logo Conveyor</seg>
       </tuv>
     </tu>
-    <tu tuid="userStamp_1">
+    <tu tuid="LowSpeed">
       <tuv xml:lang="fr">
-        <seg>punch position d</seg>
+        <seg>Bas vitess</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Punch Pos. Start</seg>
-      </tuv>
-    </tu>
-    <tu tuid="userstmpStop_1">
-      <tuv xml:lang="fr">
-        <seg>punch position f</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Punch Pos. Stop</seg>
-      </tuv>
-    </tu>
-    <tu tuid="Run">
-      <tuv xml:lang="fr">
-        <seg>marche</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Run</seg>
-      </tuv>
-    </tu>
-    <tu tuid="user">
-      <tuv xml:lang="fr">
-        <seg>utilisature</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Users</seg>
-      </tuv>
-    </tu>
-    <tu tuid="disable">
-      <tuv xml:lang="fr">
-        <seg>desavtivate</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Disable</seg>
-      </tuv>
-    </tu>
-    <tu tuid="manualnotsele">
-      <tuv xml:lang="fr">
-        <seg>mode manuelle pas active</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Manaul mode not selected</seg>
-      </tuv>
-    </tu>
-    <tu tuid="stopper">
-      <tuv xml:lang="fr">
-        <seg>stop</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Stopper</seg>
+        <seg>Low Speed</seg>
       </tuv>
     </tu>
     <tu tuid="machinestop">
@@ -597,6 +357,86 @@
         <seg>Machine should be stopped to change parameters</seg>
       </tuv>
     </tu>
+    <tu tuid="MainPage">
+      <tuv xml:lang="fr">
+        <seg>Entree</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Main</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Manual">
+      <tuv xml:lang="fr">
+        <seg>manuelle</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Manual/SetUp</seg>
+      </tuv>
+    </tu>
+    <tu tuid="manualnotsele">
+      <tuv xml:lang="fr">
+        <seg>mode manuelle pas active</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Manaul mode not selected</seg>
+      </tuv>
+    </tu>
+    <tu tuid="mediumspeed">
+      <tuv xml:lang="fr">
+        <seg>Vitesse moyenne</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Medium Speed</seg>
+      </tuv>
+    </tu>
+    <tu tuid="NodeBonding">
+      <tuv xml:lang="fr">
+        <seg>Liaison de Node</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Node Bonding</seg>
+      </tuv>
+    </tu>
+    <tu tuid="OutfeedConvVelocitySpeedControl">
+      <tuv xml:lang="fr">
+        <seg>R�f�rence de vitesse du convoyeur de sortie</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Outfeed Conveyor Velocity Speed Reference</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Param">
+      <tuv xml:lang="fr">
+        <seg>Parameter</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Parameter</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Password">
+      <tuv xml:lang="fr">
+        <seg>Mot de passe</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Password</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Performance">
+      <tuv xml:lang="fr">
+        <seg>Performance</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Performance</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Picker">
+      <tuv xml:lang="fr">
+        <seg>prendre</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Picker</seg>
+      </tuv>
+    </tu>
     <tu tuid="poweron">
       <tuv xml:lang="fr">
         <seg>PowerOn</seg>
@@ -605,20 +445,100 @@
         <seg>Power ON</seg>
       </tuv>
     </tu>
-    <tu tuid="userpunchStop_H">
+    <tu tuid="ProS">
       <tuv xml:lang="fr">
-        <seg>punch position h</seg>
+        <seg>pro Speed</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Punch Pos. Home</seg>
+        <seg>Produc. Speed</seg>
       </tuv>
     </tu>
-    <tu tuid="userstmpStop_H">
+    <tu tuid="punch">
       <tuv xml:lang="fr">
-        <seg>stamp position h</seg>
+        <seg>puncher</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Stamp Pos. Home</seg>
+        <seg>Puncher</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Pusher">
+      <tuv xml:lang="fr">
+        <seg>Pusse</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Pusher</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Reset">
+      <tuv xml:lang="fr">
+        <seg>R�initialiser</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Reset</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Run">
+      <tuv xml:lang="fr">
+        <seg>marche</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Run</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Save">
+      <tuv xml:lang="fr">
+        <seg>Sauvgarder</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Save</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SaveToFile">
+      <tuv xml:lang="fr">
+        <seg>Enregistrer les param�tres dans un fichier</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Save Parameters To File</seg>
+      </tuv>
+    </tu>
+    <tu tuid="ServicePage">
+      <tuv xml:lang="fr">
+        <seg>Service</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Service</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SetTemperature">
+      <tuv xml:lang="fr">
+        <seg>R�gler la temp�rature</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Set Temperature</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Sorter">
+      <tuv xml:lang="fr">
+        <seg>sorter</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Sorter</seg>
+      </tuv>
+    </tu>
+    <tu tuid="SorterConv">
+      <tuv xml:lang="fr">
+        <seg>sorter conv</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Sorter Conv</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Speed">
+      <tuv xml:lang="fr">
+        <seg>vittesse</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Speed</seg>
       </tuv>
     </tu>
     <tu tuid="Sppedatio">
@@ -637,52 +557,20 @@
         <seg>Punch/Conv Speed Ratio</seg>
       </tuv>
     </tu>
-    <tu tuid="finpro">
+    <tu tuid="Stamp">
       <tuv xml:lang="fr">
-        <seg>fin de production</seg>
+        <seg>stampe</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Prduc. Finish</seg>
+        <seg>Stamper</seg>
       </tuv>
     </tu>
-    <tu tuid="clor">
+    <tu tuid="Start">
       <tuv xml:lang="fr">
-        <seg>clor pas correct</seg>
+        <seg>Commencer</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Wrong Colour Assignment</seg>
-      </tuv>
-    </tu>
-    <tu tuid="Home">
-      <tuv xml:lang="fr">
-        <seg>maison</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Home</seg>
-      </tuv>
-    </tu>
-    <tu tuid="CurrentP">
-      <tuv xml:lang="fr">
-        <seg>position act.</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Actual Position</seg>
-      </tuv>
-    </tu>
-    <tu tuid="jogS">
-      <tuv xml:lang="fr">
-        <seg>jog vittess</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Jog Speed</seg>
-      </tuv>
-    </tu>
-    <tu tuid="ProS">
-      <tuv xml:lang="fr">
-        <seg>pro Speed</seg>
-      </tuv>
-      <tuv xml:lang="en">
-        <seg>Produc. Speed</seg>
+        <seg>Start</seg>
       </tuv>
     </tu>
     <tu tuid="Start_1">
@@ -691,6 +579,118 @@
       </tuv>
       <tuv xml:lang="en">
         <seg>Start Cut</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Status">
+      <tuv xml:lang="fr">
+        <seg>Etat</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Status</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Stop">
+      <tuv xml:lang="fr">
+        <seg>Arr�t</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Stop</seg>
+      </tuv>
+    </tu>
+    <tu tuid="stopper">
+      <tuv xml:lang="fr">
+        <seg>stop</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Stopper</seg>
+      </tuv>
+    </tu>
+    <tu tuid="time">
+      <tuv xml:lang="fr">
+        <seg>Temps</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Time</seg>
+      </tuv>
+    </tu>
+    <tu tuid="TopSpeedBoxRelease">
+      <tuv xml:lang="fr">
+        <seg>Vitesse de lib�ration de la bo�te du convoyeur sup�rieur en amont</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Upstream Top Conveyor Box Release Delay</seg>
+      </tuv>
+    </tu>
+    <tu tuid="user">
+      <tuv xml:lang="fr">
+        <seg>utilisature</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Users</seg>
+      </tuv>
+    </tu>
+    <tu tuid="Username">
+      <tuv xml:lang="fr">
+        <seg>Nom d'utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Username</seg>
+      </tuv>
+    </tu>
+    <tu tuid="userpunchStop_H">
+      <tuv xml:lang="fr">
+        <seg>punch position h</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Punch Pos. Home</seg>
+      </tuv>
+    </tu>
+    <tu tuid="userStamp">
+      <tuv xml:lang="fr">
+        <seg>stamping position d</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Stamp Pos. Start</seg>
+      </tuv>
+    </tu>
+    <tu tuid="userStamp_1">
+      <tuv xml:lang="fr">
+        <seg>punch position d</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Punch Pos. Start</seg>
+      </tuv>
+    </tu>
+    <tu tuid="userstmpStop">
+      <tuv xml:lang="fr">
+        <seg>stamping position f</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Stamp Pos. Stop</seg>
+      </tuv>
+    </tu>
+    <tu tuid="userstmpStop_1">
+      <tuv xml:lang="fr">
+        <seg>punch position f</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Punch Pos. Stop</seg>
+      </tuv>
+    </tu>
+    <tu tuid="userstmpStop_H">
+      <tuv xml:lang="fr">
+        <seg>stamp position h</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Stamp Pos. Home</seg>
+      </tuv>
+    </tu>
+    <tu tuid="ValueBonding">
+      <tuv xml:lang="fr">
+        <seg>Liaison de Value</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Value Bonding</seg>
       </tuv>
     </tu>
   </body>

@@ -179,6 +179,7 @@
         <Variable Name="gConvPrSpeed" EURangesId="4" EngineeringUnitId="3" />
         <Variable Name="gCutJogSpeed" EURangesId="3" EngineeringUnitId="4" />
         <Variable Name="gManualActive" />
+        <Variable Name="gMachineStatusMessage" />
       </GlobalVariables>
       <Task Name="CamAutomat">
         <Variable Name="MpAxisBasic_AxisMaster">

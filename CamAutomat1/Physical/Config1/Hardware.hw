@@ -36,7 +36,7 @@
     <Parameter ID="UserPartitionSize" Value="200" />
     <Parameter ID="RemMemDevice" Value="PCI.1.PPC21xx.SRAM" />
     <Parameter ID="RemMemSize" Value="262144" />
-    <Parameter ID="RemanentGlobalPvSize" Value="1048" />
+    <Parameter ID="RemanentGlobalPvSize" Value="2096" />
     <Parameter ID="TimerDeviceType" Value="EPLX2X" />
     <Parameter ID="TimerDevice" Value="5ACCIF01.FPLK-000.IF1" />
     <Parameter ID="TaskClassIdleTime" Value="2000" />

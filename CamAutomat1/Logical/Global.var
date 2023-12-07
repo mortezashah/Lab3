@@ -30,3 +30,8 @@ VAR
 	gConvJogSpeed : REAL := 72.00; (*Jog Speed Conveyor*)
 	gManualActive : BOOL; (*Des activate Manaul*)
 END_VAR
+VAR RETAIN
+	gMachineStatusArray : ARRAY[0..9] OF STRING[100] := ['Stop/Manual','Run','Manual','Error','Initializing','Finishing Production',4('')]; (*machine status message*)
+	gMachineStatusMessage : STRING[100]; (*machine status message*)
+	gMachineStatus : USINT; (*machine status message*)
+END_VAR
