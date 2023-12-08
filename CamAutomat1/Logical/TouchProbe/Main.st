@@ -26,7 +26,7 @@ PROGRAM _CYCLIC
 	IF newValue > ( preValue + 15.0) THEN
 		difValue := newValue - preValue ;
 
-		IF difValue > minValue THEN
+		IF difValue > gMinValue THEN
 		preValue := newValue;
 		partDetected := delatTimerProbe.Q ;
 		END_IF

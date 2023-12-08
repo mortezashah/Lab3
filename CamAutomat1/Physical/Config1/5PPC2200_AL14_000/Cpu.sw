@@ -9,6 +9,7 @@
   <TaskClass Name="Cyclic#3" />
   <TaskClass Name="Cyclic#4">
     <Task Name="MachineAla" Source="MachineAlarm.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="RecipeMgmt" Source="RecipeMgmt.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#5" />
   <TaskClass Name="Cyclic#6" />

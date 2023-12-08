@@ -27,6 +27,7 @@
     <EventBindingsSet refId="ContentUp_eventbinding" />
     <EventBindingsSet refId="ContentParameter_eventbinding" />
     <EventBindingsSet refId="ContentDiag_eventbinding" />
+    <EventBindingsSet refId="ContentLeft_eventbinding" />
   </EventBindingsSets>
   <Dialogs>
     <Dialog refId="dialog_0" />

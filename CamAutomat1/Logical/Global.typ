@@ -61,4 +61,9 @@ TYPE
 		parmOperMin : REAL; (*Min position displayed on screen based on job setup and mechanical limits*)
 		parmReferencePosition : REAL; (*Physical position when at the reference mark. (Real world units)*)
 	END_STRUCT;
+	cutParam_typ : 	STRUCT 
+		RecipeName : STRING[65];
+		productionSpeed : REAL := 0.0; (*reference lane *)
+		minimumCutSpped : LREAL := 0.0; (*reference lane *)
+	END_STRUCT;
 END_TYPE

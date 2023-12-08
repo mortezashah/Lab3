@@ -11,6 +11,7 @@
     <Object Type="Program" Language="IEC" Description="Control Axis">CamAutomat</Object>
     <Object Type="Program" Language="IEC" Description="Save Prosition">TouchProbe</Object>
     <Object Type="Program" Language="IEC" Description="Laram Dispaly">MachineAlarm</Object>
+    <Object Type="Program" Language="IEC" Description="Manage Recipe">RecipeMgmt</Object>
     <Object Type="File" Description="Project Language">Project.language</Object>
   </Objects>
 </Package>

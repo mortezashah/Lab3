@@ -170,7 +170,7 @@ PROGRAM _CYCLIC
 									
 					ELSIF NOT MpAxisBasic_AxisMaster.MoveVelocity AND (Axis1.cmdManualForward OR Axis1.cmdManualReverse OR Axis2.cmdManualForward OR Axis2.cmdManualReverse ) THEN
 						AxisStep := STATE_JOG;
-						startPositionJog := MpAxisBasic_AxisSlave.Position ;
+						startPositionJog := MpAxisBasic_AxisMaster.Position ;
 						
 						
 					END_IF
@@ -265,12 +265,13 @@ PROGRAM _CYCLIC
 				STATE_JOG ://************************* 40 **************************** STATE_JOG ********************************* 40 ********************* STATE_JOG 					
 				
 			
-				IF NOT (Axis1.cmdManualForward OR Axis1.cmdManualReverse OR Axis2.cmdManualForward OR Axis2.cmdManualReverse ) THEN
+				IF NOT (Axis1.cmdManualForward OR Axis1.cmdManualReverse OR Axis2.cmdManualForward OR Axis2.cmdManualReverse ) AND  gRunPage THEN
+					gRunPage := FALSE;	
 					AxisStep := STATE_READY;
 				END_IF
 				
-				MpAxisBasic_AxisMaster.JogPositive 	:= Axis1.cmdManualForward;
-				MpAxisBasic_AxisMaster.JogNegative	:= Axis1.cmdManualReverse;
+				MpAxisBasic_AxisMaster.JogPositive 	:= Axis1.cmdManualForward AND sawInCutPosition;
+				MpAxisBasic_AxisMaster.JogNegative	:= Axis1.cmdManualReverse AND MpAxisBasic_AxisMaster.Position > (startPositionJog - 100.00) AND sawInCutPosition;
 						
 				MpAxisBasic_AxisSlave.JogPositive 	:= Axis2.cmdManualForward AND cutJogEnableFW   ;
 				MpAxisBasic_AxisSlave.JogNegative 	:= Axis2.cmdManualReverse AND cutJogEnableBW ;
@@ -328,7 +329,7 @@ PROGRAM _CYCLIC
 	MpAxisBasic_AxisSlave();	
 	MpAxisCamSequencer_0();
 	
-	
+	// Stop blade pass the cut zone
 	cutJogEnableFW := (MpAxisBasic_AxisSlave.Position > -0.1  AND MpAxisBasic_AxisSlave.Position < cutJogEnableFWL ) OR // stop jog when the blade is off
 	(MpAxisBasic_AxisSlave.Position > cutJogEnableFWM  AND MpAxisBasic_AxisSlave.Position < 359.9999) OR
 	bypassProtection;
@@ -370,9 +371,12 @@ PROGRAM _CYCLIC
 	
 	cutEnd := MpAxisBasic_AxisSlave.Position > cutStartDegree AND MpAxisBasic_AxisSlave.Position < cutEndDegree;
 
-	IF EDGEPOS(cutEnd) THEN
+	IF EDGEPOS(cutEnd) THEN  // if one cut done cut the signal plc
 		Axis1.cmdCam := FALSE;
 	END_IF
+	
+
+	
 	
 	
 END_PROGRAM

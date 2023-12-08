@@ -587,7 +587,9 @@
               <Property ID="MaxVelocity" Value="1000" />
             </Selector>
             <Property ID="StartPosition" Value="0.00" />
-            <Selector ID="StartInterval" Value="MasterAxisPeriod" />
+            <Selector ID="StartInterval" Value="SpecifyValue">
+              <Property ID="Interval" Value="1.0" />
+            </Selector>
           </Group>
           <Group ID="AdvancedParameters">
             <Group ID="StartStateParameters">

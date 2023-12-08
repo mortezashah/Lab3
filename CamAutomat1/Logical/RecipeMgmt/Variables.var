@@ -1,0 +1,28 @@
+VAR
+	State : State_enum;
+	uiLoad : BOOL;
+	uiSave : BOOL;
+	sDeviceName : STRING[255] := 'CSV_Recipes';
+	sFileName : STRING[255] := 'recipe1';
+	sVariableName : STRING[255] := 'gCutPar';
+	MpRecipeCsv_0 : MpRecipeCsv;
+	MpRecipeRegPar_0 : MpRecipeRegPar;
+	RecipeError : BOOL;
+	ErrorReset : BOOL;
+END_VAR
+VAR RETAIN
+	RecipeCurrent : STRING[100]; (*Current recipe*)
+END_VAR
+VAR
+	DataProviderMid : ARRAY[0..9] OF STRING[90]; (*Data Provider*)
+END_VAR
+VAR RETAIN
+	DataProvider : ARRAY[0..9] OF STRING[100]; (*Data Provider*)
+	RecipeList : ARRAY[0..9] OF STRING[65]; (*List of recepie*)
+END_VAR
+VAR
+	DataProviderTail : ARRAY[0..9] OF STRING[25] := ['{"value":"0","text":"','{"value":"1","text":"','{"value":"2","text":"','{"value":"3","text":"','{"value":"4","text":"','{"value":"5","text":"','{"value":"6","text":"','{"value":"7","text":"','{"value":"8","text":"','{"value":"9","text":"']; (*Data Provider*)
+	DataProviderHead : ARRAY[0..9] OF STRING[10] := [10('"}')]; (*Data Provider*)
+	i : INT;
+	WarnColor : BOOL; (*Color Check*)
+END_VAR

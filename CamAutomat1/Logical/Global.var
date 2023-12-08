@@ -31,4 +31,15 @@ VAR RETAIN
 	gMachineStatusArray : ARRAY[0..9] OF STRING[100] := ['Stop/Manual','Run','Manual','Error','Initializing','Finishing Production',4('')]; (*machine status message*)
 	gMachineStatusMessage : STRING[100]; (*machine status message*)
 	gMachineStatus : USINT; (*machine status message*)
+	gCutPar : ARRAY[0..9] OF cutParam_typ; (*Recepie parametres*)
+END_VAR
+VAR
+	gMinValue : LREAL := 65.0; (*minum distance*)
+END_VAR
+VAR RETAIN
+	gRecepitRefHmi : INT := 0; (*HMI refrence *)
+END_VAR
+VAR
+	gRunPage : BOOL := FALSE; (*set to on in run*)
+	gManualPage : BOOL := TRUE; (*set to one in run*)
 END_VAR

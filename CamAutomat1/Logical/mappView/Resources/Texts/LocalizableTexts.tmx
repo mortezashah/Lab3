@@ -79,18 +79,18 @@
     </tu>
     <tu tuid="ConvBottomVelocitySpeedControl">
       <tuv xml:lang="fr">
-        <seg>Metallic cap en linge</seg>
+        <seg>Production Speed</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Metallic Cap in Lane</seg>
+        <seg>Production Speed print/m</seg>
       </tuv>
     </tu>
     <tu tuid="ConvLiftVelocitySpeedControl">
       <tuv xml:lang="fr">
-        <seg>Noir cap en linge</seg>
+        <seg>Minimum Cut</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Black Cap in Lane</seg>
+        <seg>Minimum Cut</seg>
       </tuv>
     </tu>
     <tu tuid="ConvOnOff">

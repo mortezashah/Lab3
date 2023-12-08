@@ -7,7 +7,6 @@ VAR
 	newValue : LREAL; (*new Position*)
 	preValue : LREAL; (*Old position*)
 	difValue : LREAL; (*distance*)
-	minValue : LREAL := 65.0; (*minum distance*)
 	partDetected : BOOL; (*start cam*)
 	delatTimerCut : TON := (PT:=T#500ms); (*Delay for start cut*)
 	delatTimerProbe : TON; (*Delay for start cut*)

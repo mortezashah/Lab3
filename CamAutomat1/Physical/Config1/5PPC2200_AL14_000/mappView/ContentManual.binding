@@ -98,9 +98,14 @@
 <Source xsi:type="opcUa" refId="::CamAutomat:bypassProtection" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ToggleButton1" attribute="value" />
 </Binding>
+
 <Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::TouchProbe:minValue" attribute="node" />
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gMinValue" attribute="node" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="SetSpeed3" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::CamAutomat:displayMessageAuto" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="Label18" attribute="visible" />
 </Binding>
 </Bindings>
 </BindingsSet>

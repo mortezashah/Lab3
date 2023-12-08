@@ -1,44 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Content id="ContentParameter" height="522" width="798" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
-    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle1" top="224" left="118" width="430" height="42" zIndex="4" />
-    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle3" top="224" left="554" width="118" height="42" zIndex="3" />
-    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle6" top="269" left="554" width="118" height="42" zIndex="2" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed1" top="277" left="564" zIndex="5" unit="{'metric':'MTS','imperial':'FS','imperial-us':'FS'}" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed" top="231" left="564" zIndex="6" unit="{'metric':'MTS','imperial':'FS','imperial-us':'FS'}" />
-    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle5" top="322" left="554" width="118" height="42" zIndex="8" />
-    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle7" top="367" left="554" width="118" height="42" zIndex="7" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed3" top="375" left="564" zIndex="9" unit="{'metric':'MTS','imperial':'FS','imperial-us':'FS'}" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed2" top="329" left="564" zIndex="10" unit="{'metric':'MTS','imperial':'FS','imperial-us':'FS'}" />
-    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle10" top="412" left="554" width="118" height="42" zIndex="12" />
-    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle11" top="465" left="554" width="118" height="42" zIndex="11" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed5" top="473" left="564" zIndex="13" unit="{'metric':'MTS','imperial':'FS','imperial-us':'FS'}" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed4" top="419" left="564" zIndex="14" unit="{'metric':'MTS','imperial':'FS','imperial-us':'FS'}" />
-    <Widget xsi:type="widgets.brease.Label" id="Label3" top="230" left="122" width="404" zIndex="15" text="$IAT/InfeedConvBottomVelocitySpeedControl" textAlign="left" fontSize="13px" bold="true" />
-    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle2" top="269" left="118" width="430" height="42" zIndex="16" />
-    <Widget xsi:type="widgets.brease.Label" id="Label4" top="275" left="122" width="404" zIndex="17" text="$IAT/InfeedConvTopVelocitySpeedControl" textAlign="left" fontSize="13px" bold="true" />
-    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle4" top="322" left="118" width="430" height="42" zIndex="18" />
-    <Widget xsi:type="widgets.brease.Label" id="Label5" top="328" left="122" width="404" zIndex="19" text="$IAT/ConvBottomVelocitySpeedControl" textAlign="left" fontSize="13px" bold="true" />
-    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle8" top="367" left="118" width="430" height="42" zIndex="20" />
-    <Widget xsi:type="widgets.brease.Label" id="Label6" top="373" left="122" width="404" zIndex="21" text="$IAT/ConvTopVelocitySpeedControl" textAlign="left" fontSize="13px" bold="true" />
-    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle9" top="412" left="118" width="430" height="42" zIndex="22" />
-    <Widget xsi:type="widgets.brease.Label" id="Label7" top="418" left="122" width="404" zIndex="23" text="$IAT/ConvLiftVelocitySpeedControl" textAlign="left" fontSize="13px" bold="true" />
-    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle12" top="465" left="118" width="430" height="42" zIndex="24" />
-    <Widget xsi:type="widgets.brease.Label" id="Label8" top="471" left="122" width="404" zIndex="25" text="$IAT/OutfeedConvVelocitySpeedControl" textAlign="left" fontSize="13px" bold="true" />
-    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle13" top="129" left="118" width="430" height="42" zIndex="27" />
-    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle14" top="129" left="554" width="118" height="42" zIndex="0" />
-    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle15" top="174" left="554" width="118" height="42" zIndex="26" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed6" top="182" left="564" zIndex="28" unit="{'metric':'SEC','imperial':'SEC','imperial-us':'SEC'}" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed7" top="136" left="564" zIndex="1" unit="{'metric':'SEC','imperial':'SEC','imperial-us':'SEC'}" />
-    <Widget xsi:type="widgets.brease.Label" id="Label9" top="135" left="122" width="404" zIndex="29" text="$IAT/BottomSpeedBoxRelease" textAlign="left" fontSize="13px" bold="true" />
-    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle16" top="174" left="118" width="430" height="42" zIndex="30" />
-    <Widget xsi:type="widgets.brease.Label" id="Label10" top="180" left="122" width="404" zIndex="31" text="$IAT/TopSpeedBoxRelease" textAlign="left" fontSize="13px" bold="true" />
-    <Widget xsi:type="widgets.brease.Line" id="Line1" zIndex="32" x1="126" x2="664" y1="220" y2="220" lineCap="square" style="Solid_Orange" />
-    <Widget xsi:type="widgets.brease.Line" id="Line2" zIndex="33" x1="123" x2="661" y1="316" y2="316" lineCap="square" style="Solid_Orange" />
-    <Widget xsi:type="widgets.brease.Line" id="Line3" zIndex="34" x1="123" x2="661" y1="459" y2="459" lineCap="square" style="Solid_Orange" />
-    <Widget xsi:type="widgets.brease.DropDownBox" id="DropDownBox1" top="46" left="122" width="160" zIndex="35" dataProvider="[{'value':'0','text':'Low Speed'},{'value':'1','text':'Medium Speed'},{'value':'2','text':'High Speed'}]" selectedValue="0" />
-    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart1" top="46" left="399" width="260" zIndex="36" text="$IAT/SaveToFile" />
-    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart2" top="83" left="399" width="260" zIndex="37" text="$IAT/LoadToFile" />
-    <Widget xsi:type="widgets.brease.Image" id="Image1" top="5" left="651" width="38" height="33" zIndex="38" image="Media/SymbolLib/Alarm/AlarmHistory.svg" backColor="rgba(176, 196, 222, 0)" imageColor="rgba(255, 128, 0, 1)" visible="false" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle5" top="228" left="536" width="118" height="42" zIndex="1" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle7" top="273" left="536" width="118" height="42" zIndex="0" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle4" top="228" left="100" width="430" height="42" zIndex="2" />
+    <Widget xsi:type="widgets.brease.Label" id="Label5" top="234" left="104" width="404" zIndex="3" text="$IAT/ConvBottomVelocitySpeedControl" textAlign="left" fontSize="13px" bold="true" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle8" top="273" left="100" width="430" height="42" zIndex="4" />
+    <Widget xsi:type="widgets.brease.Label" id="Label7" top="279" left="104" width="404" zIndex="5" text="$IAT/ConvLiftVelocitySpeedControl" textAlign="left" fontSize="13px" bold="true" />
+    <Widget xsi:type="widgets.brease.Line" id="Line2" zIndex="6" x1="105" x2="643" y1="222" y2="222" lineCap="square" style="Solid_Orange" />
+    <Widget xsi:type="widgets.brease.Line" id="Line3" zIndex="7" x1="109" x2="647" y1="321" y2="321" lineCap="square" style="Solid_Orange" />
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart1" top="46" left="399" width="260" zIndex="8" text="$IAT/SaveToFile" />
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart2" top="83" left="399" width="260" zIndex="9" text="$IAT/LoadToFile" />
+    <Widget xsi:type="widgets.brease.Image" id="Image1" top="5" left="651" width="38" height="33" zIndex="10" image="Media/SymbolLib/Alarm/AlarmHistory.svg" backColor="rgba(176, 196, 222, 0)" imageColor="rgba(255, 128, 0, 1)" visible="false" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle6" top="138" left="43" width="228" height="42" zIndex="11" />
+    <Widget xsi:type="widgets.brease.TextInput" id="TextInput1" top="146" left="291" zIndex="12" />
+    <Widget xsi:type="widgets.brease.Label" id="Label10" top="143" left="48" width="217" zIndex="13" text="$IAT/Param" textAlign="left" fontSize="13px" bold="true" />
+    <Widget xsi:type="widgets.brease.Label" id="Label1" top="344" left="149" width="445" height="29" zIndex="14" text="$IAT/machinestop" textColor="rgba(255, 0, 0, 1)" textAlign="center" fontSize="20px" visible="false" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed3" top="277" left="539" width="108" zIndex="15" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed1" top="233" left="543" width="104" zIndex="16" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" />
+    <Widget xsi:type="widgets.brease.DropDownBox" id="DropDownBox2" top="100" left="46" width="160" zIndex="17" />
   </Widgets>
 </Content>

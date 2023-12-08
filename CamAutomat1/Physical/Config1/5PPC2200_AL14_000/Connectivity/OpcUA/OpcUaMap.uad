@@ -30,16 +30,16 @@
           <High ValueProvider="Const">200.00</High>
         </EURange>
       </EURanges>
-      <EURanges Id="6">
-        <EURange>
-          <Low ValueProvider="Const">0.0</Low>
-          <High ValueProvider="Const">75.00</High>
-        </EURange>
-      </EURanges>
       <EURanges Id="7">
         <EURange>
           <Low ValueProvider="Const">0</Low>
           <High ValueProvider="Const">4800</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="8">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">140</High>
         </EURange>
       </EURanges>
     </EURangesAliases>
@@ -186,6 +186,13 @@
         <Variable Name="gManualActive" />
         <Variable Name="gMachineStatusMessage" />
         <Variable Name="gConvPrSpeed" EURangesId="7" />
+        <Variable Name="gSpeedRefHmi" />
+        <Variable Name="gMinValue" EURangesId="8" EngineeringUnitId="1" />
+        <Variable Name="gRecepitRefHmi" />
+        <Variable Name="gManualPage" />
+        <Variable Name="gRunPage" />
+        <Variable Name="gReceiptChanged" />
+        <Variable Name="gSaveParameter" />
       </GlobalVariables>
       <Task Name="CamAutomat">
         <Variable Name="MpAxisBasic_AxisMaster">
@@ -205,8 +212,26 @@
       <Task Name="MachineAla">
         <Variable Name="ackAlarms" />
       </Task>
-      <Task Name="TouchProbe">
-        <Variable Name="minValue" EURangesId="6" EngineeringUnitId="1" />
+      <Task Name="TouchProbe" />
+      <Task Name="RecipeMgmt">
+        <Variable Name="DataProvider" />
+        <Variable Name="DataProviderHead" />
+        <Variable Name="DataProviderMid" />
+        <Variable Name="DataProviderTail" />
+        <Variable Name="ErrorReset" />
+        <Variable Name="i" />
+        <Variable Name="MpRecipeCsv_0" />
+        <Variable Name="MpRecipeRegPar_0" />
+        <Variable Name="RecipeCurrent" />
+        <Variable Name="RecipeError" />
+        <Variable Name="RecipeList" />
+        <Variable Name="sDeviceName" />
+        <Variable Name="sFileName" />
+        <Variable Name="State" />
+        <Variable Name="sVariableName" />
+        <Variable Name="uiLoad" />
+        <Variable Name="uiSave" />
+        <Variable Name="WarnColor" />
       </Task>
     </Module>
   </DefaultView>

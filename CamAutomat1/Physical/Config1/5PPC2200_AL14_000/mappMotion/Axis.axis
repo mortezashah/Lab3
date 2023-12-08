@@ -1,14 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?AutomationStudio FileVersion="4.9"?>
 <Configuration>
-  <Element ID="gConv_MpLink" Type="axis">
+  <Element ID="gConv_MpLink" Type="axis" Description="Conver Servo">
     <Property ID="BaseTypeIsReadOnly" Value="0" />
-    <Selector ID="BaseType" Value="Linear">
+    <Selector ID="BaseType" Value="LinearPeriodic">
       <Property ID="MeasurementUnit" Value="5066068" />
       <Property ID="MeasurementResolutionIsReadOnly" Value="0" />
       <Property ID="MeasurementResolution" Value="0.01" />
       <Property ID="CountDirectionIsReadOnly" Value="0" />
       <Property ID="CountDirection" Value="Standard" />
+      <Group ID="PeriodSettings">
+        <Property ID="Period" Value="144" />
+      </Group>
     </Selector>
     <Property ID="MovementLimitsIsReadOnly" Value="0" />
     <Selector ID="MovementLimits" Value="Internal">
@@ -36,7 +39,7 @@
     </Selector>
     <Selector ID="Alarms" Value="MpAlarmX" />
   </Element>
-  <Element ID="gCutter_MpLink" Type="axis">
+  <Element ID="gCutter_MpLink" Type="axis" Description="Cutter Servo">
     <Property ID="BaseTypeIsReadOnly" Value="0" />
     <Selector ID="BaseType" Value="RotaryPeriodic">
       <Property ID="MeasurementUnitIsReadOnly" Value="0" />
