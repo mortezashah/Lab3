@@ -225,6 +225,7 @@ PROGRAM _CYCLIC
 						
 				STATE_MOVE_CAMAUTOMAT : //*************** 30 *************************** STATE_MOVE_VELOCITY *********************** 30 ******************* STATE_MOVE_CAMAUTOMAT 
 			gEnableTouchProbe := TRUE;
+						MpAxisBasic_AxisMaster.Update := gSaveParameter;
 						MpAxisCamSequencer_0.Signal2 := Axis1.statusOff ;	
 						CutStart := MpAxisCamSequencer_0.ActualStateIndex <> 0 AND enableCut;
 						gEnableTouchProbe := CutStart;
