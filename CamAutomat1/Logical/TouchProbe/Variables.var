@@ -11,4 +11,6 @@ VAR
 	partDetected : BOOL; (*start cam*)
 	delatTimerCut : TON := (PT:=T#500ms); (*Delay for start cut*)
 	delatTimerProbe : TON; (*Delay for start cut*)
+	MC_BR_ProcessParID_AcpAx_0 : MC_BR_ProcessParID_AcpAx; (*Set the battery problem Par block*)
+	McAcpAxProcessParIDPar : McAcpAxProcessParIDType := (ParID:=719,VariableAddress:=1,DataType:=mcACPAX_PARTYPE_UDINT); (*parameters*)
 END_VAR

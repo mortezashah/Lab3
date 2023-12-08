@@ -22,10 +22,7 @@
 <Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="PushButtonStart2" attribute="value" />
 </Binding>
 
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:Axis1.cmdStartAutomat" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="PushButtonStart3" attribute="value" />
-</Binding>
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::CamAutomat:MpAxisBasic_AxisMaster.MoveVelocity" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="PushButtonStart3" attribute="enable" />
@@ -41,6 +38,19 @@
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::CamAutomat:displayStopImage" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="Image2" attribute="visible" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::CamAutomat:sawInCutPosition" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="PushButtonStart" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::CamAutomat:displayMessageAuto" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="Label15" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::CamAutomat:enableCut" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="PushButtonStart3" attribute="value" />
 </Binding>
 </Bindings>
 </BindingsSet>

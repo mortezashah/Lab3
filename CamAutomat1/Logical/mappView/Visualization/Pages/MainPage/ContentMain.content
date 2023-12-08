@@ -8,5 +8,6 @@
     <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStartMain1" top="255" left="33" width="126" zIndex="4" text="$IAT/finpro" />
     <Widget xsi:type="widgets.brease.Image" id="Image2" top="43" left="246" width="296" height="165" zIndex="5" image="Media/Capture.JPG" />
     <Widget xsi:type="widgets.brease.Image" id="Image3" top="43" left="246" width="296" height="165" zIndex="6" image="Media/EseniTqEJ9MA6Si7.gif" />
+    <Widget xsi:type="widgets.brease.Label" id="Label15" top="8" left="249" width="285" zIndex="7" text="$IAT/sawInCut" textAlign="center" fontSize="13px" visible="false" />
   </Widgets>
 </Content>

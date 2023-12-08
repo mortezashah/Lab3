@@ -733,5 +733,13 @@
         <seg>Minimum Cut Distance</seg>
       </tuv>
     </tu>
+    <tu tuid="sawInCut">
+      <tuv xml:lang="fr">
+        <seg>Cie en position coup</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Saw in Cut Position Automatic is Disabled</seg>
+      </tuv>
+    </tu>
   </body>
 </tmx>

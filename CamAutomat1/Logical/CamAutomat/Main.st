@@ -45,12 +45,21 @@ END_PROGRAM
 
 PROGRAM _CYCLIC	
 				
-	AxisParameters_Master.Velocity := gConvPrSpeed / 60  ;	
+	AxisParameters_Master.Velocity := gConvPrSpeed / 60  ;	// speed comes the part per minites divided by 60 s 
 	AxisParameters_Slave.Jog.Velocity := gCutJogSpeed;	
 	AxisParameters_Master.Jog.Velocity := gConvJogSpeed;
 	gConvPosition := MpAxisBasic_AxisMaster.Position;
 	gCutPosition  := MpAxisBasic_AxisSlave.Position;
 	gManualActive :=  NOT MpAxisBasic_AxisMaster.MoveVelocity;
+	IF  (MpAxisBasic_AxisSlave.Position < cutJogEnableFWL) THEN // if the saw is not in cut zone move is backward
+		AxisParameters_Slave.Direction := mcDIR_NEGATIVE;
+	ELSE 
+		AxisParameters_Slave.Direction :=  mcDIR_POSITIVE;
+		
+	END_IF
+		
+	sawInCutPosition := NOT (MpAxisBasic_AxisSlave.Position > cutJogEnableBWL AND MpAxisBasic_AxisSlave.Position < cutJogEnableFWM) AND NOT MpAxisBasic_AxisMaster.MoveVelocity ;
+	displayMessageAuto := NOT sawInCutPosition AND NOT MpAxisBasic_AxisMaster.MoveVelocity ;
 	
 	(* Insert code here *)
 	TON_DelayDo1.PT := DelayOpc;
@@ -127,8 +136,9 @@ PROGRAM _CYCLIC
 					Axis1.statusOff := 0;
 					Axis1.statusStarting :=0;
 					MpAxisCamSequencer_0.Enable := TRUE;
+					gEnableTouchProbe := FALSE;
 					CutStart := FALSE;
-					IF (Axis1.cmdHome = 1 AND NOT  MpAxisBasic_AxisMaster.CommandBusy  AND NOT  MpAxisBasic_AxisSlave.CommandBusy )THEN
+					IF (Axis1.cmdHome = 1 AND NOT  MpAxisBasic_AxisMaster.CommandBusy  AND NOT  MpAxisBasic_AxisSlave.CommandBusy )THEN  // command home if 
 						Axis1Home							:= FALSE;
 						Axis2Home							:= FALSE;
 						MpAxisCamSequencer_0.StartSequence 	:= FALSE;
@@ -205,7 +215,8 @@ PROGRAM _CYCLIC
 						MpAxisBasic_AxisMaster.MoveVelocity	:= TRUE;
 						Axis1.cmdMoveVelocity := FALSE;
 						AxisStep := STATE_READY;
-						TON_StepDelay.IN			:= TRUE;
+					TON_StepDelay.IN			:= TRUE;
+					Axis1.cmdStartAutomat 		:= TRUE;
 					END_IF
 
 					IF MpAxisBasic_AxisMaster.Error THEN
@@ -215,12 +226,14 @@ PROGRAM _CYCLIC
 				STATE_MOVE_CAMAUTOMAT : //*************** 30 *************************** STATE_MOVE_VELOCITY *********************** 30 ******************* STATE_MOVE_CAMAUTOMAT 
 			gEnableTouchProbe := TRUE;
 						MpAxisCamSequencer_0.Signal2 := Axis1.statusOff ;	
-					CutStart := MpAxisCamSequencer_0.ActualStateIndex <> 0;
+						CutStart := MpAxisCamSequencer_0.ActualStateIndex <> 0 AND enableCut;
+						gEnableTouchProbe := CutStart;
 					 IF NOT Axis1.cmdStartAutomat  THEN
 						Axis1.cmdCam 			:= FALSE;
 						MpAxisCamSequencer_0.StartSequence 		:= FALSE;
 						AxisStep := STATE_READY;
 					ELSIF (Axis1.cmdStop = 1) THEN
+						enableCut								:= FALSE;
 						Axis1.cmdStartAutomat 					:= FALSE;
 						Axis1.cmdCam 							:= FALSE;
 						Axis1.cmdStop 							:= FALSE;
@@ -230,7 +243,7 @@ PROGRAM _CYCLIC
 						MpAxisBasic_AxisMaster.MoveVelocity 	:= FALSE;
 						MpAxisCamSequencer_0.StartSequence		:= FALSE;
 						AxisStep := STATE_STOP;
-					ELSIF (Axis1.statusOff = 1 AND MpAxisBasic_AxisSlave.Velocity = 0.0 ) THEN
+					ELSIF (Axis1.statusOff = 1 AND MpAxisCamSequencer_0.ActualStateIndex = 1 ) THEN
 						Axis1.cmdStartAutomat 					:= FALSE;
 						Axis1.cmdCam 							:= FALSE;
 						Axis1.statusOff							:= FALSE;
@@ -240,7 +253,7 @@ PROGRAM _CYCLIC
 						MpAxisBasic_AxisMaster.MoveVelocity 	:= FALSE;
 						MpAxisCamSequencer_0.StartSequence		:= FALSE;
 						AxisStep := STATE_STOP;
-				
+						enableCut								:= FALSE;
 					ELSIF MpAxisCamSequencer_0.ActualStateIndex >=1 THEN
 						MpAxisCamSequencer_0.Signal1 := Axis1.cmdCam AND NOT Axis1.statusOff ;
 			
@@ -270,6 +283,7 @@ PROGRAM _CYCLIC
 			
 				STATE_ERROR : //********************** 101 ******************************* STATE_ERROR **************************** 101 ********************** STATE_ERROR 
 					gErrorID := 3;	
+					enableCut := FALSE;
 					Axis1.statusStarting :=0;
 					Axis1.statusFaulted := TRUE;					
 					MpAxisBasic_AxisMaster.Power := FALSE;

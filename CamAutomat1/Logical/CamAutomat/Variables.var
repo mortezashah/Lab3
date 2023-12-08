@@ -41,5 +41,8 @@ VAR
 	cutJogEnableFWL : LREAL := 67; (*At this disgree cut jog limit*)
 	cutJogEnableFWM : LREAL := 107.5; (*At this disgree cut jog limit*)
 	cutJogEnableBWL : LREAL := 71.5; (*At this disgree cut jog limit*)
+	sawInCutPosition : BOOL; (*Saw is in cut area*)
 	cutJogEnableBWM : LREAL := 112.5; (*At this disgree cut jog limit*)
+	displayMessageAuto : BOOL; (*Display message*)
+	enableCut : BOOL; (*Enable cut in automatic mode*)
 END_VAR

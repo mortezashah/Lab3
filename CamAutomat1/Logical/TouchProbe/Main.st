@@ -12,6 +12,8 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC
+	MC_BR_ProcessParID_AcpAx_0(Axis := ADR(gCutter_MpLink), DataAddress := ADR(McAcpAxProcessParIDPar) , NumberOfParIDs :=1 , Mode := mcACPAX_PARID_SET);
+	MC_BR_ProcessParID_AcpAx_0();
 	(* Insert code here *)
 	MC_BR_TouchProbe_0.AdvancedParameters := McBrAdvancePar;
 	MC_BR_TouchProbe_0.Axis := ADR(gConv_MpLink);

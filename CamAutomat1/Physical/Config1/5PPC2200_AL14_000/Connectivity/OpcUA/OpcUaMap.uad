@@ -198,6 +198,9 @@
         <Variable Name="bypassProtection" />
         <Variable Name="displayRunImage" />
         <Variable Name="displayStopImage" />
+        <Variable Name="sawInCutPosition" />
+        <Variable Name="displayMessageAuto" />
+        <Variable Name="enableCut" />
       </Task>
       <Task Name="MachineAla">
         <Variable Name="ackAlarms" />
