@@ -450,7 +450,7 @@
         <seg>pro Speed</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Produc. Speed</seg>
+        <seg>Produc. Speed p/m</seg>
       </tuv>
     </tu>
     <tu tuid="punch">
@@ -699,6 +699,38 @@
       </tuv>
       <tuv xml:lang="en">
         <seg>Stop/Manual</seg>
+      </tuv>
+    </tu>
+    <tu tuid="zero">
+      <tuv xml:lang="fr">
+        <seg>Zero</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Zero</seg>
+      </tuv>
+    </tu>
+    <tu tuid="saw">
+      <tuv xml:lang="fr">
+        <seg>Cie</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>SAW</seg>
+      </tuv>
+    </tu>
+    <tu tuid="conv">
+      <tuv xml:lang="fr">
+        <seg>Belt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>BELT</seg>
+      </tuv>
+    </tu>
+    <tu tuid="minCuts">
+      <tuv xml:lang="fr">
+        <seg>Minimum Cut Distance</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Minimum Cut Distance</seg>
       </tuv>
     </tu>
   </body>

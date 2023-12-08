@@ -10,7 +10,7 @@
       <Property ID="CountDirectionIsReadOnly" Value="0" />
       <Property ID="CountDirection" Value="Standard" />
       <Group ID="PeriodSettings">
-        <Property ID="Period" Value="300" />
+        <Property ID="Period" Value="144" />
       </Group>
     </Selector>
     <Property ID="MovementLimitsIsReadOnly" Value="0" />

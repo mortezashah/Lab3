@@ -1,4 +1,8 @@
-
+//[*********************************************************************************
+//* Primary Author:    	Morteza Shahmoradi
+//* Created:   			Dec 7, 2023
+//* Description: 		Touch Probe
+//	*********************************************************************************]
 PROGRAM _INIT
 	(* Insert code here *)
 
@@ -22,24 +26,24 @@ PROGRAM _CYCLIC
 
 		IF difValue > minValue THEN
 		preValue := newValue;
-		partDetected := TON_0.Q ;
+		partDetected := delatTimerProbe.Q ;
 		END_IF
 		
 		
 	END_IF
 	
-	TON_0(IN := CutStart , PT := T#500ms);
-	TON_0();	
-	IF 	EDGEPOS(partDetected) AND TON_0.Q THEN
+	delatTimerProbe(IN := CutStart , PT := T#500ms);
+	delatTimerProbe();	
+	IF 	EDGEPOS(partDetected) AND delatTimerProbe.Q THEN
 		Axis1.cmdCam := TRUE;
 		partDetected := FALSE;
 	END_IF
 	
-	TON_1.IN := Axis1.cmdCam;
-	TON_1();
-	IF EDGEPOS(TON_1.Q) THEN
-		Axis1.cmdCam := FALSE;
-	END_IF
+	delatTimerCut.IN := Axis1.cmdCam;
+	delatTimerCut();
+//	IF EDGEPOS(delatTimerCut.Q) THEN
+//		Axis1.cmdCam := FALSE;
+//	END_IF
 	
 	IF EDGEPOS(Axis1.cmdStartAutomat) THEN
 		preValue := newValue;

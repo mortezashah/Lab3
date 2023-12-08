@@ -23,7 +23,7 @@ VAR
 	gDispalyServoNotReady : BOOL; (*Not  ready to start *)
 	gEnableTouchProbe : BOOL; (*Enable the touch probe*)
 	gCutJogSpeed : REAL := 10.00; (*Jog Speed Cut*)
-	gConvPrSpeed : REAL := 72.00; (*Product  Speed Conveyor*)
+	gConvPrSpeed : REAL := 3200; (*Product  Speed Conveyor*)
 	gConvJogSpeed : REAL := 72.00; (*Jog Speed Conveyor*)
 	gManualActive : BOOL; (*Des activate Manaul*)
 END_VAR

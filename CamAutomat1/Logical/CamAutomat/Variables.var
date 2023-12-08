@@ -35,4 +35,11 @@ VAR
 	bypassProtection : BOOL; (*bypass jog prectoon*)
 	displayStopImage : BOOL; (*Display stop image*)
 	displayRunImage : BOOL; (*Display Run image*)
+	cutEnd : BOOL; (*one cut is done*)
+	cutStartDegree : LREAL := 80; (*At this disgree cut start*)
+	cutEndDegree : LREAL := 110; (*At this disgree cut end*)
+	cutJogEnableFWL : LREAL := 67; (*At this disgree cut jog limit*)
+	cutJogEnableFWM : LREAL := 107.5; (*At this disgree cut jog limit*)
+	cutJogEnableBWL : LREAL := 71.5; (*At this disgree cut jog limit*)
+	cutJogEnableBWM : LREAL := 112.5; (*At this disgree cut jog limit*)
 END_VAR

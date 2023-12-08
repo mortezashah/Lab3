@@ -24,16 +24,22 @@
           <High ValueProvider="Const">15.00</High>
         </EURange>
       </EURanges>
-      <EURanges Id="4">
-        <EURange>
-          <Low ValueProvider="Const">0.00</Low>
-          <High ValueProvider="Const">200.00</High>
-        </EURange>
-      </EURanges>
       <EURanges Id="5">
         <EURange>
           <Low ValueProvider="Const">0</Low>
           <High ValueProvider="Const">200.00</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="6">
+        <EURange>
+          <Low ValueProvider="Const">0.0</Low>
+          <High ValueProvider="Const">75.00</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="7">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">4800</High>
         </EURange>
       </EURanges>
     </EURangesAliases>
@@ -176,10 +182,10 @@
         <Variable Name="gConvPosition" EngineeringUnitId="1" />
         <Variable Name="gCutPosition" EngineeringUnitId="2" />
         <Variable Name="gConvJogSpeed" EURangesId="5" EngineeringUnitId="3" />
-        <Variable Name="gConvPrSpeed" EURangesId="4" EngineeringUnitId="3" />
         <Variable Name="gCutJogSpeed" EURangesId="3" EngineeringUnitId="4" />
         <Variable Name="gManualActive" />
         <Variable Name="gMachineStatusMessage" />
+        <Variable Name="gConvPrSpeed" EURangesId="7" />
       </GlobalVariables>
       <Task Name="CamAutomat">
         <Variable Name="MpAxisBasic_AxisMaster">
@@ -195,6 +201,9 @@
       </Task>
       <Task Name="MachineAla">
         <Variable Name="ackAlarms" />
+      </Task>
+      <Task Name="TouchProbe">
+        <Variable Name="minValue" EURangesId="6" EngineeringUnitId="1" />
       </Task>
     </Module>
   </DefaultView>

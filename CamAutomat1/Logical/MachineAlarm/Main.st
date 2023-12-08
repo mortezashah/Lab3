@@ -1,7 +1,7 @@
 //[*********************************************************************************
 //* Primary Author:    	Morteza Shahmoradi
-//* Created:   			Dec 4, 2023
-//* Description: 		Machine  Control
+//* Created:   			Dec 7, 2023
+//* Description: 		Machine  Alarm
 //	*********************************************************************************]  
 PROGRAM _INIT
 	(* Insert code here *)

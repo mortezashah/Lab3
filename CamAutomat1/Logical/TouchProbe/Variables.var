@@ -1,14 +1,14 @@
 VAR
-	MC_BR_TouchProbe_0 : MC_BR_TouchProbe;
-	McBrTrigger : McBrTriggerType;
-	McBrInfoType : McBrTriggerInfoType;
-	trigger : BOOL;
-	McBrAdvancePar : McAdvBrTouchProbeParType;
+	MC_BR_TouchProbe_0 : MC_BR_TouchProbe; (*MC probe to detec the position*)
+	McBrTrigger : McBrTriggerType; (*MC Br Trigger*)
+	McBrInfoType : McBrTriggerInfoType; (*MC BR trigger info*)
+	trigger : BOOL; (*Trigger*)
+	McBrAdvancePar : McAdvBrTouchProbeParType; (*MC Advance paramter*)
 	newValue : LREAL; (*new Position*)
 	preValue : LREAL; (*Old position*)
 	difValue : LREAL; (*distance*)
-	minValue : LREAL := 134.0; (*minum distance*)
+	minValue : LREAL := 65.0; (*minum distance*)
 	partDetected : BOOL; (*start cam*)
-	TON_1 : TON := (PT:=T#500ms); (*Delay for start cut*)
-	TON_0 : TON; (*Delay for start cut*)
+	delatTimerCut : TON := (PT:=T#500ms); (*Delay for start cut*)
+	delatTimerProbe : TON; (*Delay for start cut*)
 END_VAR
