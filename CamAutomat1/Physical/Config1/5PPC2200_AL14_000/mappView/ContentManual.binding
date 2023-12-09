@@ -1,36 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BindingsSet id="ContentManual_binding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Bindings>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:Axis1.cmdManualForward" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButton1" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:Axis1.cmdManualReverse" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButton2" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:Axis2.cmdManualForward" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButton3" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:Axis2.cmdManualReverse" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButton4" attribute="value" />
-</Binding>
 
 
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gConvJogSpeed" attribute="node" />
-<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="SetSpeed" attribute="node" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gConvPrSpeed" attribute="node" />
-<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="SetSpeed1" attribute="node" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gCutJogSpeed" attribute="node" />
-<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="SetSpeed2" attribute="node" />
-</Binding>
+
+
+
+
+
+
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gCutPosition" attribute="node" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="NumericOutput2" attribute="node" />
@@ -43,43 +22,25 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="Label10" attribute="enable" />
 </Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButton1" attribute="enable" />
-</Binding>
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="Label13" attribute="enable" />
 </Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="SetSpeed2" attribute="enable" />
-</Binding>
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="Label14" attribute="enable" />
 </Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="SetSpeed1" attribute="enable" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButton3" attribute="enable" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButton4" attribute="enable" />
-</Binding>
+
+
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="Label11" attribute="enable" />
 </Binding>
 
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButton2" attribute="enable" />
-</Binding>
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="NumericOutput2" attribute="enable" />
@@ -99,21 +60,96 @@
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ToggleButton1" attribute="value" />
 </Binding>
 
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gMinValue" attribute="node" />
-<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="SetSpeed3" attribute="node" />
-</Binding>
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::CamAutomat:displayMessageAuto" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="Label18" attribute="visible" />
 </Binding>
+
+
 <Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="SetSpeed" attribute="enable" />
+<Source xsi:type="opcUa" refId="::AsGlobalPV:Axis1.cmdManualForward" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButFWBeltJOG" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:Axis1.cmdManualReverse" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButtonBWBeltJog" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gConvPrSpeed" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="SetSpeedProduct" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gConvJogSpeed" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="SetSpeedBelt" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:Axis2.cmdManualForward" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButtonFWSaw" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:Axis2.cmdManualReverse" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButtonBWJogSaw" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gCutJogSpeed" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="SetSpeedjogsaw" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gMinValue" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="SetCutSize" attribute="node" />
 </Binding>
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="SetSpeed3" attribute="enable" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="Label17" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButFWBeltJOG" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="Label15" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButtonBWJogSaw" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButtonFWSaw" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButtonBWBeltJog" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="SetSpeedProduct" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="SetSpeedBelt" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="SetSpeedjogsaw" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="SetCutSize" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="Label16" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ToggleButton1" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:Axis1.Exists" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ToggleButton2" attribute="value" />
 </Binding>
 </Bindings>
 </BindingsSet>

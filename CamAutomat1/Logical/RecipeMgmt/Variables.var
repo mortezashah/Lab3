@@ -1,13 +1,13 @@
 VAR
-	State : State_enum;
-	uiLoad : BOOL;
-	uiSave : BOOL;
-	sDeviceName : STRING[255] := 'CSV_Recipes';
-	sFileName : STRING[255] := 'recipe1';
-	sVariableName : STRING[255] := 'gCutPar';
-	MpRecipeCsv_0 : MpRecipeCsv;
-	MpRecipeRegPar_0 : MpRecipeRegPar;
-	RecipeError : BOOL;
+	State : State_enum; (*Recepie state enum to wait for next save*)
+	uiLoad : BOOL; (*Hmi demand to load*)
+	uiSave : BOOL; (*Hmi demand to save data to plc harddisk*)
+	sDeviceName : STRING[255] := 'CSV_Recipes'; (*device name (set in the cpu configuration)*)
+	sFileName : STRING[255] := 'recipe1'; (*NAme of the saved file*)
+	sVariableName : STRING[255] := 'gCutPar'; (*name of the variable to be saved in the PLC*)
+	MpRecipeCsv_0 : MpRecipeCsv; (*mp recepie fucntion block*)
+	MpRecipeRegPar_0 : MpRecipeRegPar; (*function block parameter*)
+	RecipeError : BOOL; (*if there is an error*)
 	ErrorReset : BOOL;
 END_VAR
 VAR RETAIN

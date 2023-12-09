@@ -1,5 +1,5 @@
 VAR
-	MpAlarmXCore_0 : MpAlarmXCore; (*mp alarm core x*)
-	MpAlarmXAcknowledgeAll_0 : MpAlarmXAcknowledgeAll;
-	ackAlarms : BOOL;
+	MpAlarmXCore_0 : MpAlarmXCore; (*mp alarm core x function block *)
+	MpAlarmXAcknowledgeAll_0 : MpAlarmXAcknowledgeAll; (*Reset alarm list*)
+	ackAlarms : BOOL; (*Hmi request to delete alarm*)
 END_VAR

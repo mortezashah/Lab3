@@ -46,10 +46,10 @@ END_PROGRAM
 PROGRAM _CYCLIC	
 				
 	AxisParameters_Master.Velocity := gConvPrSpeed / 60  ;	// speed comes the part per minites divided by 60 s 
-	AxisParameters_Slave.Jog.Velocity := gCutJogSpeed;	
-	AxisParameters_Master.Jog.Velocity := gConvJogSpeed;
-	gConvPosition := MpAxisBasic_AxisMaster.Position;
-	gCutPosition  := MpAxisBasic_AxisSlave.Position;
+	AxisParameters_Slave.Jog.Velocity := gCutJogSpeed;	  // Jog speed comes from HMi manaul page
+	AxisParameters_Master.Jog.Velocity := gConvJogSpeed; // belt jog peed  comes from HMi manaul page
+	gConvPosition := MpAxisBasic_AxisMaster.Position;  // realtime belt position  to  HMi manaul page
+	gCutPosition  := MpAxisBasic_AxisSlave.Position;  // real time saw position to hmi
 	gManualActive :=  NOT MpAxisBasic_AxisMaster.MoveVelocity;
 	IF  (MpAxisBasic_AxisSlave.Position < cutJogEnableFWL) THEN // if the saw is not in cut zone move is backward
 		AxisParameters_Slave.Direction := mcDIR_NEGATIVE;
@@ -59,7 +59,7 @@ PROGRAM _CYCLIC
 	END_IF
 		
 	sawInCutPosition := NOT (MpAxisBasic_AxisSlave.Position > cutJogEnableBWL AND MpAxisBasic_AxisSlave.Position < cutJogEnableFWM) AND NOT MpAxisBasic_AxisMaster.MoveVelocity ;
-	displayMessageAuto := NOT sawInCutPosition AND NOT MpAxisBasic_AxisMaster.MoveVelocity ;
+	displayMessageAuto := NOT sawInCutPosition AND NOT MpAxisBasic_AxisMaster.MoveVelocity ; // dispay disable message so no possibe run
 	
 	(* Insert code here *)
 	TON_DelayDo1.PT := DelayOpc;
@@ -79,9 +79,9 @@ PROGRAM _CYCLIC
 		CASE AxisStep OF
 				
 				STATE_WAIT :     //**************** 00000 ************************** STATE_WAIT ********************* 0000 ********************* STATE_WAIT
-					MpAxisBasic_AxisMaster.Power		:= FALSE;
-					MpAxisBasic_AxisSlave.Power			:= FALSE;
-					MpAxisCamSequencer_0.Enable			:= FALSE;
+					MpAxisBasic_AxisMaster.Power		:= FALSE; // turn of drive
+					MpAxisBasic_AxisSlave.Power			:= FALSE; // turn of drive Saw
+					MpAxisCamSequencer_0.Enable			:= FALSE; // diale the cam sequencer
 					gEnableTouchProbe := FALSE;		
 					IF ( Axis1.Exists AND gServoInitialized) THEN
 						MpAxisBasic_AxisMaster.Power	:= TRUE;
@@ -100,10 +100,10 @@ PROGRAM _CYCLIC
 					
 				STATE_HOME :  //***************************** 2 ********************STATE_HOME************************* 2 *********************STATE_HOME
 					Axis1.statusHomed 							:= FALSE;
-					AxisParameters_Master.Homing.Mode 		:= mcHOMING_DIRECT;
+					AxisParameters_Master.Homing.Mode 		:= mcHOMING_DIRECT;// set the home type for the master ax
 					AxisParameters_Master.Homing.Position 	:= 0.0;
-					AxisParameters_Slave.Homing.Mode 		:= mcHOMING_ABSOLUTE;
-					AxisParameters_Slave.Homing.Position 	:= -161.4;
+					AxisParameters_Slave.Homing.Mode 		:= mcHOMING_ABSOLUTE; // set the home type abs for the slave
+					AxisParameters_Slave.Homing.Position 	:= -161.4;  // relative position
 					IF (NOT MpAxisCamSequencer_0.CommandBusy AND NOT MpAxisCamSequencer_0.StartSequence)  THEN
 						MpAxisBasic_AxisMaster.Home 			:= TRUE;
 						MpAxisBasic_AxisSlave.Home 			:= TRUE;
@@ -116,7 +116,7 @@ PROGRAM _CYCLIC
 						Axis2Home		:= TRUE;
 					END_IF
 					
-					IF (Axis1Home AND Axis2Home) THEN
+					IF (Axis1Home AND Axis2Home) THEN  // if its home then go to ready state
 						Axis1.statusHomed 			:= 1;
 						MpAxisBasic_AxisMaster.Home 	:= FALSE;
 						MpAxisBasic_AxisSlave.Home 	:= FALSE;
@@ -127,7 +127,7 @@ PROGRAM _CYCLIC
 						AxisStep := STATE_READY;
 						
 					END_IF			
-					IF (MpAxisBasic_AxisMaster.Error OR MpAxisBasic_AxisSlave.Error) THEN
+					IF (MpAxisBasic_AxisMaster.Error OR MpAxisBasic_AxisSlave.Error) THEN  // if there is an erro o to error state
 						Axis1_ErrorID := 2;
 						AxisStep := STATE_ERROR;
 					END_IF
@@ -171,13 +171,15 @@ PROGRAM _CYCLIC
 					ELSIF NOT MpAxisBasic_AxisMaster.MoveVelocity AND (Axis1.cmdManualForward OR Axis1.cmdManualReverse OR Axis2.cmdManualForward OR Axis2.cmdManualReverse ) THEN
 						AxisStep := STATE_JOG;
 						startPositionJog := MpAxisBasic_AxisMaster.Position ;
-						
-						
+					ELSIF (Axis1.Exists = 0) THEN  // power of servos
+						AxisStep := STATE_WAIT;
+				
 					END_IF
 					
-					IF MpAxisBasic_AxisMaster.Error OR MpAxisBasic_AxisSlave.Error THEN
+					IF MpAxisBasic_AxisMaster.Error OR MpAxisBasic_AxisSlave.Error THEN  // if there is an erro o to error state
 						AxisStep := STATE_ERROR;
 					END_IF
+					
 					
 									
 				STATE_STOP : //*********************** 20 ****************************** STATE_STOP ***************************** 20 ********************** STATE_STOP 
@@ -206,7 +208,7 @@ PROGRAM _CYCLIC
 						AxisStep := STATE_READY;
 					END_IF
 					
-					IF MpAxisBasic_AxisMaster.Error THEN
+					IF MpAxisBasic_AxisMaster.Error THEN  // if there is an erro o to error state
 						AxisStep := STATE_ERROR;
 					END_IF
 					
@@ -345,7 +347,10 @@ PROGRAM _CYCLIC
 		gMachineStatus := 3; // Error
 		displayStopImage := TRUE;
 		displayRunImage := FALSE;
-		
+	ELSIF AxisStep = 0 AND gServoInitialized  THEN
+		gMachineStatus := 6;
+		displayStopImage := TRUE;
+		displayRunImage := FALSE;
 	ELSIF MpAxisBasic_AxisMaster.MoveVelocity AND gErrorID = 0 THEN // define the stop mode
 		gMachineStatus := 1;
 		displayStopImage := FALSE;
@@ -366,6 +371,8 @@ PROGRAM _CYCLIC
 		gMachineStatus := 4;
 		displayStopImage := TRUE;
 		displayRunImage := FALSE;
+		
+		
 	END_IF		
 	gMachineStatusMessage := gMachineStatusArray[gMachineStatus];	 // HMI status
 
