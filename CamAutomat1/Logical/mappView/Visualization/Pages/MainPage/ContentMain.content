@@ -1,13 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Content id="ContentMain" height="522" width="798" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
-    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart" top="255" left="178" width="135" zIndex="0" text="$IAT/Auto" />
-    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStopManual" top="255" left="331" width="135" zIndex="1" text="$IAT/Stop_1" />
-    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonReset" top="255" left="638" width="135" zIndex="2" text="$IAT/Reset" />
-    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonSartCut" top="255" left="485" width="135" zIndex="3" text="$IAT/Start_1" />
-    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonproductFinish" top="255" left="33" width="126" zIndex="4" text="$IAT/finpro" />
-    <Widget xsi:type="widgets.brease.Image" id="Image2" top="43" left="246" width="296" height="165" zIndex="5" image="Media/Capture.JPG" />
-    <Widget xsi:type="widgets.brease.Image" id="Image3" top="43" left="246" width="296" height="165" zIndex="6" image="Media/EseniTqEJ9MA6Si7.gif" />
-    <Widget xsi:type="widgets.brease.Label" id="Label15" top="8" left="249" width="285" zIndex="7" text="$IAT/sawInCut" textAlign="center" fontSize="13px" visible="false" />
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart" top="226" left="178" width="135" zIndex="1" text="$IAT/Auto" />
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStopManual" top="226" left="331" width="135" zIndex="2" text="$IAT/Stop_1" />
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonReset" top="226" left="638" width="135" zIndex="3" text="$IAT/Reset" />
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonSartCut" top="226" left="485" width="135" zIndex="4" text="$IAT/Start_1" />
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonproductFinish" top="226" left="33" width="126" zIndex="5" text="$IAT/finpro" />
+    <Widget xsi:type="widgets.brease.Image" id="Image2" top="43" left="246" width="296" height="165" zIndex="6" image="Media/Capture.JPG" />
+    <Widget xsi:type="widgets.brease.Image" id="Image3" top="43" left="246" width="296" height="165" zIndex="7" image="Media/EseniTqEJ9MA6Si7.gif" />
+    <Widget xsi:type="widgets.brease.Label" id="Label15" top="8" left="249" width="285" zIndex="8" text="$IAT/sawInCut" textAlign="center" fontSize="13px" visible="false" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="RectangleCount" top="294" left="139" width="561" height="47" zIndex="9" />
+    <Widget xsi:type="widgets.brease.Label" id="cutCountsLabel" top="304" left="147" width="209" zIndex="10" text="$IAT/Count" textAlign="left" fontSize="13px" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputCutCount" top="304" left="397" width="94" zIndex="11" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" maxValue="5000" backColor="rgba(255, 255, 255, 0)" />
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonResetCount" top="303" left="543" width="135" zIndex="12" text="$IAT/Reset" />
+    <Widget xsi:type="widgets.brease.Label" id="cutCountsLabel1" top="356" left="145" width="273" zIndex="13" text="$IAT/lastDista" textAlign="left" fontSize="13px" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="Rectanglelastdifmm" top="347" left="139" width="561" height="47" zIndex="0" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="Rectanglelastdifmm1" top="399" left="139" width="561" height="47" zIndex="14" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputDistance" top="356" left="577" width="94" zIndex="15" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" maxValue="5000" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" backColor="rgba(255, 255, 255, 0)" />
+    <Widget xsi:type="widgets.brease.Label" id="cutCountsLabel2" top="406" left="147" width="209" zIndex="16" text="$IAT/numberofmissedcut" textAlign="left" fontSize="13px" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputMissed" top="408" left="577" width="94" zIndex="17" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" maxValue="5000" backColor="rgba(255, 255, 255, 0)" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="Rectanglelastdifmm2" top="451" left="140" width="561" height="47" zIndex="18" />
+    <Widget xsi:type="widgets.brease.Label" id="cutCountsLabelAve" top="458" left="148" width="209" zIndex="19" text="$IAT/average" textAlign="left" fontSize="13px" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputDistance1" top="461" left="540" width="131" zIndex="20" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':2,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':2,'minimumIntegerDigits':1}}" maxValue="5000" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" backColor="rgba(255, 255, 255, 0)" />
   </Widgets>
 </Content>

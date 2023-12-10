@@ -23,15 +23,34 @@ PROGRAM _CYCLIC
 	
 	newValue := MC_BR_TouchProbe_0.RecordedPeriodicValue;
 	
-	IF newValue > ( preValue + 15.0) THEN
-		difValue := newValue - preValue ;
+	IF newValue > ( preValue + cutSize) THEN  // check if its a new print mark coms
+		
+		
+		difValue := newValue - preValue ;  // calculates
 
-		IF difValue > gMinValue THEN
+		IF difValue > gMinValue THEN   // validate correct distance
 		preValue := newValue;
-		partDetected := delatTimerProbe.Q ;
+		partDetected := delatTimerProbe.Q ; // part is detected rise cut flag
+			
+			FOR i := 0 TO 6 BY 1 DO
+				cutDistance[i+1] := cutDistance[i] ;
+			END_FOR
+			cutDistance [0] := difValue;
+			cutDistanceAve := 0;
+			FOR i := 0 TO 7 BY 1 DO
+				cutDistanceAve := cutDistanceAve + cutDistance[i] ;
+			END_FOR
+			cutDistanceAveHmi := cutDistanceAve/ 8;
+			
+		END_IF
+		IF difValue < gMinValue THEN   // count missed cuts
+			missedCuts := missedCuts + 1;
 		END_IF
 		
-		
+	END_IF
+	
+	IF gResetCount THEN  // reset cut count 
+		missedCuts := 0;
 	END_IF
 	
 	delatTimerProbe(IN := CutStart , PT := T#500ms);

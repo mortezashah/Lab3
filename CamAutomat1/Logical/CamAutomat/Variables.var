@@ -45,4 +45,7 @@ VAR
 	cutJogEnableBWM : LREAL := 112.5; (*At this disgree cut jog limit*)
 	displayMessageAuto : BOOL; (*Display message*)
 	enableCut : BOOL; (*Enable cut in automatic mode*)
+	twoCutEnable : BOOL; (*Enabling two cut from hmi*)
+	cutCount : INT; (*Count of Cut*)
+	alarmActive : BOOL; (*if there is ana alarm this will be activated*)
 END_VAR

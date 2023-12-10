@@ -20,6 +20,7 @@
     <BindingsSet refId="ContentUp_binding" />
     <BindingsSet refId="ContentAlarm2_binding" />
     <BindingsSet refId="ContentManual_binding" />
+    <BindingsSet refId="ContentLeft_binding" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="ContentMain_eventbinding" />

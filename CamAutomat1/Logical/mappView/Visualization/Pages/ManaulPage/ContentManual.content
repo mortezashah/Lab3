@@ -20,9 +20,10 @@
     <Widget xsi:type="widgets.brease.Label" id="Label16" top="109" left="508" width="118" zIndex="18" text="$IAT/saw" textAlign="center" fontSize="13px" />
     <Widget xsi:type="widgets.brease.Label" id="Label17" top="226" left="442" width="142" zIndex="19" text="$IAT/minCuts" textAlign="left" fontSize="13px" />
     <Widget xsi:type="widgets.brease.NumericInput" id="SetCutSize" top="224" left="597" zIndex="20" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" />
-    <Widget xsi:type="widgets.brease.Label" id="Label18" top="15" left="237" width="285" zIndex="21" text="$IAT/sawInCut" textAlign="center" fontSize="13px" visible="false" />
-    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle1" top="107" left="55" width="320" height="371" zIndex="1" />
-    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle2" top="107" left="420" width="320" height="371" zIndex="0" />
+    <Widget xsi:type="widgets.brease.Label" id="Label18" top="15" left="237" width="285" zIndex="21" text="$IAT/sawInCut_1" textAlign="center" fontSize="13px" visible="false" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle1" top="107" left="55" width="320" height="371" zIndex="0" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle2" top="107" left="420" width="320" height="371" zIndex="1" />
     <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton2" top="61" left="271" width="210" zIndex="22" text="$IAT/poweron" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButFWBeltJOG1" top="262" left="161" zIndex="23" text="$IAT/zero" />
   </Widgets>
 </Content>

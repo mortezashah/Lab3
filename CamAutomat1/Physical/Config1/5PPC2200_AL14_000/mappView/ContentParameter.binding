@@ -48,5 +48,9 @@
 <Source xsi:type="opcUa" refId="::RecipeMgmt:DataProvider" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="DropDownBox2" attribute="dataProvider" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::CamAutomat:twoCutEnable" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="ToggleButton2" attribute="value" />
+</Binding>
 </Bindings>
 </BindingsSet>

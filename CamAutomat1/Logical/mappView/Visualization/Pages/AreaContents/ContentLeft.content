@@ -10,5 +10,6 @@
         <Widget xsi:type="widgets.brease.NavigationButton" id="ServiceNavBtn1" top="264" left="23" width="144" height="47" zIndex="4" pageId="ParameterPage" text="$IAT/Param" />
       </Widgets>
     </Widget>
+    <Widget xsi:type="widgets.brease.Image" id="Image1" top="154" left="129" width="38" height="33" zIndex="1" image="Media/SymbolLib/Alarm/Alarm.svg" backColor="rgba(176, 196, 222, 0)" imageColor="rgba(255, 128, 0, 1)" visible="false" />
   </Widgets>
 </Content>

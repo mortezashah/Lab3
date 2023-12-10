@@ -151,5 +151,13 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:Axis1.Exists" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ToggleButton2" attribute="value" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButFWBeltJOG1" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:Axis1.cmdHome" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButFWBeltJOG1" attribute="value" />
+</Binding>
 </Bindings>
 </BindingsSet>

@@ -3,7 +3,7 @@
 <Package SubType="mappMotion" PackageType="mappMotion" xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
     <Object Type="File">CamAutom.axisfeature</Object>
-    <Object Type="File">Config_2.mappmotioncfg</Object>
-    <Object Type="File">Config_1.axis</Object>
+    <Object Type="File">unitsOfser.mappmotioncfg</Object>
+    <Object Type="File">Sevos.axis</Object>
   </Objects>
 </Package>

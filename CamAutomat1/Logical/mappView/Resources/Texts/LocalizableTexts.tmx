@@ -114,7 +114,7 @@
         <seg>Nombre de boite descharge</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Number of Unloaded Box</seg>
+        <seg>Number of Cuts</seg>
       </tuv>
     </tu>
     <tu tuid="CurrentP">
@@ -739,6 +739,46 @@
       </tuv>
       <tuv xml:lang="en">
         <seg>Saw in Cut Position Automatic is Disabled</seg>
+      </tuv>
+    </tu>
+    <tu tuid="sawInCut_1">
+      <tuv xml:lang="fr">
+        <seg>Cie en position coup</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Saw in Cut Position Belt is Disabled</seg>
+      </tuv>
+    </tu>
+    <tu tuid="twoCut">
+      <tuv xml:lang="fr">
+        <seg>CoupDouble</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Enable Double Cut</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lastDista">
+      <tuv xml:lang="fr">
+        <seg>difference distance</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Distance Between the Current and Last Cut</seg>
+      </tuv>
+    </tu>
+    <tu tuid="numberofmissedcut">
+      <tuv xml:lang="fr">
+        <seg>miss cuts</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Count of Non Valid Cut Mark</seg>
+      </tuv>
+    </tu>
+    <tu tuid="average">
+      <tuv xml:lang="fr">
+        <seg>Average Distance</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Average Cuts Distance </seg>
       </tuv>
     </tu>
   </body>

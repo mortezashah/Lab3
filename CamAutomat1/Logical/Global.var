@@ -42,4 +42,5 @@ END_VAR
 VAR
 	gRunPage : BOOL := FALSE; (*set to on in run from hmi to plc*)
 	gManualPage : BOOL := TRUE; (*set to one in run*)
+	gResetCount : BOOL; (*Reset number of Count*)
 END_VAR

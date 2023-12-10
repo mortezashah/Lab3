@@ -15,9 +15,10 @@
     <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle6" top="138" left="43" width="228" height="42" zIndex="11" />
     <Widget xsi:type="widgets.brease.TextInput" id="TextInput1" top="146" left="291" zIndex="12" />
     <Widget xsi:type="widgets.brease.Label" id="Label10" top="143" left="48" width="217" zIndex="13" text="$IAT/Param" textAlign="left" fontSize="13px" bold="true" />
-    <Widget xsi:type="widgets.brease.Label" id="Label1" top="344" left="149" width="445" height="29" zIndex="14" text="$IAT/machinestop" textColor="rgba(255, 0, 0, 1)" textAlign="center" fontSize="20px" visible="false" />
+    <Widget xsi:type="widgets.brease.Label" id="Label1" top="342" left="168" width="445" height="29" zIndex="14" text="$IAT/machinestop" textColor="rgba(255, 0, 0, 1)" textAlign="center" fontSize="20px" visible="false" />
     <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed3" top="277" left="539" width="108" zIndex="15" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" />
     <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed1" top="233" left="543" width="104" zIndex="16" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" />
     <Widget xsi:type="widgets.brease.DropDownBox" id="DropDownBox2" top="100" left="46" width="160" zIndex="17" />
+    <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton2" top="389" left="282" width="210" zIndex="18" text="$IAT/twoCut" />
   </Widgets>
 </Content>

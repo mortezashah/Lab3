@@ -193,6 +193,7 @@
         <Variable Name="gRunPage" />
         <Variable Name="gReceiptChanged" />
         <Variable Name="gSaveParameter" />
+        <Variable Name="gResetCount" />
       </GlobalVariables>
       <Task Name="CamAutomat">
         <Variable Name="MpAxisBasic_AxisMaster">
@@ -208,11 +209,20 @@
         <Variable Name="sawInCutPosition" />
         <Variable Name="displayMessageAuto" />
         <Variable Name="enableCut" />
+        <Variable Name="twoCutEnable" />
+        <Variable Name="cutCount" />
+        <Variable Name="alarmActive" />
       </Task>
       <Task Name="MachineAla">
         <Variable Name="ackAlarms" />
       </Task>
-      <Task Name="TouchProbe" />
+      <Task Name="TouchProbe">
+        <Variable Name="newValue" />
+        <Variable Name="difValue" EngineeringUnitId="1" />
+        <Variable Name="cutSize" />
+        <Variable Name="missedCuts" />
+        <Variable Name="cutDistanceAveHmi" />
+      </Task>
       <Task Name="RecipeMgmt">
         <Variable Name="DataProvider" />
         <Variable Name="DataProviderHead" />

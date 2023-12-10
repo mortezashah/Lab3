@@ -18,5 +18,6 @@
     <Object Type="File">ContentAlarm2.binding</Object>
     <Object Type="File">ContentManual.binding</Object>
     <Object Type="File">ContentLeft.eventbinding</Object>
+    <Object Type="File">ContentLeft.binding</Object>
   </Objects>
 </Package>

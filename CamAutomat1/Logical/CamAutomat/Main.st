@@ -10,7 +10,8 @@ PROGRAM _INIT
 	AxisParameters_Master.Position := 0.0;	
 	AxisParameters_Master.Velocity := 72.0;	
 	AxisParameters_Master.Acceleration := 3600.0;	
-	AxisParameters_Master.Deceleration := 3600.0;	
+	AxisParameters_Master.Deceleration := 3600.0;
+	AxisParameters_Master.Jog.Deceleration := 3600;
 	AxisParameters_Master.Stop.Deceleration := 3600.0;
 	(* Initialize MpAxisBasic_AxisSlave *)	
 	MpAxisBasic_AxisSlave.Enable := TRUE;		
@@ -18,6 +19,8 @@ PROGRAM _INIT
 	AxisParameters_Slave.Velocity := 72.0;	
 	AxisParameters_Slave.Acceleration := 3600.0;	
 	AxisParameters_Slave.Deceleration := 3600.0;	
+	AxisParameters_Slave.Stop.Deceleration := 3600.0;
+	AxisParameters_Slave.Jog.Deceleration := 3600;
 	AxisParameters_Slave.Stop.Deceleration := 3600.0;
 	
 	AxisParameters_Master.AutoTune.Mode 				:= mcAXIS_TUNE_AUTOMATIC;
@@ -137,7 +140,9 @@ PROGRAM _CYCLIC
 					Axis1.statusStarting :=0;
 					MpAxisCamSequencer_0.Enable := TRUE;
 					gEnableTouchProbe := FALSE;
-					CutStart := FALSE;
+						CutStart := FALSE;
+						
+						// Home state if requested by HMI
 					IF (Axis1.cmdHome = 1 AND NOT  MpAxisBasic_AxisMaster.CommandBusy  AND NOT  MpAxisBasic_AxisSlave.CommandBusy )THEN  // command home if 
 						Axis1Home							:= FALSE;
 						Axis2Home							:= FALSE;
@@ -145,7 +150,7 @@ PROGRAM _CYCLIC
 						AxisStep 							:= STATE_HOME;
 						Axis1.cmdHome		 				:= FALSE;
 		
-					ELSIF (Axis1.cmdStop = 1) THEN
+					ELSIF (Axis1.cmdStop = 1) THEN  // Stop command activate from HMI
 
 						Axis1.cmdCamAutomat 					:=FALSE;
 						Axis1.cmdStop 							:= FALSE;
@@ -155,7 +160,7 @@ PROGRAM _CYCLIC
 						MpAxisBasic_AxisMaster.MoveVelocity 	:= FALSE;
 						AxisStep 				:= STATE_STOP;
 						
-					ELSIF MpAxisBasic_AxisMaster.MoveVelocity AND Axis1.cmdStartAutomat   THEN
+					ELSIF MpAxisBasic_AxisMaster.MoveVelocity AND Axis1.cmdStartAutomat   THEN  // demand for the Cut
 						MpAxisCamSequencer_0.StartSequence := TRUE;
 						MpAxisCamSequencer_0.Signal1		:= FALSE;
 						AxisStep := STATE_MOVE_CAMAUTOMAT;	
@@ -231,12 +236,12 @@ PROGRAM _CYCLIC
 						MpAxisCamSequencer_0.Signal2 := Axis1.statusOff ;	
 						CutStart := MpAxisCamSequencer_0.ActualStateIndex <> 0 AND enableCut;
 						gEnableTouchProbe := CutStart;
-					 IF NOT Axis1.cmdStartAutomat  THEN
+					 IF NOT Axis1.cmdStartAutomat  THEN  // demand for cut activate from HMI
 						Axis1.cmdCam 			:= FALSE;
 						MpAxisCamSequencer_0.StartSequence 		:= FALSE;
 						AxisStep := STATE_READY;
 					ELSIF (Axis1.cmdStop = 1) THEN
-						enableCut								:= FALSE;
+						enableCut								:= FALSE; // Enable cut will be clear as stop cmamnd comes
 						Axis1.cmdStartAutomat 					:= FALSE;
 						Axis1.cmdCam 							:= FALSE;
 						Axis1.cmdStop 							:= FALSE;
@@ -247,7 +252,7 @@ PROGRAM _CYCLIC
 						MpAxisCamSequencer_0.StartSequence		:= FALSE;
 						AxisStep := STATE_STOP;
 					ELSIF (Axis1.statusOff = 1 AND MpAxisCamSequencer_0.ActualStateIndex = 1 ) THEN
-						Axis1.cmdStartAutomat 					:= FALSE;
+						Axis1.cmdStartAutomat 					:= FALSE;  // production finish procedure
 						Axis1.cmdCam 							:= FALSE;
 						Axis1.statusOff							:= FALSE;
 						Axis1.cmdMoveVelocity 					:= FALSE;
@@ -258,7 +263,8 @@ PROGRAM _CYCLIC
 						AxisStep := STATE_STOP;
 						enableCut								:= FALSE;
 					ELSIF MpAxisCamSequencer_0.ActualStateIndex >=1 THEN
-						MpAxisCamSequencer_0.Signal1 := Axis1.cmdCam AND NOT Axis1.statusOff ;
+						MpAxisCamSequencer_0.Signal1 := Axis1.cmdCam AND NOT Axis1.statusOff AND NOT twoCutEnable ;	
+						MpAxisCamSequencer_0.Signal2 := Axis1.cmdCam AND NOT Axis1.statusOff AND  twoCutEnable ;
 			
 					END_IF							
 				
@@ -287,6 +293,8 @@ PROGRAM _CYCLIC
 			
 				STATE_ERROR : //********************** 101 ******************************* STATE_ERROR **************************** 101 ********************** STATE_ERROR 
 					gErrorID := 3;	
+					alarmActive := TRUE;
+			
 					enableCut := FALSE;
 					Axis1.statusStarting :=0;
 					Axis1.statusFaulted := TRUE;					
@@ -312,6 +320,7 @@ PROGRAM _CYCLIC
 						MpAxisBasic_AxisSlave.ErrorReset  := FALSE;
 					MpAxisCamSequencer_0.ErrorReset := FALSE;
 					gErrorID := 0;
+					alarmActive := FALSE;
 		
 					END_IF
 					
@@ -367,7 +376,7 @@ PROGRAM _CYCLIC
 		gMachineStatus := 0;	
 		displayStopImage := TRUE;
 		displayRunImage := FALSE;
-	ELSIF gServoInitialized = 0 THEN
+	ELSIF gServoInitialized = 0 THEN // servo are intialized
 		gMachineStatus := 4;
 		displayStopImage := TRUE;
 		displayRunImage := FALSE;
@@ -377,11 +386,18 @@ PROGRAM _CYCLIC
 	gMachineStatusMessage := gMachineStatusArray[gMachineStatus];	 // HMI status
 
 	
-	cutEnd := MpAxisBasic_AxisSlave.Position > cutStartDegree AND MpAxisBasic_AxisSlave.Position < cutEndDegree;
+	cutEnd := (MpAxisBasic_AxisSlave.Position > cutStartDegree AND MpAxisBasic_AxisSlave.Position < cutEndDegree ) OR (MpAxisBasic_AxisSlave.Position > cutStartDegree + 180.0 AND MpAxisBasic_AxisSlave.Position < cutEndDegree +180 AND twoCutEnable );
 
 	IF EDGEPOS(cutEnd) THEN  // if one cut done cut the signal plc
 		Axis1.cmdCam := FALSE;
+		cutCount := cutCount +1; // add one cut is done
+		
 	END_IF
+	
+	IF gResetCount THEN  // reset cut count 
+		cutCount := 0;
+	END_IF
+	
 	
 
 	
