@@ -222,6 +222,33 @@
         <Variable Name="cutSize" />
         <Variable Name="missedCuts" />
         <Variable Name="cutDistanceAveHmi" />
+        <Variable Name="MC_BR_TouchProbe_0">
+          <Variable Name="Axis" />
+          <Variable Name="TriggerInput" />
+          <Variable Name="Enable" />
+          <Variable Name="Period" />
+          <Variable Name="PeriodChange" />
+          <Variable Name="ExpectedValue" />
+          <Variable Name="WindowNegative" />
+          <Variable Name="WindowPositive" />
+          <Variable Name="Mode" />
+          <Variable Name="AdvancedParameters" />
+          <Variable Name="InOperation" />
+          <Variable Name="Busy" />
+          <Variable Name="Error" />
+          <Variable Name="ErrorID" />
+          <Variable Name="RecordedPeriodicValue" />
+          <Variable Name="RecordedValue" />
+          <Variable Name="DeltaExpectedValue" />
+          <Variable Name="ValidTriggerCount" />
+          <Variable Name="MissedTriggerCount" />
+          <Variable Name="TriggerInfo">
+            <Variable Name="Width" EngineeringUnitId="1" />
+            <Variable Name="Status" />
+          </Variable>
+          <Variable Name="Internal" />
+        </Variable>
+        <Variable Name="lastAndCurrentDif" EngineeringUnitId="1" />
       </Task>
       <Task Name="RecipeMgmt">
         <Variable Name="DataProvider" />

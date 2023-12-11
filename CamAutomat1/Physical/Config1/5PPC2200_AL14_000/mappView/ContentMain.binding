@@ -45,14 +45,8 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:Axis1.cmdStop" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="PushButtonStopManual" attribute="value" />
 </Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::CamAutomat:MpAxisBasic_AxisMaster.MoveVelocity" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="PushButtonSartCut" attribute="enable" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::CamAutomat:enableCut" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="PushButtonSartCut" attribute="value" />
-</Binding>
+
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:Axis1.cmdReset" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="PushButtonReset" attribute="value" />
@@ -69,13 +63,36 @@
 <Source xsi:type="opcUa" refId="::TouchProbe:difValue" attribute="node" />
 <Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="NumericOutputDistance" attribute="node" />
 </Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::TouchProbe:missedCuts" attribute="node" />
-<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="NumericOutputMissed" attribute="node" />
-</Binding>
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::TouchProbe:cutDistanceAveHmi" attribute="node" />
 <Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="NumericOutputDistance1" attribute="node" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::CamAutomat:enableCut" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="ToggleButtonEnableCut" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::CamAutomat:MpAxisBasic_AxisMaster.MoveVelocity" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="ToggleButtonEnableCut" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::TouchProbe:MC_BR_TouchProbe_0.TriggerInfo.Width" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="NumericOutputDistanceWidth" attribute="node" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gConvPrSpeed" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="SetSpeedProduc" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::TouchProbe:MC_BR_TouchProbe_0.ValidTriggerCount" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="NumericOutputValid" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::TouchProbe:MC_BR_TouchProbe_0.MissedTriggerCount" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="NumericOutputMissed" attribute="value" />
 </Binding>
 </Bindings>
 </BindingsSet>

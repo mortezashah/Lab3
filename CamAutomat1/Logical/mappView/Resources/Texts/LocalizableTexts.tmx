@@ -770,7 +770,7 @@
         <seg>miss cuts</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Count of Non Valid Cut Mark</seg>
+        <seg>Count of missed Print Mark</seg>
       </tuv>
     </tu>
     <tu tuid="average">
@@ -779,6 +779,30 @@
       </tuv>
       <tuv xml:lang="en">
         <seg>Average Cuts Distance </seg>
+      </tuv>
+    </tu>
+    <tu tuid="enablecut">
+      <tuv xml:lang="fr">
+        <seg>Coup Com</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Enable Cut</seg>
+      </tuv>
+    </tu>
+    <tu tuid="PrintSize">
+      <tuv xml:lang="fr">
+        <seg>Print lengh</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Width of the Last Cut Mark</seg>
+      </tuv>
+    </tu>
+    <tu tuid="countValid">
+      <tuv xml:lang="fr">
+        <seg>non valid print mark</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Count of Valid Print Mark</seg>
       </tuv>
     </tu>
   </body>

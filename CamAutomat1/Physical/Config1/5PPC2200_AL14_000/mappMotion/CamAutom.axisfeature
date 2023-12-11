@@ -82,7 +82,7 @@
               <Property ID="PredefinedCam" Value="OneToOne" />
             </Selector>
             <Property ID="MasterFactor" Value="2000" />
-            <Property ID="SlaveFactor" Value="2000" />
+            <Property ID="SlaveFactor" Value="2300" />
             <Selector ID="CompensationMode" Value="DistancesBetweenExitEntryPoints">
               <Property ID="MasterDistance" Value="100" />
               <Property ID="SlaveDistance" Value="160" />
@@ -836,7 +836,7 @@
               <Property ID="PredefinedCam" Value="OneToOne" />
             </Selector>
             <Property ID="MasterFactor" Value="2000" />
-            <Property ID="SlaveFactor" Value="2000" />
+            <Property ID="SlaveFactor" Value="2200" />
             <Selector ID="CompensationMode" Value="DistancesBetweenExitEntryPoints">
               <Property ID="MasterDistance" Value="0" />
               <Property ID="SlaveDistance" Value="0" />
@@ -863,7 +863,7 @@
             <Property ID="SlaveFactor" Value="0" />
             <Selector ID="CompensationMode" Value="DistancesBetweenExitEntryPoints">
               <Property ID="MasterDistance" Value="16" />
-              <Property ID="SlaveDistance" Value="260" />
+              <Property ID="SlaveDistance" Value="258" />
               <Selector ID="AdvancedParameters" Value="NotUsed" />
             </Selector>
             <Group ID="AdvancedParameters">
@@ -908,7 +908,7 @@
               <Property ID="PredefinedCam" Value="OneToOne" />
             </Selector>
             <Property ID="MasterFactor" Value="2000" />
-            <Property ID="SlaveFactor" Value="2000" />
+            <Property ID="SlaveFactor" Value="2200" />
             <Selector ID="CompensationMode" Value="DistancesBetweenExitEntryPoints">
               <Property ID="MasterDistance" Value="0" />
               <Property ID="SlaveDistance" Value="0" />
@@ -935,7 +935,7 @@
             <Property ID="SlaveFactor" Value="0" />
             <Selector ID="CompensationMode" Value="DistancesBetweenExitEntryPoints">
               <Property ID="MasterDistance" Value="16" />
-              <Property ID="SlaveDistance" Value="80" />
+              <Property ID="SlaveDistance" Value="78" />
               <Selector ID="AdvancedParameters" Value="NotUsed" />
             </Selector>
             <Group ID="AdvancedParameters">
