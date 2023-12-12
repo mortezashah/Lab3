@@ -2,8 +2,8 @@
 <?AutomationStudio FileVersion="4.9"?>
 <Package SubType="mappMotion" PackageType="mappMotion" xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
-    <Object Type="File">CamAutom.axisfeature</Object>
-    <Object Type="File">unitsOfser.mappmotioncfg</Object>
-    <Object Type="File">Sevos.axis</Object>
+    <Object Type="File" Description="Com Auto mat Config Files">CamAutom.axisfeature</Object>
+    <Object Type="File" Description="Unit managments">unitsOfser.mappmotioncfg</Object>
+    <Object Type="File" Description="Servo config files">Sevos.axis</Object>
   </Objects>
 </Package>

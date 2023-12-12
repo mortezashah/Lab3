@@ -48,7 +48,5 @@ VAR
 	alarmActive : BOOL; (*if there is ana alarm this will be activated*)
 	disbaleHome : BOOL; (*disable home in hmi while manual start*)
 	maxproducSpeed : REAL; (*maximum probduction Speed*)
-END_VAR
-VAR CONSTANT
-	FIXED_SPEED : REAL := 70.0; (*maximum single cut speed*)
+	maxSpeed : {REDUND_UNREPLICABLE} REAL := 70.0; (*maximum single cut speed*)
 END_VAR

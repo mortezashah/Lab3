@@ -7,7 +7,7 @@ PROGRAM _INIT
 	(* Insert code here *)
 
 
-
+	MC_BR_TouchProbe_1.Enable := TRUE;
 	
 END_PROGRAM
 
@@ -36,7 +36,8 @@ PROGRAM _CYCLIC
 	MC_BR_TouchProbe_1.Axis := ADR(gConv_MpLink);
 	MC_BR_TouchProbe_1.TriggerInput := McBrTrigger_1;
 	MC_BR_TouchProbe_1(); 
-	MC_BR_TouchProbe_1.Enable := gEnableTouchProbe;
+	MC_BR_TouchProbe_1.Enable := NOT gResetCount;
+
 	currentReadingDistance := MC_BR_TouchProbe_1.Period - MC_BR_TouchProbe_1.DeltaExpectedValue;
 	
 	// manaul paramter find

@@ -85,10 +85,7 @@
 </Binding>
 
 
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::TouchProbe:MC_BR_TouchProbe_0.ValidTriggerCount" attribute="node" />
-<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="NumericOutputValid" attribute="node" />
-</Binding>
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::TouchProbe:MC_BR_TouchProbe_1.MissedTriggerCount" attribute="node" />
 <Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="NumericOutputMissed" attribute="node" />
@@ -96,6 +93,10 @@
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::TouchProbe:cutDistanceAveHmi" attribute="node" />
 <Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="NumericOutputDistanceAverage" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::TouchProbe:MC_BR_TouchProbe_1.ValidTriggerCount" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="NumericOutputValid" attribute="node" />
 </Binding>
 </Bindings>
 </BindingsSet>

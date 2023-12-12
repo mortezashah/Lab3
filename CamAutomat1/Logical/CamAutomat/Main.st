@@ -368,7 +368,7 @@ PROGRAM _CYCLIC
 	
 	gMachineStatusMessage := gMachineStatusArray[gMachineStatus];	 // HMI status
 	cutEnd := (MpAxisBasic_AxisSlave.Position > cutStartDegree AND MpAxisBasic_AxisSlave.Position < cutEndDegree ) OR (MpAxisBasic_AxisSlave.Position > cutStartDegree + 180.0 AND MpAxisBasic_AxisSlave.Position < cutEndDegree +180 AND twoCutEnable );
-	maxproducSpeed := FIXED_SPEED + FIXED_SPEED * 0.855 * twoCutEnable; // max production speed
+	maxproducSpeed := maxSpeed + maxSpeed * 0.855 * twoCutEnable; // max production speed
 	IF gConvPrSpeed > maxproducSpeed THEN // limit the speed to prevent fault
 		gConvPrSpeed := maxproducSpeed;
 	END_IF

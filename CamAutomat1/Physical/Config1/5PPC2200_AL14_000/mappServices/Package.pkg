@@ -2,8 +2,8 @@
 <?AutomationStudio FileVersion="4.9"?>
 <Package SubType="mappServices" PackageType="mappServices" xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
-    <Object Type="File">Config.mprecipecsv</Object>
-    <Object Type="File">Config_5.mpalarmxcore</Object>
-    <Object Type="File">Config_6.mpcomunit</Object>
+    <Object Type="File" Description="Saving CSV for recepie">Recepie.mprecipecsv</Object>
+    <Object Type="File" Description="Alarm Control">Alarms.mpalarmxcore</Object>
+    <Object Type="File" Description="Unit Config">units.mpcomunit</Object>
   </Objects>
 </Package>
