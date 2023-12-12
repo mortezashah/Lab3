@@ -15,6 +15,8 @@ PROGRAM _CYCLIC
 	// Code to write the par id 719 19, to bypass the encoder alarm, for cutter 
 	MC_BR_ProcessParID_AcpAx_0(Axis := ADR(gCutter_MpLink), DataAddress := ADR(McAcpAxProcessParIDPar) , NumberOfParIDs :=1 , Mode := mcACPAX_PARID_SET);
 	MC_BR_ProcessParID_AcpAx_0();
+	MC_BR_ProcessParID_AcpAx_1(Axis := ADR(gConv_MpLink), DataAddress := ADR(McAcpAxProcessParIDPar) , NumberOfParIDs :=1 , Mode := mcACPAX_PARID_SET);
+	MC_BR_ProcessParID_AcpAx_1();
 	// touch probe setup, 
 	MC_BR_TouchProbe_0.AdvancedParameters := McBrAdvancePar;
 	MC_BR_TouchProbe_0.Axis := ADR(gConv_MpLink);
@@ -70,7 +72,7 @@ PROGRAM _CYCLIC
 	
 	delatTimerProbe(IN := CutStart , PT := T#500ms);
 	delatTimerProbe();	
-	IF 	EDGEPOS(partDetected) AND delatTimerProbe.Q THEN // activate the cut when the touch is 70mm after that
+	IF 	EDGEPOS(partDetected) AND delatTimerProbe.Q  THEN // activate the cut when the touch is 70mm after that
 		Axis1.cmdCam := TRUE;
 		partDetected := FALSE;
 	END_IF

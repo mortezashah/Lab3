@@ -1,6 +1,5 @@
 VAR
-	State : State_enum; (*Recepie state enum to wait for next save*)
-	uiLoad : BOOL; (*Hmi demand to load*)
+	uiLoad : BOOL := FALSE; (*Hmi demand to load*)
 	uiSave : BOOL; (*Hmi demand to save data to plc harddisk*)
 	sDeviceName : STRING[255] := 'CSV_Recipes'; (*device name (set in the cpu configuration)*)
 	sFileName : STRING[255] := 'recipe1'; (*NAme of the saved file*)
@@ -14,17 +13,16 @@ VAR RETAIN
 	RecipeCurrent : STRING[100]; (*Current recipe*)
 END_VAR
 VAR
-	DataProviderMid : ARRAY[0..9] OF STRING[90]; (*Data Provider*)
+	DataProviderMid : ARRAY[0..2] OF STRING[90]; (*Data Provider*)
 END_VAR
 VAR RETAIN
-	DataProvider : ARRAY[0..9] OF STRING[100]; (*Data Provider*)
-	RecipeList : ARRAY[0..9] OF STRING[65]; (*List of recepie*)
+	DataProvider : ARRAY[0..2] OF STRING[100]; (*Data Provider*)
+	RecipeList : ARRAY[0..2] OF STRING[65]; (*List of recepie*)
 END_VAR
 VAR
-	DataProviderTail : ARRAY[0..9] OF STRING[25] := ['{"value":"0","text":"','{"value":"1","text":"','{"value":"2","text":"','{"value":"3","text":"','{"value":"4","text":"','{"value":"5","text":"','{"value":"6","text":"','{"value":"7","text":"','{"value":"8","text":"','{"value":"9","text":"']; (*Data Provider*)
-	DataProviderHead : ARRAY[0..9] OF STRING[10] := [10('"}')]; (*Data Provider*)
-	i : INT;
-	WarnColor : BOOL; (*Color Check*)
+	DataProviderTail : ARRAY[0..2] OF STRING[25] := ['{"value":"0","text":"','{"value":"1","text":"','{"value":"2","text":"']; (*Data Provider*)
+	DataProviderHead : ARRAY[0..2] OF STRING[10] := [3('"}')]; (*Data Provider*)
+	i : INT; (*to be used at for and while loop*)
 	MC_BR_CamAutomatGetPar_AcpAx_0 : MC_BR_CamAutomatGetPar_AcpAx := (Command:=mcSET_ALL_PAR_FROM_ADR,CamAutomat:=(DataObjectName:='Feature_CamAutomat')); (*Get parameter from cam automat*)
 	MC_BR_CamAutomatSetPar_AcpAx_0 : MC_BR_CamAutomatSetPar_AcpAx := (Command:=mcSET_ALL_PAR_FROM_ADR,CamAutomat:=(DataObjectName:='Feature_CamAutomat')); (*Set Parameters CAM ID*)
 	McAcpAxAdvCamAutSetPar : McAcpAxAdvCamAutSetParType; (*Command for the transfer of the parameter
@@ -33,12 +31,18 @@ VAR
 *)
 END_VAR
 VAR RETAIN
+	McAcpAxCamAutPartypDef : ARRAY[0..2] OF McAcpAxCamAutParType; (*Command for the transfer of the parameter Current Defaults
+*)
 	McAcpAxCamAutPartyp : McAcpAxCamAutParType; (*Command for the transfer of the parameter Current
 *)
 END_VAR
 VAR
 	CutType : UDINT := 1; (*Cut Type *)
 	copyAll : BOOL; (*Copy all partameter *)
-	copySelction : BOOL; (*Copy selection to the memory*)
-	selction : UDINT; (*selected type*)
+	copySelction : BOOL := TRUE; (*Copy selection to the memory*)
+	upperPosition : LREAL := 8; (*Upper Position*)
+	lowerPosition : LREAL := 10; (*Lower cut Position*)
+	pasteSelection : BOOL; (*Paste form default*)
+	validDateCamExist : BOOL := FALSE; (*If a Valid Data Exist to trasnfer to cam*)
+	copySelctionValid : BOOL; (*Copy Valid Data to selection*)
 END_VAR

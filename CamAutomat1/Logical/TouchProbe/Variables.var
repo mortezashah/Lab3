@@ -18,7 +18,6 @@ VAR
 	i : USINT; (*for saving the cuts*)
 	difValue : LREAL; (*distance*)
 	delatTimerProbe : TON; (*Delay for start cut*)
-	delatTimerCut : TON := (PT:=T#500ms); (*Delay for start cut*)
 	cutSize : LREAL := 10.0; (*Cut Size *)
 	cutDistanceAveHmi : LREAL; (*Average of last cuts to be display in hmi*)
 	cutDistanceAve : LREAL; (*Average of last cuts *)
@@ -26,4 +25,5 @@ VAR
 	MC_BR_TouchProbe_1 : MC_BR_TouchProbe := (Period:=70,ExpectedValue:=70,WindowNegative:=20,WindowPositive:=20,Mode:=mcTP_MODE_SHIFT_FROM_RESULT); (*MC probe to detec the position*)
 	McBrTrigger_1 : McBrTriggerType; (*MC Br Trigger*)
 	McBrAdvancePar_1 : McAdvBrTouchProbeParType := (UseFirstTriggerPosition:=1); (*MC Advance paramter*)
+	MC_BR_ProcessParID_AcpAx_1 : MC_BR_ProcessParID_AcpAx; (*Set the battery problem Par block conv*)
 END_VAR

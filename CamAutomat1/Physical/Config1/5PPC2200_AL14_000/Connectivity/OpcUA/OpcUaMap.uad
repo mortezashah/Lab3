@@ -30,12 +30,6 @@
           <High ValueProvider="Const">200.00</High>
         </EURange>
       </EURanges>
-      <EURanges Id="7">
-        <EURange>
-          <Low ValueProvider="Const">0</Low>
-          <High ValueProvider="Const">4800</High>
-        </EURange>
-      </EURanges>
       <EURanges Id="8">
         <EURange>
           <Low ValueProvider="Const">0</Low>
@@ -46,6 +40,18 @@
         <EURange>
           <Low ValueProvider="Const">1</Low>
           <High ValueProvider="Const">3</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="10">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">5600</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="11">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">10</High>
         </EURange>
       </EURanges>
     </EURangesAliases>
@@ -121,7 +127,6 @@
           <Variable Name="parmReferencePosition" />
         </Variable>
         <Variable Name="Data" />
-        <Variable Name="Data2" />
         <Variable Name="Axis2">
           <Variable Name="Exists" />
           <Variable Name="name" />
@@ -191,11 +196,9 @@
         <Variable Name="gCutJogSpeed" EURangesId="3" EngineeringUnitId="4" />
         <Variable Name="gManualActive" />
         <Variable Name="gMachineStatusMessage" />
-        <Variable Name="gConvPrSpeed" EURangesId="7" />
-        <Variable Name="gSpeedRefHmi" />
+        <Variable Name="gConvPrSpeed" EURangesId="10" />
         <Variable Name="gMinValue" EURangesId="8" EngineeringUnitId="1" />
         <Variable Name="gRecepitRefHmi" />
-        <Variable Name="gManualPage" />
         <Variable Name="gRunPage" />
         <Variable Name="gReceiptChanged" />
         <Variable Name="gSaveParameter" />
@@ -274,12 +277,12 @@
         <Variable Name="RecipeList" />
         <Variable Name="sDeviceName" />
         <Variable Name="sFileName" />
-        <Variable Name="State" />
         <Variable Name="sVariableName" />
         <Variable Name="uiLoad" />
         <Variable Name="uiSave" />
-        <Variable Name="WarnColor" />
         <Variable Name="CutType" EURangesId="9" />
+        <Variable Name="lowerPosition" EURangesId="11" EngineeringUnitId="1" />
+        <Variable Name="upperPosition" EURangesId="11" EngineeringUnitId="1" />
       </Task>
     </Module>
   </DefaultView>

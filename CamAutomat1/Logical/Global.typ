@@ -63,9 +63,10 @@ TYPE
 	END_STRUCT;
 	cutParam_typ : 	STRUCT 
 		selCutType : UDINT := 1; (*Choose cut type*)
-		CutType : ARRAY[0..2]OF McAcpAxCamAutParType; (*default  cut type middle*)
 		RecipeName : STRING[65]; (*name of recepit*)
 		productionSpeed : REAL := 0.0; (*reference lane *)
 		minimumCutSpped : LREAL := 0.0; (*reference lane *)
+		lowerPosition : LREAL; (*position Of lower CUT*)
+		upperPosition : LREAL; (*position Of Upper CUT*)
 	END_STRUCT;
 END_TYPE

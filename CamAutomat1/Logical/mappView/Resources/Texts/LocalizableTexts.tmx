@@ -821,5 +821,21 @@
         <seg>Start Conv.</seg>
       </tuv>
     </tu>
+    <tu tuid="lowerPos_1">
+      <tuv xml:lang="fr">
+        <seg>position 1</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Position of Upper Edge Cut</seg>
+      </tuv>
+    </tu>
+    <tu tuid="lowerPos">
+      <tuv xml:lang="fr">
+        <seg>position 1</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Position of Lower Edge Cut</seg>
+      </tuv>
+    </tu>
   </body>
 </tmx>
