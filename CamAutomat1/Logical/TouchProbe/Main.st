@@ -12,9 +12,10 @@ PROGRAM _INIT
 END_PROGRAM
 
 PROGRAM _CYCLIC
+	// Code to write the par id 719 19, to bypass the encoder alarm, for cutter 
 	MC_BR_ProcessParID_AcpAx_0(Axis := ADR(gCutter_MpLink), DataAddress := ADR(McAcpAxProcessParIDPar) , NumberOfParIDs :=1 , Mode := mcACPAX_PARID_SET);
 	MC_BR_ProcessParID_AcpAx_0();
-	(* Insert code here *)
+	// touch probe setup, 
 	MC_BR_TouchProbe_0.AdvancedParameters := McBrAdvancePar;
 	MC_BR_TouchProbe_0.Axis := ADR(gConv_MpLink);
 	MC_BR_TouchProbe_0.TriggerInput := McBrTrigger;
@@ -25,7 +26,7 @@ PROGRAM _CYCLIC
 	MissedTriggerCount := MC_BR_TouchProbe_0.MissedTriggerCount; // count of missed trigger
 	MC_BR_TouchProbe_0.TriggerInput.MaxWidth := MaxWidth; // MaxWidth to the touch probe
 	MC_BR_TouchProbe_0.TriggerInput.MinWidth := MinWidth; // Min Width to the touch rpobe
-	
+	// second touch probe for training purpose
 	MC_BR_TouchProbe_1.AdvancedParameters := McBrAdvancePar_1;
 	MC_BR_TouchProbe_1.Axis := ADR(gConv_MpLink);
 	MC_BR_TouchProbe_1.TriggerInput := McBrTrigger_1;
@@ -34,15 +35,9 @@ PROGRAM _CYCLIC
 	
 	// manaul paramter find
 	
-	newValue := MC_BR_TouchProbe_0.RecordedValue;
-	
-	IF newValue > ( preValue + cutSize) THEN  // check if its a new print mark coms
-		
-		
-		
-		
+	newValue := MC_BR_TouchProbe_0.RecordedValue;	
+	IF newValue > ( preValue + cutSize) THEN  // check if its a new print mark coms	
 		difValue := newValue - preValue ;  // calculates
-
 		IF difValue > gMinValue THEN   // validate correct distance
 			newValueF := TRUE;
 			preValue := newValue;
@@ -50,8 +45,7 @@ PROGRAM _CYCLIC
 			IF difValue < maxValueExpected THEN
 				FOR i := 0 TO 6 BY 1 DO
 					cutDistance[7-i] := cutDistance[6-i] ;
-				END_FOR
-			
+				END_FOR			
 				cutDistance [0] := difValue;
 				lastAndCurrentDif := difValue; // for Hmi display
 				cutDistanceAve := 0;
@@ -81,9 +75,6 @@ PROGRAM _CYCLIC
 		partDetected := FALSE;
 	END_IF
 	
-
-
-	
 	IF EDGEPOS(Axis1.cmdStartAutomat) THEN // transfer the cut last and new position to the last position
 		preValue := newValue;
 	END_IF
@@ -98,6 +89,9 @@ PROGRAM _EXIT
 	(* Insert code here *)
 	MC_BR_TouchProbe_0.Enable := FALSE;
 	MC_BR_TouchProbe_0();
+	MC_BR_TouchProbe_1.Enable := FALSE;
+	MC_BR_TouchProbe_1();
+	 
 	 
 END_PROGRAM
 

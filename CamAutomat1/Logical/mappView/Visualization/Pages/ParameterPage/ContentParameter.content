@@ -9,16 +9,16 @@
     <Widget xsi:type="widgets.brease.Label" id="Label7" top="279" left="104" width="404" zIndex="6" text="$IAT/ConvLiftVelocitySpeedControl" textAlign="left" fontSize="13px" bold="true" />
     <Widget xsi:type="widgets.brease.Line" id="Line2" zIndex="7" x1="105" x2="643" y1="222" y2="222" lineCap="square" style="Solid_Orange" />
     <Widget xsi:type="widgets.brease.Line" id="Line3" zIndex="8" x1="109" x2="647" y1="321" y2="321" lineCap="square" style="Solid_Orange" />
-    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart1" top="46" left="399" width="260" zIndex="9" text="$IAT/SaveToFile" />
-    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart2" top="83" left="399" width="260" zIndex="10" text="$IAT/LoadToFile" />
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStartSave" top="46" left="399" width="260" zIndex="9" text="$IAT/SaveToFile" />
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStartLoad" top="83" left="399" width="260" zIndex="10" text="$IAT/LoadToFile" />
     <Widget xsi:type="widgets.brease.Image" id="Image1" top="5" left="651" width="38" height="33" zIndex="11" image="Media/SymbolLib/Alarm/AlarmHistory.svg" backColor="rgba(176, 196, 222, 0)" imageColor="rgba(255, 128, 0, 1)" visible="false" />
     <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle6" top="138" left="43" width="228" height="42" zIndex="12" />
-    <Widget xsi:type="widgets.brease.TextInput" id="TextInput1" top="146" left="291" width="151" zIndex="13" />
+    <Widget xsi:type="widgets.brease.TextInput" id="receipeName" top="146" left="291" width="204" zIndex="13" />
     <Widget xsi:type="widgets.brease.Label" id="Label10" top="143" left="48" width="217" zIndex="14" text="$IAT/Param" textAlign="left" fontSize="13px" bold="true" />
     <Widget xsi:type="widgets.brease.Label" id="Label1" top="394" left="173" width="445" height="29" zIndex="15" text="$IAT/machinestop" textColor="rgba(255, 0, 0, 1)" textAlign="center" fontSize="20px" visible="false" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed3" top="277" left="541" width="108" zIndex="16" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeed1" top="233" left="543" width="104" zIndex="17" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" />
-    <Widget xsi:type="widgets.brease.DropDownBox" id="DropDownBox2" top="100" left="46" width="160" zIndex="18" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="MinimumCutDistace" top="277" left="541" width="108" zIndex="16" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeedProdcutionSpeed" top="233" left="543" width="104" zIndex="17" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" />
+    <Widget xsi:type="widgets.brease.DropDownBox" id="DropDownBox2" top="100" left="42" width="226" zIndex="18" />
     <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton2" top="441" left="287" width="210" zIndex="19" text="$IAT/twoCut" />
     <Widget xsi:type="widgets.brease.NumericInput" id="SetCutPosition" top="330" left="543" width="104" zIndex="20" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" />
     <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle9" top="326" left="100" width="430" height="42" zIndex="21" />

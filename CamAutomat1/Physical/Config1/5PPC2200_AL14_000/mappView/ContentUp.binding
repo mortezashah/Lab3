@@ -9,9 +9,10 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gDispalyServoNotReady" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentUp" widgetRefId="TextOutput3" attribute="visible" />
 </Binding>
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gMachineStatusMessage" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentUp" widgetRefId="TextOutput2" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentUp" widgetRefId="TextOutputDisplaySataus" attribute="value" />
 </Binding>
 </Bindings>
 </BindingsSet>

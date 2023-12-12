@@ -8,9 +8,9 @@
     <Object Type="Package" Description="Global libraries">Libraries</Object>
     <Object Type="Package" Description="Imported Images">Images</Object>
     <Object Type="Package" Description="HMI">mappView</Object>
-    <Object Type="Program" Language="IEC" Description="Control Axis">CamAutomat</Object>
-    <Object Type="Program" Language="IEC" Description="Save Prosition">TouchProbe</Object>
-    <Object Type="Program" Language="IEC" Description="Laram Dispaly">MachineAlarm</Object>
+    <Object Type="Program" Language="IEC" Description="Control Conv. and Cutter">CamAutomat</Object>
+    <Object Type="Program" Language="IEC" Description="Save position and control trigger">TouchProbe</Object>
+    <Object Type="Program" Language="IEC" Description="Alarm Control">MachineAlarm</Object>
     <Object Type="Program" Language="IEC" Description="Manage Recipe">RecipeMgmt</Object>
     <Object Type="File" Description="Project Language">Project.language</Object>
   </Objects>

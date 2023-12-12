@@ -370,7 +370,7 @@
         <seg>manuelle</seg>
       </tuv>
       <tuv xml:lang="en">
-        <seg>Manual/SetUp</seg>
+        <seg>Manual</seg>
       </tuv>
     </tu>
     <tu tuid="manualnotsele">
@@ -811,6 +811,14 @@
       </tuv>
       <tuv xml:lang="en">
         <seg>Cut Type (1=Middle , 2= Upper, 3 = Lower)</seg>
+      </tuv>
+    </tu>
+    <tu tuid="StartCOm">
+      <tuv xml:lang="fr">
+        <seg>Commence Conv</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Start Conv.</seg>
       </tuv>
     </tu>
   </body>

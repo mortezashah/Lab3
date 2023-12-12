@@ -5,25 +5,25 @@
     <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButtonBWBeltJog" top="301" left="231" zIndex="3" text="$IAT/BACK" />
     <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButtonFWSaw" top="304" left="457" zIndex="4" text="$IAT/FWD" />
     <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButtonBWJogSaw" top="304" left="599" zIndex="5" text="$IAT/BACK" />
-    <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput1" top="158" left="204" width="118" zIndex="6" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" />
-    <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutput2" top="158" left="596" zIndex="7" unit="{'metric':'DD','imperial':'DD','imperial-us':'DD'}" />
-    <Widget xsi:type="widgets.brease.Label" id="Label10" top="158" left="77" width="118" zIndex="8" text="$IAT/CurrentP" textAlign="left" fontSize="13px" />
-    <Widget xsi:type="widgets.brease.Label" id="Label11" top="161" left="442" width="118" zIndex="9" text="$IAT/CurrentP" textAlign="left" fontSize="13px" />
-    <Widget xsi:type="widgets.brease.Label" id="Label12" top="189" left="77" width="118" zIndex="10" text="$IAT/jogS" textAlign="left" fontSize="13px" />
-    <Widget xsi:type="widgets.brease.Label" id="Label13" top="223" left="77" width="118" zIndex="11" text="$IAT/ProS" textAlign="left" fontSize="13px" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputActualPosition" top="158" left="204" width="118" zIndex="6" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputCutPosition" top="158" left="596" height="31" zIndex="7" unit="{'metric':'DD','imperial':'DD','imperial-us':'DD'}" />
+    <Widget xsi:type="widgets.brease.Label" id="LabelActualPosition" top="158" left="77" width="118" zIndex="8" text="$IAT/CurrentP" textAlign="left" fontSize="13px" />
+    <Widget xsi:type="widgets.brease.Label" id="LabelActualPos" top="161" left="442" width="118" zIndex="9" text="$IAT/CurrentP" textAlign="left" fontSize="13px" />
+    <Widget xsi:type="widgets.brease.Label" id="LabelJogPosition" top="189" left="77" width="118" zIndex="10" text="$IAT/jogS" textAlign="left" fontSize="13px" />
+    <Widget xsi:type="widgets.brease.Label" id="LabelProductionSpeed" top="223" left="77" width="118" zIndex="11" text="$IAT/ProS" textAlign="left" fontSize="13px" />
     <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeedBelt" top="189" left="204" width="122" zIndex="12" unit="{'metric':'C16','imperial':'FS','imperial-us':'FS'}" />
     <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeedProduct" top="223" left="204" width="122" zIndex="13" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" />
-    <Widget xsi:type="widgets.brease.Label" id="Label14" top="192" left="442" width="118" zIndex="14" text="$IAT/jogS" textAlign="left" fontSize="13px" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeedjogsaw" top="189" left="596" zIndex="15" unit="{'metric':'E96','imperial':'E96','imperial-us':'E96'}" />
-    <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton1" top="262" left="474" width="210" zIndex="16" text="Bypass JOG Protection" />
+    <Widget xsi:type="widgets.brease.Label" id="LabelJogSpeedC" top="192" left="442" width="118" zIndex="14" text="$IAT/jogS" textAlign="left" fontSize="13px" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeedjogsaw" top="189" left="596" height="31" zIndex="15" unit="{'metric':'E96','imperial':'E96','imperial-us':'E96'}" />
+    <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonByPassProtection" top="262" left="474" width="210" zIndex="16" text="Bypass JOG Protection" />
     <Widget xsi:type="widgets.brease.Label" id="Label15" top="112" left="152" width="118" zIndex="17" text="$IAT/conv" textAlign="center" fontSize="13px" />
     <Widget xsi:type="widgets.brease.Label" id="Label16" top="109" left="508" width="118" zIndex="18" text="$IAT/saw" textAlign="center" fontSize="13px" />
-    <Widget xsi:type="widgets.brease.Label" id="Label17" top="226" left="442" width="142" zIndex="19" text="$IAT/minCuts" textAlign="left" fontSize="13px" />
+    <Widget xsi:type="widgets.brease.Label" id="LabelMinCut" top="226" left="442" width="142" zIndex="19" text="$IAT/minCuts" textAlign="left" fontSize="13px" />
     <Widget xsi:type="widgets.brease.NumericInput" id="SetCutSize" top="224" left="597" zIndex="20" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" />
     <Widget xsi:type="widgets.brease.Label" id="Label18" top="15" left="237" width="285" zIndex="21" text="$IAT/sawInCut_1" textAlign="center" fontSize="13px" visible="false" />
     <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle1" top="107" left="55" width="320" height="371" zIndex="0" />
-    <Widget xsi:type="widgets.brease.Rectangle" id="Rectangle2" top="107" left="420" width="320" height="371" zIndex="1" />
-    <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButton2" top="61" left="271" width="210" zIndex="22" text="$IAT/poweron" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButFWBeltJOG1" top="262" left="161" zIndex="23" text="$IAT/zero" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="RectangleCut" top="107" left="420" width="320" height="371" zIndex="1" />
+    <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonPowerON" top="61" left="271" width="210" zIndex="22" text="$IAT/poweron" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButReset" top="262" left="161" zIndex="23" text="$IAT/zero" />
   </Widgets>
 </Content>

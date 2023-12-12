@@ -12,14 +12,8 @@
 
 
 
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::RecipeMgmt:uiSave" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="PushButtonStart1" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::RecipeMgmt:uiLoad" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="PushButtonStart2" attribute="value" />
-</Binding>
+
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::RecipeMgmt:RecipeError" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="Image1" attribute="visible" />
@@ -27,19 +21,10 @@
 
 
 
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::RecipeMgmt:RecipeCurrent" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="TextInput1" attribute="value" />
-</Binding>
 
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gMinValue" attribute="node" />
-<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="SetSpeed3" attribute="node" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gConvPrSpeed" attribute="node" />
-<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="SetSpeed1" attribute="node" />
-</Binding>
+
+
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gRecepitRefHmi" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="DropDownBox2" attribute="selectedIndex" />
@@ -62,25 +47,112 @@
 <Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="DropDownBox2" attribute="enable" />
 </Binding>
 
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="SetSpeed3" attribute="enable" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="SetSpeed1" attribute="enable" />
-</Binding>
+
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="SetCutPosition" attribute="enable" />
 </Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="TextInput1" attribute="enable" />
-</Binding>
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::CamAutomat:MpAxisBasic_AxisMaster.MoveVelocity" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="Label1" attribute="visible" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gConvPrSpeed" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="SetSpeedProdcutionSpeed" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gMinValue" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="MinimumCutDistace" attribute="node" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::RecipeMgmt:RecipeCurrent" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="receipeName" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::RecipeMgmt:uiLoad" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="PushButtonStartLoad" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::RecipeMgmt:uiSave" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="PushButtonStartSave" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="Label7" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="Line2" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="Line3" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="Rectangle10" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="PushButtonStartLoad" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="Label5" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="SetSpeedProdcutionSpeed" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="receipeName" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="Label10" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="PushButtonStartSave" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="Rectangle5" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="MinimumCutDistace" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="Rectangle4" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="Rectangle9" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="Label8" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="Rectangle7" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="Rectangle8" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="Image1" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="Rectangle6" attribute="enable" />
 </Binding>
 </Bindings>
 </BindingsSet>
