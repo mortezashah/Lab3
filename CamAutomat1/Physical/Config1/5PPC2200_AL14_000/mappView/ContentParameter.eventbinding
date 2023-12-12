@@ -31,21 +31,21 @@
         </Action>
       </EventHandler>
     </EventBinding>
-    <EventBinding id="ContentParameter.SetSpeed1.ValueChanged">
-      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="ContentParameter" widgetRefId="SetSpeed1" event="ValueChanged" />
-      <EventHandler>
-        <Action>
-          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSaveParameter">
-            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
-          </Target>
-        </Action>
-      </EventHandler>
-    </EventBinding>
     <EventBinding id="ContentParameter.DropDownBox2.SelectedIndexChanged">
       <Source xsi:type="widgets.brease.DropDownBox.Event" contentRefId="ContentParameter" widgetRefId="DropDownBox2" event="SelectedIndexChanged" />
       <EventHandler>
         <Action>
           <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gReceiptChanged">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="ContentParameter.SetCutPosition.ValueChanged">
+      <Source xsi:type="widgets.brease.NumericInput.Event" contentRefId="ContentParameter" widgetRefId="SetCutPosition" event="ValueChanged" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:gSaveParameter">
             <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
           </Target>
         </Action>

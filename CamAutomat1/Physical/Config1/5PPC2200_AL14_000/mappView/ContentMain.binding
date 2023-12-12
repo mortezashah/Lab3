@@ -86,13 +86,15 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gConvPrSpeed" attribute="node" />
 <Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="SetSpeedProduc" attribute="node" />
 </Binding>
+
+
 <Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::TouchProbe:MC_BR_TouchProbe_0.ValidTriggerCount" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="NumericOutputValid" attribute="value" />
+<Source xsi:type="opcUa" refId="::TouchProbe:MC_BR_TouchProbe_0.ValidTriggerCount" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="NumericOutputValid" attribute="node" />
 </Binding>
 <Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::TouchProbe:MC_BR_TouchProbe_0.MissedTriggerCount" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="NumericOutputMissed" attribute="value" />
+<Source xsi:type="opcUa" refId="::TouchProbe:MC_BR_TouchProbe_1.MissedTriggerCount" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentMain" widgetRefId="NumericOutputMissed" attribute="node" />
 </Binding>
 </Bindings>
 </BindingsSet>

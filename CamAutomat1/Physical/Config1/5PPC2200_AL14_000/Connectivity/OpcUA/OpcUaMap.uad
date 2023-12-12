@@ -42,6 +42,12 @@
           <High ValueProvider="Const">140</High>
         </EURange>
       </EURanges>
+      <EURanges Id="9">
+        <EURange>
+          <Low ValueProvider="Const">1</Low>
+          <High ValueProvider="Const">3</High>
+        </EURange>
+      </EURanges>
     </EURangesAliases>
     <EngineeringUnitAliases>
       <EngineeringUnit Id="1" UnitId="5066068" NameSpaceUri="http://www.opcfoundation.org/UA/units/un/cefact" Name="millimetre" Symbol="mm" />
@@ -249,6 +255,10 @@
           <Variable Name="Internal" />
         </Variable>
         <Variable Name="lastAndCurrentDif" EngineeringUnitId="1" />
+        <Variable Name="MC_BR_TouchProbe_1">
+          <Variable Name="ValidTriggerCount" />
+          <Variable Name="MissedTriggerCount" />
+        </Variable>
       </Task>
       <Task Name="RecipeMgmt">
         <Variable Name="DataProvider" />
@@ -269,6 +279,7 @@
         <Variable Name="uiLoad" />
         <Variable Name="uiSave" />
         <Variable Name="WarnColor" />
+        <Variable Name="CutType" EURangesId="9" />
       </Task>
     </Module>
   </DefaultView>

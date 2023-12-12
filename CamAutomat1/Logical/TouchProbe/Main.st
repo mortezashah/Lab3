@@ -26,6 +26,11 @@ PROGRAM _CYCLIC
 	MC_BR_TouchProbe_0.TriggerInput.MaxWidth := MaxWidth; // MaxWidth to the touch probe
 	MC_BR_TouchProbe_0.TriggerInput.MinWidth := MinWidth; // Min Width to the touch rpobe
 	
+	MC_BR_TouchProbe_1.AdvancedParameters := McBrAdvancePar_1;
+	MC_BR_TouchProbe_1.Axis := ADR(gConv_MpLink);
+	MC_BR_TouchProbe_1.TriggerInput := McBrTrigger_1;
+	MC_BR_TouchProbe_1(); 
+	MC_BR_TouchProbe_1.Enable := gEnableTouchProbe;
 	
 	// manaul paramter find
 	
@@ -85,10 +90,7 @@ PROGRAM _CYCLIC
 		
 	
 	//  get paramter infor from cam automat
-	McAcpAxCamAutDefinetyp.DataAddress := ADR(McAcpAxCamAutPartyp);
-	MC_BR_CamAutomatGetPar_AcpAx_0(Slave := ADR(gCutter_MpLink) , CamAutomat := McAcpAxCamAutDefinetyp);
-	 
-	MC_BR_CamAutomatSetPar_AcpAx_0(Slave := ADR(gCutter_MpLink) , CamAutomat := McAcpAxCamAutDefinetyp , AdvancedParameters := McAcpAxAdvCamAutSetPar);
+
 	
 END_PROGRAM
 

@@ -28,8 +28,8 @@
     <Widget xsi:type="widgets.brease.Rectangle" id="Rectanglelastdifmm4" top="314" left="420" width="366" height="46" zIndex="24" />
     <Widget xsi:type="widgets.brease.NumericInput" id="SetSpeedProduc" top="322" left="669" width="104" zIndex="25" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" />
     <Widget xsi:type="widgets.brease.Label" id="cutCountscutwidth1" top="323" left="428" width="209" zIndex="26" text="$IAT/ConvBottomVelocitySpeedControl" textAlign="left" fontSize="13px" />
-    <Widget xsi:type="widgets.brease.Rectangle" id="RectanglelastdifmmCount" top="368" left="420" width="366" height="47" zIndex="27" />
-    <Widget xsi:type="widgets.brease.Label" id="cutCountsLabelCountValid" top="378" left="426" width="209" zIndex="28" text="$IAT/countValid" textAlign="left" fontSize="13px" />
-    <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputValid" top="377" left="678" width="94" zIndex="29" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" maxValue="5000" backColor="rgba(255, 255, 255, 0)" />
+    <Widget xsi:type="widgets.brease.Rectangle" id="RectanglelastdifmmCount" top="365" left="420" width="366" height="47" zIndex="27" />
+    <Widget xsi:type="widgets.brease.Label" id="cutCountsLabelCountValid" top="375" left="426" width="209" zIndex="28" text="$IAT/countValid" textAlign="left" fontSize="13px" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputValid" top="374" left="678" width="94" zIndex="29" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" maxValue="5000" backColor="rgba(255, 255, 255, 0)" />
   </Widgets>
 </Content>

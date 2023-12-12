@@ -25,4 +25,20 @@ VAR
 	DataProviderHead : ARRAY[0..9] OF STRING[10] := [10('"}')]; (*Data Provider*)
 	i : INT;
 	WarnColor : BOOL; (*Color Check*)
+	MC_BR_CamAutomatGetPar_AcpAx_0 : MC_BR_CamAutomatGetPar_AcpAx := (Command:=mcSET_ALL_PAR_FROM_ADR,CamAutomat:=(DataObjectName:='Feature_CamAutomat')); (*Get parameter from cam automat*)
+	MC_BR_CamAutomatSetPar_AcpAx_0 : MC_BR_CamAutomatSetPar_AcpAx := (Command:=mcSET_ALL_PAR_FROM_ADR,CamAutomat:=(DataObjectName:='Feature_CamAutomat')); (*Set Parameters CAM ID*)
+	McAcpAxAdvCamAutSetPar : McAcpAxAdvCamAutSetParType; (*Command for the transfer of the parameter
+*)
+	McAcpAxCamAutDefinetyp : McAcpAxCamAutDefineType := (DataObjectName:='Feature_CamAutomat'); (*Command for the transfer of the parameter
+*)
+END_VAR
+VAR RETAIN
+	McAcpAxCamAutPartyp : McAcpAxCamAutParType; (*Command for the transfer of the parameter Current
+*)
+END_VAR
+VAR
+	CutType : UDINT := 1; (*Cut Type *)
+	copyAll : BOOL; (*Copy all partameter *)
+	copySelction : BOOL; (*Copy selection to the memory*)
+	selction : UDINT; (*selected type*)
 END_VAR

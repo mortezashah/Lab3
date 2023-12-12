@@ -52,5 +52,35 @@
 <Source xsi:type="opcUa" refId="::CamAutomat:twoCutEnable" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="ToggleButton2" attribute="value" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::RecipeMgmt:CutType" attribute="node" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="SetCutPosition" attribute="node" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="DropDownBox2" attribute="enable" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="SetSpeed3" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="SetSpeed1" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="SetCutPosition" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="TextInput1" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::CamAutomat:MpAxisBasic_AxisMaster.MoveVelocity" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="Label1" attribute="visible" />
+</Binding>
 </Bindings>
 </BindingsSet>

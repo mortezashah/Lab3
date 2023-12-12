@@ -805,5 +805,13 @@
         <seg>Count of Valid Print Mark</seg>
       </tuv>
     </tu>
+    <tu tuid="CutType">
+      <tuv xml:lang="fr">
+        <seg>Cut Type (1=Middle , 2= Upper, 3 = Lower)</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Cut Type (1=Middle , 2= Upper, 3 = Lower)</seg>
+      </tuv>
+    </tu>
   </body>
 </tmx>

@@ -62,7 +62,9 @@ TYPE
 		parmReferencePosition : REAL; (*Physical position when at the reference mark. (Real world units)*)
 	END_STRUCT;
 	cutParam_typ : 	STRUCT 
-		RecipeName : STRING[65];
+		selCutType : UDINT := 1; (*Choose cut type*)
+		CutType : ARRAY[0..2]OF McAcpAxCamAutParType; (*default  cut type middle*)
+		RecipeName : STRING[65]; (*name of recepit*)
 		productionSpeed : REAL := 0.0; (*reference lane *)
 		minimumCutSpped : LREAL := 0.0; (*reference lane *)
 	END_STRUCT;
