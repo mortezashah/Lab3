@@ -48,7 +48,7 @@ END_PROGRAM
 
 PROGRAM _CYCLIC	
 				
-	AxisParameters_Master.Velocity := gConvPrSpeed / 60  ;	// speed comes the part per minites divided by 60 s 
+	AxisParameters_Master.Velocity := gConvPrSpeed * 70 / 60 ;	// speed comes the part per minites divided by 60 s 
 	AxisParameters_Slave.Jog.Velocity := gCutJogSpeed;	  // Jog speed comes from HMi manaul page
 	AxisParameters_Master.Jog.Velocity := gConvJogSpeed; // belt jog peed  comes from HMi manaul page
 	gConvPosition := MpAxisBasic_AxisMaster.Position;  // realtime belt position  to  HMi manaul page
@@ -136,8 +136,8 @@ PROGRAM _CYCLIC
 					Axis1.statusStarting :=0;
 					MpAxisCamSequencer_0.Enable := TRUE;
 					gEnableTouchProbe := FALSE;
-						CutStart := FALSE;
-						
+					CutStart := FALSE;
+					disbaleHome := TRUE;	// Enable home
 						// Home state if requested by HMI
 					IF (Axis1.cmdHome = 1 AND NOT  MpAxisBasic_AxisMaster.CommandBusy  AND NOT  MpAxisBasic_AxisSlave.CommandBusy )THEN  // command home if 
 						Axis1Home							:= FALSE;
@@ -276,9 +276,12 @@ PROGRAM _CYCLIC
 				
 				MpAxisBasic_AxisMaster.JogPositive 	:= Axis1.cmdManualForward AND sawInCutPosition; // Jog Conveyor forward
 				MpAxisBasic_AxisMaster.JogNegative	:= Axis1.cmdManualReverse AND MpAxisBasic_AxisMaster.Position > (startPositionJog - 100.00) AND sawInCutPosition;
-						
+				IF 	EDGENEG(Axis1.cmdManualForward) THEN // correct the position
+					startPositionJog := MpAxisBasic_AxisMaster.Position;
+				END_IF
 				MpAxisBasic_AxisSlave.JogPositive 	:= Axis2.cmdManualForward AND cutJogEnableFW   ;// Jog Cutter Forward
 				MpAxisBasic_AxisSlave.JogNegative 	:= Axis2.cmdManualReverse AND cutJogEnableBW ; // Jog Cutter Reverse
+				disbaleHome := FALSE; // disable to make zero in hmi
 			
 			
 				STATE_ERROR : //********************** 101 ******************************* STATE_ERROR **************************** 101 ********************** STATE_ERROR 
@@ -365,7 +368,12 @@ PROGRAM _CYCLIC
 	
 	gMachineStatusMessage := gMachineStatusArray[gMachineStatus];	 // HMI status
 	cutEnd := (MpAxisBasic_AxisSlave.Position > cutStartDegree AND MpAxisBasic_AxisSlave.Position < cutEndDegree ) OR (MpAxisBasic_AxisSlave.Position > cutStartDegree + 180.0 AND MpAxisBasic_AxisSlave.Position < cutEndDegree +180 AND twoCutEnable );
-
+	maxproducSpeed := FIXED_SPEED + FIXED_SPEED * 0.855 * twoCutEnable; // max production speed
+	IF gConvPrSpeed > maxproducSpeed THEN // limit the speed to prevent fault
+		gConvPrSpeed := maxproducSpeed;
+	END_IF
+	
+		
 	IF EDGEPOS(cutEnd) THEN  // if one cut done cut the signal plc
 		Axis1.cmdCam := FALSE;
 		cutCount := cutCount +1; // add one cut is done	

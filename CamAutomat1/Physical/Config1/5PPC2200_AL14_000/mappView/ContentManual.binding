@@ -163,10 +163,7 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="LabelJogSpeedC" attribute="enable" />
 </Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
-<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButReset" attribute="enable" />
-</Binding>
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="NumericOutputActualPosition" attribute="enable" />
@@ -186,6 +183,10 @@
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="ToggleButtonPowerON" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::CamAutomat:disbaleHome" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentManual" widgetRefId="MomentaryPushButReset" attribute="enable" />
 </Binding>
 </Bindings>
 </BindingsSet>

@@ -17,23 +17,27 @@ PROGRAM _CYCLIC
 	MC_BR_ProcessParID_AcpAx_0();
 	MC_BR_ProcessParID_AcpAx_1(Axis := ADR(gConv_MpLink), DataAddress := ADR(McAcpAxProcessParIDPar) , NumberOfParIDs :=1 , Mode := mcACPAX_PARID_SET);
 	MC_BR_ProcessParID_AcpAx_1();
+	
 	// touch probe setup, 
 	MC_BR_TouchProbe_0.AdvancedParameters := McBrAdvancePar;
 	MC_BR_TouchProbe_0.Axis := ADR(gConv_MpLink);
 	MC_BR_TouchProbe_0.TriggerInput := McBrTrigger;
 	MC_BR_TouchProbe_0(); 
 	MC_BR_TouchProbe_0.Enable := gEnableTouchProbe;
+	
 	McBrAdvancePar.ReadTriggerWidth := TRUE; // Enable to read print lengh
 	ValidTriggerCount := MC_BR_TouchProbe_0.ValidTriggerCount;// count of valid trigger
 	MissedTriggerCount := MC_BR_TouchProbe_0.MissedTriggerCount; // count of missed trigger
 	MC_BR_TouchProbe_0.TriggerInput.MaxWidth := MaxWidth; // MaxWidth to the touch probe
 	MC_BR_TouchProbe_0.TriggerInput.MinWidth := MinWidth; // Min Width to the touch rpobe
+	
 	// second touch probe for training purpose
 	MC_BR_TouchProbe_1.AdvancedParameters := McBrAdvancePar_1;
 	MC_BR_TouchProbe_1.Axis := ADR(gConv_MpLink);
 	MC_BR_TouchProbe_1.TriggerInput := McBrTrigger_1;
 	MC_BR_TouchProbe_1(); 
 	MC_BR_TouchProbe_1.Enable := gEnableTouchProbe;
+	currentReadingDistance := MC_BR_TouchProbe_1.Period - MC_BR_TouchProbe_1.DeltaExpectedValue;
 	
 	// manaul paramter find
 	
@@ -80,7 +84,10 @@ PROGRAM _CYCLIC
 	IF EDGEPOS(Axis1.cmdStartAutomat) THEN // transfer the cut last and new position to the last position
 		preValue := newValue;
 	END_IF
-		
+	IF EDGEPOS(gEnableTouchProbe) THEN  // reset the partDetected bit to prevent stop in jog
+		partDetected := FALSE;
+	END_IF
+	
 	
 	//  get paramter infor from cam automat
 

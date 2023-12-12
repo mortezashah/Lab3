@@ -26,4 +26,5 @@ VAR
 	McBrTrigger_1 : McBrTriggerType; (*MC Br Trigger*)
 	McBrAdvancePar_1 : McAdvBrTouchProbeParType := (UseFirstTriggerPosition:=1); (*MC Advance paramter*)
 	MC_BR_ProcessParID_AcpAx_1 : MC_BR_ProcessParID_AcpAx; (*Set the battery problem Par block conv*)
+	currentReadingDistance : LREAL; (*Reead the current distance beween two print mark*)
 END_VAR

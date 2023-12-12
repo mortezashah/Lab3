@@ -42,16 +42,16 @@
           <High ValueProvider="Const">3</High>
         </EURange>
       </EURanges>
-      <EURanges Id="10">
-        <EURange>
-          <Low ValueProvider="Const">0</Low>
-          <High ValueProvider="Const">5600</High>
-        </EURange>
-      </EURanges>
       <EURanges Id="11">
         <EURange>
           <Low ValueProvider="Const">0</Low>
           <High ValueProvider="Const">10</High>
+        </EURange>
+      </EURanges>
+      <EURanges Id="12">
+        <EURange>
+          <Low ValueProvider="Const">0</Low>
+          <High ValueProvider="Const">130</High>
         </EURange>
       </EURanges>
     </EURangesAliases>
@@ -196,7 +196,7 @@
         <Variable Name="gCutJogSpeed" EURangesId="3" EngineeringUnitId="4" />
         <Variable Name="gManualActive" />
         <Variable Name="gMachineStatusMessage" />
-        <Variable Name="gConvPrSpeed" EURangesId="10" />
+        <Variable Name="gConvPrSpeed" EURangesId="12" />
         <Variable Name="gMinValue" EURangesId="8" EngineeringUnitId="1" />
         <Variable Name="gRecepitRefHmi" />
         <Variable Name="gRunPage" />
@@ -221,6 +221,8 @@
         <Variable Name="twoCutEnable" />
         <Variable Name="cutCount" />
         <Variable Name="alarmActive" />
+        <Variable Name="disbaleHome" />
+        <Variable Name="maxproducSpeed" />
       </Task>
       <Task Name="MachineAla">
         <Variable Name="ackAlarms" />
@@ -262,6 +264,7 @@
           <Variable Name="ValidTriggerCount" />
           <Variable Name="MissedTriggerCount" />
         </Variable>
+        <Variable Name="currentReadingDistance" EngineeringUnitId="1" />
       </Task>
       <Task Name="RecipeMgmt">
         <Variable Name="DataProvider" />

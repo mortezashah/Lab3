@@ -162,5 +162,13 @@
 <Source xsi:type="opcUa" refId="::RecipeMgmt:upperPosition" attribute="node" />
 <Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="UpperCut" attribute="node" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="UpperCut" attribute="enable" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gManualActive" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentParameter" widgetRefId="LowerCutPosition" attribute="enable" />
+</Binding>
 </Bindings>
 </BindingsSet>
