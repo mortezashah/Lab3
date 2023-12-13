@@ -35,4 +35,5 @@ END_VAR
 VAR
 	gRunPage : BOOL := FALSE; (*set to on in run from hmi to plc*)
 	gResetCount : BOOL; (*Reset number of Count*)
+	gvalidDateCamExist : BOOL := FALSE; (*If a Valid Data Exist to trasnfer to cam*)
 END_VAR

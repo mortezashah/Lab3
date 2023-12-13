@@ -43,6 +43,8 @@ VAR
 	upperPosition : LREAL := 8; (*Upper Position*)
 	lowerPosition : LREAL := 10; (*Lower cut Position*)
 	pasteSelection : BOOL; (*Paste form default*)
-	validDateCamExist : BOOL := FALSE; (*If a Valid Data Exist to trasnfer to cam*)
 	copySelctionValid : BOOL; (*Copy Valid Data to selection*)
+	MS_TEST_BIT0 : BOOL := TRUE; (*Test bit to find the bug for set paramters*)
+	selectedCutType : STRING[100] := 'Loading Cut Type ....'; (*selected cut type*)
+	cutTypeDefault : ARRAY[0..2] OF STRING[100] := ['Middle Cut','Upper Edge Cut','Lower Edge Cut']; (*default cut types*)
 END_VAR

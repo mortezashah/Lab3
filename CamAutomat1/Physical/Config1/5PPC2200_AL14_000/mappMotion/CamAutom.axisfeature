@@ -815,7 +815,7 @@
             <Property ID="SlaveFactor" Value="0" />
             <Selector ID="CompensationMode" Value="DistancesBetweenExitEntryPoints">
               <Property ID="MasterDistance" Value="27" />
-              <Property ID="SlaveDistance" Value="80" />
+              <Property ID="SlaveDistance" Value="82" />
               <Selector ID="AdvancedParameters" Value="NotUsed" />
             </Selector>
             <Group ID="AdvancedParameters">
@@ -863,7 +863,7 @@
             <Property ID="SlaveFactor" Value="0" />
             <Selector ID="CompensationMode" Value="DistancesBetweenExitEntryPoints">
               <Property ID="MasterDistance" Value="16" />
-              <Property ID="SlaveDistance" Value="258" />
+              <Property ID="SlaveDistance" Value="256" />
               <Selector ID="AdvancedParameters" Value="NotUsed" />
             </Selector>
             <Group ID="AdvancedParameters">
@@ -887,7 +887,7 @@
             <Property ID="SlaveFactor" Value="0" />
             <Selector ID="CompensationMode" Value="DistancesBetweenExitEntryPoints">
               <Property ID="MasterDistance" Value="27" />
-              <Property ID="SlaveDistance" Value="80" />
+              <Property ID="SlaveDistance" Value="82" />
               <Selector ID="AdvancedParameters" Value="NotUsed" />
             </Selector>
             <Group ID="AdvancedParameters">
@@ -935,7 +935,7 @@
             <Property ID="SlaveFactor" Value="0" />
             <Selector ID="CompensationMode" Value="DistancesBetweenExitEntryPoints">
               <Property ID="MasterDistance" Value="16" />
-              <Property ID="SlaveDistance" Value="78" />
+              <Property ID="SlaveDistance" Value="76" />
               <Selector ID="AdvancedParameters" Value="NotUsed" />
             </Selector>
             <Group ID="AdvancedParameters">

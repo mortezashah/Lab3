@@ -42,7 +42,7 @@ ACTION RecipeStateMachine:
 		
 	END_IF
 	IF 	EDGEPOS( MC_BR_CamAutomatSetPar_AcpAx_0.Done) THEN // remove the excute command after save
-		MC_BR_CamAutomatSetPar_AcpAx_0.Execute := 0;
+		MC_BR_CamAutomatSetPar_AcpAx_0.Execute := FALSE;
 	END_IF
 	
 	
@@ -56,9 +56,12 @@ ACTION RecipeStateMachine:
 		gCutPar[2] := gCutPar[0] ;
 
 	END_IF
+	IF EDGEPOS(gServoInitialized) THEN  // need to load good paramters
+		uiLoad := TRUE;
+	END_IF
 	
 	
-		MC_BR_CamAutomatGetPar_AcpAx_0.Execute := copySelction AND gManualActive AND NOT gSaveParameter  AND NOT gReceiptChanged AND gServoInitialized AND NOT validDateCamExist ;
+		MC_BR_CamAutomatGetPar_AcpAx_0.Execute := copySelction AND gManualActive AND NOT gSaveParameter  AND NOT gReceiptChanged AND gServoInitialized AND NOT gvalidDateCamExist ;
 	IF MC_BR_CamAutomatGetPar_AcpAx_0.Done THEN  // copy paramters to the data 
 		copySelction := FALSE;
 		MC_BR_CamAutomatGetPar_AcpAx_0.Execute := FALSE; // get the right paramter at the start up
@@ -75,10 +78,10 @@ ACTION RecipeStateMachine:
 		McAcpAxCamAutPartypDef[2].State[5].CompensationParameters.SlaveCompDistance := McAcpAxCamAutPartypDef[0].State[5].CompensationParameters.SlaveCompDistance + lowerPosition;
 		McAcpAxCamAutPartypDef[2].State[7].CompensationParameters.SlaveCompDistance := McAcpAxCamAutPartypDef[0].State[7].CompensationParameters.SlaveCompDistance - lowerPosition;
 		pasteSelection := TRUE;
-		validDateCamExist := TRUE;
+		gvalidDateCamExist := TRUE;
 	END_IF
 
-	IF copySelctionValid AND validDateCamExist THEN // if the valid datat esit then adjust the state of the machine
+	IF copySelctionValid AND gvalidDateCamExist THEN // if the valid datat esit then adjust the state of the machine
 		McAcpAxCamAutPartypDef[1].State[2].CompensationParameters.SlaveCompDistance := McAcpAxCamAutPartypDef[0].State[2].CompensationParameters.SlaveCompDistance - upperPosition;
 		McAcpAxCamAutPartypDef[1].State[4].CompensationParameters.SlaveCompDistance := McAcpAxCamAutPartypDef[0].State[4].CompensationParameters.SlaveCompDistance + upperPosition;
 		McAcpAxCamAutPartypDef[1].State[5].CompensationParameters.SlaveCompDistance := McAcpAxCamAutPartypDef[0].State[5].CompensationParameters.SlaveCompDistance - upperPosition;
@@ -92,11 +95,14 @@ ACTION RecipeStateMachine:
 	END_IF
 	
 		
-	IF pasteSelection AND NOT gSaveParameter  AND NOT gReceiptChanged AND validDateCamExist THEN // only save the new cam dat if its valid
+	IF pasteSelection AND NOT gSaveParameter  AND NOT gReceiptChanged AND gvalidDateCamExist AND NOT uiLoad THEN // only save the new cam dat if its valid
 		
 		McAcpAxCamAutPartyp :=  McAcpAxCamAutPartypDef[CutType-1]; // cam data is valid copy
-		MC_BR_CamAutomatSetPar_AcpAx_0.Execute := pasteSelection AND gManualActive ;
+		MC_BR_CamAutomatSetPar_AcpAx_0.Execute := pasteSelection AND gManualActive AND MS_TEST_BIT0 ;
 		pasteSelection := FALSE;
+		selectedCutType := cutTypeDefault[gCutPar[gRecepitRefHmi].selCutType-1]; 
+		
 	END_IF	
 	
+
 END_ACTION

@@ -14,5 +14,9 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:gMachineStatusMessage" attribute="value" />
 <Target xsi:type="brease" contentRefId="ContentUp" widgetRefId="TextOutputDisplaySataus" attribute="value" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::RecipeMgmt:selectedCutType" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentUp" widgetRefId="TextOutputDisplaySatausCutType" attribute="value" />
+</Binding>
 </Bindings>
 </BindingsSet>

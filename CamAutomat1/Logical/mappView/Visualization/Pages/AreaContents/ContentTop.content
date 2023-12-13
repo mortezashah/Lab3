@@ -8,7 +8,8 @@
     <Widget xsi:type="widgets.brease.LoginButton" id="LoginButton" top="6" left="848" width="146" zIndex="4" text="Login" />
     <Widget xsi:type="widgets.brease.DateTimeOutput" id="DateTimeOutput1" top="5" left="146" width="395" zIndex="5" />
     <Widget xsi:type="widgets.brease.Image" id="Image1" top="4" left="697" width="138" height="40" zIndex="6" image="Media/BW_Papersystems_logo_w_Square_icon_(transparent).png" />
-    <Widget xsi:type="widgets.brease.TextOutput" id="TextOutputDisplaySataus" top="53" left="146" width="211" height="21" zIndex="7" fontSize="16px" />
+    <Widget xsi:type="widgets.brease.TextOutput" id="TextOutputDisplaySataus" top="53" left="146" width="117" height="21" zIndex="7" fontSize="16px" />
     <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput3" top="53" left="523" width="211" height="21" zIndex="8" value="Servos are Initializing" fontSize="16px" visible="false" />
+    <Widget xsi:type="widgets.brease.TextOutput" id="TextOutputDisplaySatausCutType" top="53" left="273" width="228" height="21" zIndex="9" fontSize="16px" />
   </Widgets>
 </Content>

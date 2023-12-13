@@ -286,6 +286,7 @@
         <Variable Name="CutType" EURangesId="9" />
         <Variable Name="lowerPosition" EURangesId="11" EngineeringUnitId="1" />
         <Variable Name="upperPosition" EURangesId="11" EngineeringUnitId="1" />
+        <Variable Name="selectedCutType" />
       </Task>
     </Module>
   </DefaultView>

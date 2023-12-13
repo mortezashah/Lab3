@@ -837,5 +837,13 @@
         <seg>Position of Lower Edge Cut</seg>
       </tuv>
     </tu>
+    <tu tuid="doubleCut">
+      <tuv xml:lang="fr">
+        <seg>ebale doulbe</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg> Double Cut</seg>
+      </tuv>
+    </tu>
   </body>
 </tmx>

@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Content id="ContentMain" height="522" width="798" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
-    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart" top="217" left="15" width="135" zIndex="1" text="$IAT/StartCOm" />
-    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStopManual" top="217" left="488" width="135" zIndex="2" text="$IAT/Stop" />
-    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonReset" top="217" left="649" width="135" zIndex="3" text="$IAT/Reset" />
-    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonproductFinish" top="217" left="337" width="126" zIndex="4" text="$IAT/finpro" />
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStart" top="223" left="5" width="125" zIndex="1" text="$IAT/StartCOm" />
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonStopManual" top="223" left="531" width="125" zIndex="2" text="$IAT/Stop" />
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonReset" top="223" left="662" width="125" zIndex="3" text="$IAT/Reset" />
+    <Widget xsi:type="widgets.brease.PushButton" id="PushButtonproductFinish" top="223" left="268" width="125" zIndex="4" text="$IAT/finpro" />
     <Widget xsi:type="widgets.brease.Image" id="Image2" top="36" left="246" width="296" height="165" zIndex="5" image="Media/Capture.JPG" />
     <Widget xsi:type="widgets.brease.Image" id="Image3" top="36" left="246" width="296" height="165" zIndex="6" image="Media/EseniTqEJ9MA6Si7.gif" />
     <Widget xsi:type="widgets.brease.Label" id="Label15" top="1" left="249" width="285" zIndex="7" text="$IAT/sawInCut" textAlign="center" fontSize="13px" visible="false" />
@@ -21,7 +21,7 @@
     <Widget xsi:type="widgets.brease.Rectangle" id="Rectanglelastdifmm2" top="418" left="7" width="407" height="46" zIndex="17" />
     <Widget xsi:type="widgets.brease.Label" id="cutCountsLabelAve" top="427" left="13" width="209" zIndex="18" text="$IAT/average" textAlign="left" fontSize="13px" />
     <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputDistanceAverage" top="430" left="272" width="131" zIndex="19" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':2,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':2,'minimumIntegerDigits':1}}" maxValue="5000" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" backColor="rgba(255, 255, 255, 0)" />
-    <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonEnableCut" top="217" left="176" width="135" zIndex="20" text="$IAT/enablecut" />
+    <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonEnableCut" top="223" left="136" width="125" zIndex="20" text="$IAT/enablecut" />
     <Widget xsi:type="widgets.brease.Rectangle" id="Rectanglelastdifmm3" top="470" left="7" width="407" height="47" zIndex="21" />
     <Widget xsi:type="widgets.brease.Label" id="cutCountscutwidth" top="479" left="13" width="209" zIndex="22" text="$IAT/PrintSize" textAlign="left" fontSize="13px" />
     <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputDistanceWidth" top="478" left="272" width="131" zIndex="23" format="{'metric':{'decimalPlaces':2,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':2,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':2,'minimumIntegerDigits':1}}" maxValue="5000" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" backColor="rgba(255, 255, 255, 0)" />
@@ -31,5 +31,6 @@
     <Widget xsi:type="widgets.brease.Rectangle" id="RectanglelastdifmmCount" top="365" left="420" width="366" height="47" zIndex="27" />
     <Widget xsi:type="widgets.brease.Label" id="cutCountsLabelCountValid" top="375" left="426" width="209" zIndex="28" text="$IAT/countValid" textAlign="left" fontSize="13px" />
     <Widget xsi:type="widgets.brease.NumericOutput" id="NumericOutputValid" top="374" left="678" width="94" zIndex="29" format="{'metric':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial':{'decimalPlaces':0,'minimumIntegerDigits':1},'imperial-us':{'decimalPlaces':0,'minimumIntegerDigits':1}}" maxValue="5000" backColor="rgba(255, 255, 255, 0)" />
+    <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonEnableDoubleCut" top="223" left="399" width="125" zIndex="30" text="$IAT/doubleCut" />
   </Widgets>
 </Content>
