@@ -168,7 +168,9 @@ PROGRAM _CYCLIC
 						MpAxisBasic_AxisSlave.MoveAbsolute := TRUE;
 					ELSIF MpAxisBasic_AxisSlave.MoveAbsolute  AND  ( MpAxisBasic_AxisSlave.Position = 0.0 ) THEN
 						MpAxisBasic_AxisSlave.MoveAbsolute := FALSE;
-									
+					ELSIF Axis2.cmdHome THEN
+						MpAxisBasic_AxisSlave.MoveAbsolute := TRUE;
+						Axis2.cmdHome := FALSE;
 					ELSIF NOT MpAxisBasic_AxisMaster.MoveVelocity AND (Axis1.cmdManualForward OR Axis1.cmdManualReverse OR Axis2.cmdManualForward OR Axis2.cmdManualReverse ) THEN
 						AxisStep := STATE_JOG;
 						startPositionJog := MpAxisBasic_AxisMaster.Position ;

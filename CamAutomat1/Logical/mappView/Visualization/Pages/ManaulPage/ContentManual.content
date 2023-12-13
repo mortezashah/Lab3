@@ -25,5 +25,6 @@
     <Widget xsi:type="widgets.brease.Rectangle" id="RectangleCut" top="107" left="420" width="320" height="371" zIndex="1" />
     <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonPowerON" top="61" left="271" width="210" zIndex="22" text="$IAT/poweron" />
     <Widget xsi:type="widgets.brease.MomentaryPushButton" id="MomentaryPushButReset" top="262" left="161" zIndex="23" text="$IAT/zero" />
+    <Widget xsi:type="widgets.brease.ToggleButton" id="ToggleButtonByPassProtection1" top="346" left="506" width="138" zIndex="24" text="$IAT/Home" />
   </Widgets>
 </Content>

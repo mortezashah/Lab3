@@ -34,7 +34,37 @@
         <Property ID="Deceleration" Value="60000" />
       </Selector>
     </Selector>
-    <Selector ID="Alarms" Value="MpAlarmX" />
+    <Selector ID="Alarms" Value="MpAlarmX">
+      <Group ID="mapp.AlarmX.Core.Configuration">
+        <Group ID="[0]">
+          <Property ID="Message" Value="System problem CONV" />
+        </Group>
+        <Group ID="[1]">
+          <Property ID="Message" Value="Initialization problem CONV" />
+        </Group>
+        <Group ID="[2]">
+          <Property ID="Message" Value="Parameter problem CONV" />
+        </Group>
+        <Group ID="[3]">
+          <Property ID="Message" Value="Operation problem CONV" />
+        </Group>
+        <Group ID="[9]">
+          <Property ID="Message" Value="Network problem CONV" />
+        </Group>
+        <Group ID="[10]">
+          <Property ID="Message" Value="Encoder problem CONV" />
+        </Group>
+        <Group ID="[19]">
+          <Property ID="Message" Value="Movement error limit reached CONV" />
+        </Group>
+        <Group ID="[20]">
+          <Property ID="Message" Value="HW or SW movement limits reached CONV" />
+        </Group>
+        <Group ID="[21]">
+          <Property ID="Message" Value="Enable input low CONV" />
+        </Group>
+      </Group>
+    </Selector>
   </Element>
   <Element ID="gCutter_MpLink" Type="axis">
     <Property ID="BaseTypeIsReadOnly" Value="0" />
@@ -73,6 +103,39 @@
         <Property ID="Deceleration" Value="60000" />
       </Selector>
     </Selector>
-    <Selector ID="Alarms" Value="MpAlarmX" />
+    <Selector ID="Alarms" Value="MpAlarmX">
+      <Group ID="mapp.AlarmX.Core.Configuration">
+        <Group ID="[1]">
+          <Property ID="Message" Value="Initialization problem Cutter" />
+        </Group>
+        <Group ID="[2]">
+          <Property ID="Message" Value="Parameter problem Cutter" />
+        </Group>
+        <Group ID="[4]">
+          <Property ID="Message" Value="Data access problem Cutter" />
+        </Group>
+        <Group ID="[5]">
+          <Property ID="Message" Value="Syntax error Cutter" />
+        </Group>
+        <Group ID="[9]">
+          <Property ID="Message" Value="Network problem Cutter" />
+        </Group>
+        <Group ID="[10]">
+          <Property ID="Message" Value="Encoder problem Cutter" />
+        </Group>
+        <Group ID="[13]">
+          <Property ID="Message" Value="Supply problem Cutter" />
+        </Group>
+        <Group ID="[19]">
+          <Property ID="Message" Value="Movement error limit  Cutter" />
+        </Group>
+        <Group ID="[20]">
+          <Property ID="Message" Value="HW or SW movement limits reached Cutter" />
+        </Group>
+        <Group ID="[21]">
+          <Property ID="Message" Value="Enable input   Cutter" />
+        </Group>
+      </Group>
+    </Selector>
   </Element>
 </Configuration>
